@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/itemListMyWillMainLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/itemListMyWillImageIV"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/itemListMyWillTitleTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            android:layout_margin="10dp"
+            android:ellipsize="end"
+            android:gravity="start|center"
+            android:maxLines="1"
+            android:text="Title"
+            android:textColor="#676767"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/itemListMyWillDescriptionTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:ellipsize="end"
+            android:gravity="start|center"
+            android:maxLines="2"
+            android:text="Description"
+            android:textColor="#A2A2A2"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/itemListMyWillCreatedTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:ellipsize="end"
+            android:gravity="start|center"
+            android:maxLines="2"
+            android:text="15 October 2019"
+            android:textColor="#A2A2A2"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="#D9D9D9" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/itemListMyWillImageIV"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="5dp" />
+
+</RelativeLayout>

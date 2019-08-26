@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00aff0</color>
+    <color name="colorPrimaryDark">#009dd8</color>
+    <color name="colorAccent">@color/colorPrimaryDark</color>
+    <color name="colorBlackAlpha">#33000000</color>
+    <color name="textPrimary">#0675ef</color>
+    <color name="colorHint">#D8D8D8</color>
+    <color name="colorBlack">#000000</color>
+
+    <color name="colorPrimaryDark25">#44009dd8</color>
+    <color name="green">#55DD55</color>
+    <color name="textShade">#DDDDDD</color>
+    <color name="textMedium">#767676</color>
+    <color name="textDark">#565656</color>
+    <color name="grey">#AAAAAA</color>
+    <color name="red">#cc3333</color>
+    <color name="redLight">#ff6666</color>
+
+    <color name="kakaoPrimary">#A98ABC</color>
+    <color name="kakaoPrimaryDark">#AFC6DC</color>
+    <color name="kakaoGreen">#8BD24D</color>
+    <color name="kakaoBlue">#6990E0</color>
+    <color name="kakaoYellow">#F1DA00</color>
+    <color name="kakaoBrown">#C29D7F</color>
+    <color name="kakaoPink">#ED82C4</color>
+
+
+    <color name="newPrimaryColor">#2899BF</color>
+    <color name="newDimText">#E6E6E6</color>
+    <color name="newGrey">#B5B5B5</color>
+    <color name="newBlue">#92E2FD</color>
+    <color name="usedStorage">#BF28B5</color>
+    <color name="availableStorage">#2899BF</color>
+    <color name="colorPurple">#7E57C2</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="darkGreen">#008000</color>
+
+</resources>

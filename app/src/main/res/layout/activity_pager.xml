@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<android.support.v7.widget.AppCompatImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="90dp"-->
+    <!--android:src="@drawable/image_header"-->
+    <!--android:scaleType="fitXY"/>-->
+
+    <!--<android.support.v7.widget.AppCompatImageView-->
+    <!--android:layout_width="62dp"-->
+    <!--android:layout_height="63dp"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_marginStart="10dp"-->
+    <!--android:layout_marginLeft="10dp"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_marginEnd="10dp"-->
+    <!--android:layout_marginRight="10dp"-->
+    <!--android:layout_marginBottom="10dp"-->
+    <!--android:src="@drawable/image_logo"-->
+    <!--android:tint="@android:color/white" />-->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/activityViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="60dp" />
+
+    <TextView
+        android:id="@+id/activityPagerLetsGoTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="25dp"
+        android:padding="20dp"
+        android:text="Lets go"
+        android:textColor="@color/newPrimaryColor"
+        android:textSize="22sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/border1Cv"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_margin="2dp"
+            app:cardBackgroundColor="@color/colorPurple"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="0dp">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/pager1CV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="0dp" />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/border2Cv"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_margin="2dp"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="0dp">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/pager2CV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                app:cardBackgroundColor="@color/grey"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="0dp" />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/border3Cv"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_margin="2dp"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="0dp">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/pager3CV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                app:cardBackgroundColor="@color/grey"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="0dp" />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/border4Cv"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_margin="2dp"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="0dp">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/pager4CV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                app:cardBackgroundColor="@color/grey"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="0dp" />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/border5Cv"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_margin="2dp"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="0dp">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/pager5CV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                app:cardBackgroundColor="@color/grey"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="0dp" />
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+    <!--<android.support.v7.widget.AppCompatImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="90dp"-->
+    <!--android:src="@drawable/image_footer"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:scaleType="fitXY"/>-->
+
+</RelativeLayout>
