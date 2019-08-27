@@ -9,6 +9,7 @@ import android.support.v7.widget.AppCompatImageView;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.smnetinfo.ChangePasswordActivity;
 import com.smnetinfo.savememory.database.PostsDataSource;
 import com.smnetinfo.savememory.database.SettingsDataSource;
 import com.smnetinfo.savememory.database.UserDataSource;
@@ -51,8 +52,23 @@ public class MyPageActivity extends BaseActivity implements WebConstants {
         activityPayment = findViewById(R.id.activityPayment);
         activityFontSize = findViewById(R.id.activityFontSize);
 
+        activityChangePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(getApplicationContext(), ChangePasswordActivity.class));
+            }
+        });
 
 
+        activityPayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), PaymentActivity.class));
+
+
+            }
+        });
 
 
         activityMyPageProfileLL.setOnClickListener(new View.OnClickListener() {
@@ -89,6 +105,15 @@ public class MyPageActivity extends BaseActivity implements WebConstants {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), AboutActivity.class));
+            }
+        });
+
+        activityLockScreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), LockScreenAcivity.class));
+
+
             }
         });
 

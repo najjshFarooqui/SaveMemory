@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/comman_page" />
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv"
+        app:cardBackgroundColor="@color/fade"
+        app:cardCornerRadius="16dp">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp">
+
+            <RelativeLayout
+                android:id="@+id/rr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="Total: $120"
+                    android:textSize="18sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/optionCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Card "
+                        android:textColor="#272323"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/optionPaypal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Paypal"
+                        android:textColor="#272323"
+                        android:textSize="18sp" />
+
+
+                </RadioGroup>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/cardSelected"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rr">
+
+                <FrameLayout
+                    android:id="@+id/card"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+
+                    android:layout_marginTop="16dp">
+
+                    <Spinner
+                        android:id="@+id/spinnerCardType"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="16dp"
+
+                        android:layout_marginRight="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/et_empty"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/genderTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="0.10"
+                            android:background="@null"
+                            android:hint="Card Type"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="24sp" />
+
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/down_arrow"
+                            android:tint="@color/grey" />
+                    </LinearLayout>
+
+                </FrameLayout>
+
+
+                <EditText
+                    android:id="@+id/cardNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/card"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/et_empty"
+                    android:hint="Card Number"
+                    android:paddingLeft="20dp"
+                    android:textSize="24sp" />
+
+
+                <EditText
+                    android:id="@+id/cvc"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/cardNumber"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/et_empty"
+                    android:hint="CVC"
+                    android:paddingLeft="20dp"
+                    android:textSize="24sp" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/payaplSelected"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rr"
+                android:visibility="gone">
+
+
+                <EditText
+                    android:id="@+id/etPaypalUserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/et_empty"
+                    android:hint="Username"
+                    android:paddingLeft="20dp"
+                    android:textSize="24sp" />
+
+
+                <EditText
+                    android:id="@+id/etPaypalPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/etPaypalUserName"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/et_empty"
+                    android:hint="Password"
+                    android:paddingLeft="20dp"
+                    android:textSize="24sp" />
+
+
+            </RelativeLayout>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/submit"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="24dp"
+                android:onClick="onSubmit"
+                app:cardBackgroundColor="@color/money"
+                app:cardCornerRadius="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Proceed"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="24sp" />
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

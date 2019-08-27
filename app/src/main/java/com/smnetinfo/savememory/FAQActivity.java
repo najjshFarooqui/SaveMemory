@@ -2,11 +2,11 @@ package com.smnetinfo.savememory;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -26,7 +26,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FAQActivity extends BaseActivity implements WebConstants {
-    CardView activityFAQBackCV;
+    ImageView activityFAQBackCV;
     RecyclerView activityFAQRecyclerView;
 
     FAQRecyclerAdapter faqRecyclerAdapter;
@@ -40,7 +40,7 @@ public class FAQActivity extends BaseActivity implements WebConstants {
 
         progressDialog = new ProgressDialog(this);
 
-        activityFAQBackCV = findViewById(R.id.activityFAQBackCV);
+        activityFAQBackCV = findViewById(R.id.btnBack);
 
         activityFAQRecyclerView = findViewById(R.id.activityFAQRecyclerView);
 

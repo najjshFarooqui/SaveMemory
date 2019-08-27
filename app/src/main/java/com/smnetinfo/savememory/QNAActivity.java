@@ -2,10 +2,11 @@ package com.smnetinfo.savememory;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -27,7 +28,8 @@ public class QNAActivity extends BaseActivity implements WebConstants {
 
     EditText activityQNAAskET;
     ProgressDialog progressDialog;
-    CardView activityQNABackCV, activityQNAAskCV;
+    ImageView activityQNABackCV;
+    Button activityQNAAskCV;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

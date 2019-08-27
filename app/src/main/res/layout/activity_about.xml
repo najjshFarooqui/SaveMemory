@@ -1,5 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/set" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="10dp"
+            android:text="SaveMemory"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/colorWhite"
+        app:cardCornerRadius="14dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/activityAboutBackCV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:padding="8dp"
+                android:src="@drawable/ic_arrow_blue" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="16dp"
+                android:padding="8dp"
+                android:text="Settings"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+
+            <TextView
+                android:id="@+id/textLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="80dp"
+                android:text="About Save Memory"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24sp" />
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/textLabel">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Our App"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="32sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="32dp"
+                        android:text="SaveMemory is a free to download application for smartphones. The application allows the storing of messages, audio files, videos, images, documents, other media, etc. to a secured cloud. The application uses the internet to save messages, images, audio files, videos, documents and other files. It is free and offers simple, secure, and reliable services. You can download it from the Google Play store and iTunes." />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Our Mission"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="32sp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SaveMemory started as a service to help parents store their memories of their children. However, it is not limited only to parent-child relationships. It also provides services to the patron and heritor(s) (beneficiary). Our product supports storing of a variety of media: text, photos, videos, documents, and audio files. This app is secured with end-to-end encryption, meaning that no third party, including SaveMemory, can read or access this media. " />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Our Team"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="32sp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Our company is located in San Francisco, USA. Our team is consisted of members from different countries (eg: USA, South Korea, Japan, India, Indonesia, and etc.) to offer excellent service to its users." />
+
+
+                </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>
+
+
+    <!--RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -52,6 +196,7 @@
             </RelativeLayout>
 
             <WebView
+
                 android:id="@+id/activityAboutWebView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
@@ -80,4 +225,4 @@
 
     </android.support.v7.widget.CardView>
 
-</RelativeLayout>
+    </RelativeLayout>-->

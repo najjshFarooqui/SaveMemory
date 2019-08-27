@@ -76,4 +76,12 @@
     <string name="profile_com_title">Please provide the following information:</string>
     <string name="verify_email_text">We sent you an activation code.\n Check your email and cilick on the\n link to verify.</string>
     <string name="email_sent_text">An email has been sent to your register email address.\nFollow the direction in the email to reset your password</string>
+    <string name="item_removed_message">please fill all the fields carefully</string>
+
+
+    <string-array name="cards_array">
+        <item>Visa Card</item>
+        <item>Master Card</item>
+    </string-array>
+
 </resources>

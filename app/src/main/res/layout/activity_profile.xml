@@ -1,5 +1,487 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@color/colorPrimary">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/set" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="6dp"
+                        android:text="SaveMemory"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/colorWhite"
+                    app:cardCornerRadius="14dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/activityProfileBackIV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_arrow_blue" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="16dp"
+                            android:padding="8dp"
+                            android:text="Settings"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="18sp" />
+
+
+                        <TextView
+                            android:id="@+id/paheInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="54dp"
+                            android:text="My Information"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="32sp" />
+
+
+                        <TextView
+                            android:id="@+id/labelEss"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/paheInfo"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="16dp"
+                            android:text="Essential"
+                            android:textColor="@color/redLight"
+                            android:textSize="18sp" />
+
+
+                        <LinearLayout
+                            android:id="@+id/essentials"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/labelEss"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp"
+
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:orientation="vertical">
+
+
+                            <EditText
+                                android:id="@+id/activityProfileFirstNameET"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp"
+                                android:background="@drawable/square_bg"
+                                android:enabled="false"
+                                android:hint="First name"
+                                android:paddingLeft="20dp" />
+
+
+                            <EditText
+                                android:id="@+id/activityProfileLastNameET"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp"
+                                android:background="@drawable/square_bg"
+                                android:enabled="false"
+                                android:hint="Last name"
+                                android:paddingLeft="20dp" />
+
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp">
+
+                                <Spinner
+                                    android:id="@+id/activityProfileSexSpinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_marginLeft="16dp"
+
+                                    android:layout_marginRight="16dp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/square_bg"
+                                    android:orientation="horizontal"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:id="@+id/genderTv"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="0.10"
+                                        android:background="@null"
+                                        android:hint="Your gender"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="16sp" />
+
+                                    <ImageView
+                                        android:layout_width="12dp"
+                                        android:layout_height="12dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="10dp"
+                                        android:src="@drawable/down_arrow"
+                                        android:tint="@color/grey" />
+                                </LinearLayout>
+
+                            </FrameLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/calanderDateLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="16dp"
+                                android:background="@drawable/square_bg"
+                                android:orientation="horizontal"
+                                android:padding="10dp">
+
+                                <TextView
+                                    android:id="@+id/calanderTv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_weight="0.10"
+                                    android:background="@null"
+                                    android:hint="Date Of Birth"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="16sp" />
+
+                                <ImageView
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="10dp"
+                                    android:src="@drawable/down_arrow"
+                                    android:tint="@color/grey" />
+                            </LinearLayout>
+
+
+                            <EditText
+                                android:id="@+id/activityProfileEmailET"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp"
+                                android:background="@drawable/square_bg"
+                                android:enabled="false"
+                                android:hint="Email"
+                                android:paddingLeft="20dp" />
+
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/labelOptionals"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/essentials"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="16dp"
+                            android:text="Optional"
+                            android:textColor="@color/darkGreen"
+                            android:textSize="18sp" />
+
+
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/labelOptionals"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp"
+
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="60dp"
+                            android:orientation="vertical">
+
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp"
+                                android:background="@drawable/square_bg">
+
+                                <Spinner
+                                    android:id="@+id/activityProfileISDSpinner"
+                                    android:layout_width="32dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="8dp"
+                                    android:background="@null"
+                                    android:backgroundTint="@color/textDark" />
+
+                                <EditText
+                                    android:id="@+id/activityProfilePhoneET"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_toRightOf="@id/activityProfileISDSpinner"
+                                    android:background="@null"
+                                    android:enabled="false"
+                                    android:hint="Phone number"
+                                    android:inputType="phone"
+                                    android:textSize="14sp" />
+
+
+                            </RelativeLayout>
+
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp">
+
+                                <Spinner
+                                    android:id="@+id/activityProfileNationalitySpinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_marginLeft="16dp"
+
+                                    android:layout_marginRight="16dp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/square_bg"
+                                    android:orientation="horizontal"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="0.10"
+                                        android:background="@null"
+                                        android:hint="Nationality"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="16sp" />
+
+                                    <ImageView
+                                        android:layout_width="12dp"
+                                        android:layout_height="12dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="10dp"
+                                        android:src="@drawable/down_arrow"
+                                        android:tint="@color/grey" />
+                                </LinearLayout>
+
+                            </FrameLayout>
+
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp">
+
+                                <Spinner
+                                    android:id="@+id/activityProfileMaritalStatusSpinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_marginLeft="16dp"
+
+                                    android:layout_marginRight="16dp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/square_bg"
+                                    android:orientation="horizontal"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="0.10"
+                                        android:background="@null"
+                                        android:hint="Marital status"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="16sp" />
+
+                                    <ImageView
+                                        android:layout_width="12dp"
+                                        android:layout_height="12dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="10dp"
+                                        android:src="@drawable/down_arrow"
+                                        android:tint="@color/grey" />
+                                </LinearLayout>
+
+                            </FrameLayout>
+
+                            <EditText
+                                android:id="@+id/activityProfileCountryET"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp"
+                                android:background="@drawable/square_bg"
+                                android:enabled="false"
+                                android:hint="Living Country"
+                                android:paddingLeft="20dp" />
+
+                            <EditText
+                                android:id="@+id/activityProfileOccupationET"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp"
+                                android:background="@drawable/square_bg"
+                                android:hint="Occupation"
+                                android:paddingLeft="20dp" />
+
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp"
+                                android:background="@drawable/square_bg"
+                                android:hint="Other"
+                                android:paddingLeft="20dp" />
+
+
+                            <EditText
+                                android:id="@+id/activityProfileAddressET"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp"
+                                android:background="@drawable/square_bg"
+                                android:enabled="false"
+                                android:hint="Postal Address"
+                                android:inputType="text"
+                                android:paddingLeft="20dp" />
+
+
+                        </LinearLayout>
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/edit"
+                            android:layout_width="80dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_margin="5dp"
+                            app:cardCornerRadius="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+
+                                <ImageView
+                                    android:layout_width="28dp"
+                                    android:layout_height="28dp"
+                                    android:layout_alignParentLeft="true"
+                                    android:padding="4dp"
+
+                                    android:src="@drawable/ic_pencil" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_gravity="center"
+                                    android:text="edit"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="24sp" />
+                            </RelativeLayout>
+
+                        </android.support.v7.widget.CardView>
+
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/save"
+                            android:layout_width="80dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_margin="5dp"
+                            android:visibility="gone"
+                            app:cardCornerRadius="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_gravity="center"
+                                    android:text="save"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="24sp" />
+                            </RelativeLayout>
+
+                        </android.support.v7.widget.CardView>
+
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>
+
+    <!--
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -136,457 +618,436 @@
 
                             android:orientation="vertical">
 
-                            <!--  <TextView-->
-                            <!--      android:layout_width="0dp"-->
-                            <!--      android:layout_height="match_parent"-->
-                            <!--      android:layout_weight="1"-->
-                            <!--      android:gravity="start|center"-->
-                            <!--      android:text="Name"-->
-                            <!--      android:textSize="14sp" />-->
-
-                            <!--  <EditText-->
-                            <!--      android:id="@+id/activityProfileFirstNameET"-->
-                            <!--      android:layout_width="0dp"-->
-                            <!--      android:layout_height="match_parent"-->
-                            <!--      android:layout_weight="1"-->
-                            <!--      android:backgroundTint="@color/newDimText"-->
-                            <!--      android:enabled="false"-->
-                            <!--      android:hint="First Name"-->
-                            <!--      android:textSize="14sp" />-->
-
-                            <!--  <EditText-->
-                            <!--      android:id="@+id/activityProfileLastNameET"-->
-                            <!--      android:layout_width="0dp"-->
-                            <!--      android:layout_height="match_parent"-->
-                            <!--      android:layout_weight="1"-->
-                            <!--      android:backgroundTint="@color/newDimText"-->
-                            <!--      android:enabled="false"-->
-                            <!--      android:hint="Last Name"-->
-                            <!--      android:textSize="14sp" />-->
-
-
-                            <EditText
-                                style="@style/edittext"
-                                android:hint="Your full legal name" />
-
-
-                            <EditText
-                                style="@style/edittext"
-
-                                android:layout_marginTop="8dp" />
-
-                            <EditText
-                                style="@style/edittext"
-                                android:layout_marginTop="8dp" />
-
-                            <EditText
-                                style="@style/edittext"
-                                android:layout_marginTop="8dp"
-                                android:hint="Email" />
-
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginTop="24dp"
-                                android:text="Optional"
-                                android:textSize="24sp" />
-
-
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="50dp"
-                                android:layout_marginTop="12dp"
-                                android:background="@drawable/edittext">
-
-                                <Spinner
-                                    android:id="@+id/activityProfileISDSpinner"
-                                    android:layout_width="48dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_centerVertical="true"
-                                    android:background="@null"
-                                    android:backgroundTint="@color/textDark" />
-
-                                <EditText
-                                    android:id="@+id/activityProfilePhoneET"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_toRightOf="@+id/activityProfileISDSpinner"
-                                    android:background="@null"
-                                    android:backgroundTint="@color/newDimText"
-                                    android:enabled="false"
-                                    android:hint="Phone number"
-                                    android:inputType="phone"
-                                    android:paddingLeft="8dp"
-                                    android:textSize="14sp" />
-
-                            </RelativeLayout>
-
-
-                            <LinearLayout
-                                style="@style/edittext"
-                                android:layout_width="match_parent"
-                                android:layout_height="40dp"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="5dp"
-                                android:orientation="horizontal"
-                                android:weightSum="3">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="start|center"
-                                    android:text="@string/nationality"
-                                    android:textSize="14sp" />
-
-                                <Spinner
-                                    android:id="@+id/activityProfileNationalitySpinner"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="2"
-                                    android:backgroundTint="@color/textDark" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:orientation="horizontal"
-                            android:weightSum="3">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="start|center"
-                                android:text="DOB"
-                                android:textSize="14sp" />
-
-                            <RelativeLayout
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight=".66">
-
-                                <Spinner
-                                    android:id="@+id/activityProfileDateSpinner"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@null" />
-
-                                <android.support.v7.widget.AppCompatImageView
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_alignParentEnd="true"
-                                    android:layout_centerVertical="true"
-                                    android:src="@drawable/image_down_arrow"
-                                    android:tint="@android:color/black" />
-
-                            </RelativeLayout>
-
-                            <RelativeLayout
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight=".66">
-
-                                <Spinner
-                                    android:id="@+id/activityProfileMonthSpinner"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@null" />
-
-                                <android.support.v7.widget.AppCompatImageView
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_alignParentEnd="true"
-                                    android:layout_centerVertical="true"
-                                    android:src="@drawable/image_down_arrow"
-                                    android:tint="@android:color/black" />
-
-                            </RelativeLayout>
-
-                            <RelativeLayout
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight=".66">
-
-                                <Spinner
-                                    android:id="@+id/activityProfileYearSpinner"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@null" />
-
-                                <android.support.v7.widget.AppCompatImageView
-                                    android:layout_width="20dp"
-                                    android:layout_height="20dp"
-                                    android:layout_alignParentEnd="true"
-                                    android:layout_centerVertical="true"
-                                    android:src="@drawable/image_down_arrow"
-                                    android:tint="@android:color/black" />
-
-                            </RelativeLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:orientation="horizontal"
-                            android:weightSum="3">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="start|center"
-                                android:text="Sex"
-                                android:textSize="14sp" />
-
-                            <Spinner
-                                android:id="@+id/activityProfileSexSpinner"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="2"
-                                android:backgroundTint="@color/textDark" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:orientation="horizontal"
-                            android:weightSum="3">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="start|center"
-                                android:text="@string/email"
-                                android:textSize="14sp" />
-
-                            <EditText
-                                android:id="@+id/activityProfileEmailET"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="2"
-                                android:backgroundTint="@color/newDimText"
-                                android:enabled="false"
-                                android:hint="Direct Input"
-                                android:textSize="14sp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:orientation="horizontal"
-                            android:weightSum="3">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="start|center"
-                                android:text="@string/phone_no"
-                                android:textSize="14sp" />
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="2"
-                                android:orientation="horizontal"
-                                android:weightSum="1">
-
-                                <Spinner
-                                    android:id="@+id/activityProfileISDSpinner"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight=".4"
-                                    android:background="@null"
-                                    android:backgroundTint="@color/textDark" />
-
-                                <EditText
-                                    android:id="@+id/activityProfilePhoneET"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight=".6"
-                                    android:backgroundTint="@color/newDimText"
-                                    android:enabled="false"
-                                    android:hint="Phone number"
-                                    android:inputType="phone"
-                                    android:textSize="14sp" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:orientation="horizontal"
-                            android:weightSum="3">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="start|center"
-                                android:text="@string/nationality"
-                                android:textSize="14sp" />
-
-                            <Spinner
-                                android:id="@+id/activityProfileNationalitySpinner"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="2"
-                                android:backgroundTint="@color/textDark" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:orientation="horizontal"
-                            android:weightSum="3">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="start|center"
-                                android:text="Living Country"
-                                android:textSize="14sp" />
-
-                            <EditText
-                                android:id="@+id/activityProfileCountryET"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="2"
-                                android:backgroundTint="@color/newDimText"
-                                android:enabled="false"
-                                android:hint="Direct Input"
-                                android:textSize="14sp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:orientation="horizontal"
-                            android:weightSum="3">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="start|center"
-                                android:text="Marital Status"
-                                android:textSize="14sp" />
-
-                            <Spinner
-                                android:id="@+id/activityProfileMaritalStatusSpinner"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="2"
-                                android:backgroundTint="@color/textDark" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:orientation="horizontal"
-                            android:weightSum="3">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="start|center"
-                                android:text="Occupation"
-                                android:textSize="14sp" />
-
-                            <EditText
-                                android:id="@+id/activityProfileOccupationET"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="2"
-                                android:backgroundTint="@color/newDimText"
-                                android:enabled="false"
-                                android:hint="Direct Input"
-                                android:textSize="14sp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:orientation="horizontal"
-                            android:weightSum="3">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="start"
-                                android:paddingTop="10dp"
-                                android:text="Postal address"
-                                android:textSize="14sp" />
-
-                            <EditText
-                                android:id="@+id/activityProfileAddressET"
-                                android:layout_width="0dp"
-                                android:layout_height="100dp"
-                                android:layout_gravity="start"
-                                android:layout_weight="2"
-                                android:backgroundTint="@color/newDimText"
-                                android:enabled="false"
-                                android:gravity="start"
-                                android:hint="Type start here"
-                                android:textSize="14sp" />
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/activityProfileSaveTV"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:padding="10dp"
-                            android:text="Save"
-                            android:textColor="#00BFFF"
-                            android:textSize="18sp"
-                            android:visibility="gone" />
-
-                    </LinearLayout>
-                </RelativeLayout>
-
-            </android.support.v7.widget.CardView>
-
-        </LinearLayout>
-
-    </android.support.v4.widget.NestedScrollView>
+                              <TextView      android:layout_width="0dp"      android:layout_height="match_parent"      android:layout_weight="1"      android:gravity="start|center"      android:text="Name"      android:textSize="14sp" />
+
+    <!-  <EditText--><!--      android:id="@+id/activityProfileFirstNameET"--><!--      android:layout_width="0dp"--><!--      android:layout_height="match_parent"--><!--      android:layout_weight="1"--><!--      android:backgroundTint="@color/newDimText"--><!--      android:enabled="false"--><!--      android:hint="First Name"--><!--      android:textSize="14sp" />-->
+
+    <!--  <EditText--><!--      android:id="@+id/activityProfileLastNameET"--><!--      android:layout_width="0dp"--><!--      android:layout_height="match_parent"--><!--      android:layout_weight="1"--><!--      android:backgroundTint="@color/newDimText"--><!--      android:enabled="false"--><!--      android:hint="Last Name"--><!--      android:textSize="14sp" />-->
+
+
+    <!-- <EditText
+         style="@style/edittext"
+         android:hint="Your full legal name" />
+
+
+     <EditText
+         style="@style/edittext"
+
+         android:layout_marginTop="8dp" />
+
+     <EditText
+         style="@style/edittext"
+         android:layout_marginTop="8dp" />
+
+     <EditText
+         style="@style/edittext"
+         android:layout_marginTop="8dp"
+         android:hint="Email" />
+
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         android:layout_marginTop="24dp"
+         android:text="Optional"
+         android:textSize="24sp" />
+
+
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="50dp"
+         android:layout_marginTop="12dp"
+         android:background="@drawable/edittext">
+
+         <Spinner
+             android:id="@+id/activityProfileISDSpinner"
+             android:layout_width="48dp"
+             android:layout_height="match_parent"
+             android:layout_centerVertical="true"
+             android:background="@null"
+             android:backgroundTint="@color/textDark" />
+
+         <EditText
+             android:id="@+id/activityProfilePhoneET"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_toRightOf="@+id/activityProfileISDSpinner"
+             android:background="@null"
+             android:backgroundTint="@color/newDimText"
+             android:enabled="false"
+             android:hint="Phone number"
+             android:inputType="phone"
+             android:paddingLeft="8dp"
+             android:textSize="14sp" />
+
+     </RelativeLayout>
+
+
+     <LinearLayout
+         style="@style/edittext"
+         android:layout_width="match_parent"
+         android:layout_height="40dp"
+         android:layout_marginStart="5dp"
+         android:layout_marginEnd="5dp"
+         android:orientation="horizontal"
+         android:weightSum="3">
+
+         <TextView
+             android:layout_width="0dp"
+             android:layout_height="match_parent"
+             android:layout_weight="1"
+             android:gravity="start|center"
+             android:text="@string/nationality"
+             android:textSize="14sp" />
+
+         <Spinner
+             android:id="@+id/activityProfileNationalitySpinner"
+             android:layout_width="0dp"
+             android:layout_height="match_parent"
+             android:layout_weight="2"
+             android:backgroundTint="@color/textDark" />
+
+     </LinearLayout>
+
+ </LinearLayout>
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:layout_marginStart="5dp"
+     android:layout_marginEnd="5dp"
+     android:orientation="horizontal"
+     android:weightSum="3">
+
+     <TextView
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="1"
+         android:gravity="start|center"
+         android:text="DOB"
+         android:textSize="14sp" />
+
+     <RelativeLayout
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight=".66">
+
+         <Spinner
+             android:id="@+id/activityProfileDateSpinner"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@null" />
+
+         <android.support.v7.widget.AppCompatImageView
+             android:layout_width="20dp"
+             android:layout_height="20dp"
+             android:layout_alignParentEnd="true"
+             android:layout_centerVertical="true"
+             android:src="@drawable/image_down_arrow"
+             android:tint="@android:color/black" />
+
+     </RelativeLayout>
+
+     <RelativeLayout
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight=".66">
+
+         <Spinner
+             android:id="@+id/activityProfileMonthSpinner"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@null" />
+
+         <android.support.v7.widget.AppCompatImageView
+             android:layout_width="20dp"
+             android:layout_height="20dp"
+             android:layout_alignParentEnd="true"
+             android:layout_centerVertical="true"
+             android:src="@drawable/image_down_arrow"
+             android:tint="@android:color/black" />
+
+     </RelativeLayout>
+
+     <RelativeLayout
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight=".66">
+
+         <Spinner
+             android:id="@+id/activityProfileYearSpinner"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@null" />
+
+         <android.support.v7.widget.AppCompatImageView
+             android:layout_width="20dp"
+             android:layout_height="20dp"
+             android:layout_alignParentEnd="true"
+             android:layout_centerVertical="true"
+             android:src="@drawable/image_down_arrow"
+             android:tint="@android:color/black" />
+
+     </RelativeLayout>
+
+ </LinearLayout>
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:layout_marginStart="5dp"
+     android:layout_marginEnd="5dp"
+     android:orientation="horizontal"
+     android:weightSum="3">
+
+     <TextView
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="1"
+         android:gravity="start|center"
+         android:text="Sex"
+         android:textSize="14sp" />
+
+     <Spinner
+         android:id="@+id/activityProfileSexSpinner"
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="2"
+         android:backgroundTint="@color/textDark" />
+
+ </LinearLayout>
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:layout_marginStart="5dp"
+     android:layout_marginEnd="5dp"
+     android:orientation="horizontal"
+     android:weightSum="3">
+
+     <TextView
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="1"
+         android:gravity="start|center"
+         android:text="@string/email"
+         android:textSize="14sp" />
+
+     <EditText
+         android:id="@+id/activityProfileEmailET"
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="2"
+         android:backgroundTint="@color/newDimText"
+         android:enabled="false"
+         android:hint="Direct Input"
+         android:textSize="14sp" />
+
+ </LinearLayout>
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:layout_marginStart="5dp"
+     android:layout_marginEnd="5dp"
+     android:orientation="horizontal"
+     android:weightSum="3">
+
+     <TextView
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="1"
+         android:gravity="start|center"
+         android:text="@string/phone_no"
+         android:textSize="14sp" />
+
+     <LinearLayout
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="2"
+         android:orientation="horizontal"
+         android:weightSum="1">
+
+         <Spinner
+             android:id="@+id/activityProfileISDSpinner"
+             android:layout_width="0dp"
+             android:layout_height="match_parent"
+             android:layout_weight=".4"
+             android:background="@null"
+             android:backgroundTint="@color/textDark" />
+
+         <EditText
+             android:id="@+id/activityProfilePhoneET"
+             android:layout_width="0dp"
+             android:layout_height="match_parent"
+             android:layout_weight=".6"
+             android:backgroundTint="@color/newDimText"
+             android:enabled="false"
+             android:hint="Phone number"
+             android:inputType="phone"
+             android:textSize="14sp" />
+
+     </LinearLayout>
+
+ </LinearLayout>
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:layout_marginStart="5dp"
+     android:layout_marginEnd="5dp"
+     android:orientation="horizontal"
+     android:weightSum="3">
+
+     <TextView
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="1"
+         android:gravity="start|center"
+         android:text="@string/nationality"
+         android:textSize="14sp" />
+
+     <Spinner
+         android:id="@+id/activityProfileNationalitySpinner"
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="2"
+         android:backgroundTint="@color/textDark" />
+
+ </LinearLayout>
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:layout_marginStart="5dp"
+     android:layout_marginEnd="5dp"
+     android:orientation="horizontal"
+     android:weightSum="3">
+
+     <TextView
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="1"
+         android:gravity="start|center"
+         android:text="Living Country"
+         android:textSize="14sp" />
+
+     <EditText
+         android:id="@+id/activityProfileCountryET"
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="2"
+         android:backgroundTint="@color/newDimText"
+         android:enabled="false"
+         android:hint="Direct Input"
+         android:textSize="14sp" />
+
+ </LinearLayout>
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:layout_marginStart="5dp"
+     android:layout_marginEnd="5dp"
+     android:orientation="horizontal"
+     android:weightSum="3">
+
+     <TextView
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="1"
+         android:gravity="start|center"
+         android:text="Marital Status"
+         android:textSize="14sp" />
+
+     <Spinner
+         android:id="@+id/activityProfileMaritalStatusSpinner"
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="2"
+         android:backgroundTint="@color/textDark" />
+
+ </LinearLayout>
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:layout_marginStart="5dp"
+     android:layout_marginEnd="5dp"
+     android:orientation="horizontal"
+     android:weightSum="3">
+
+     <TextView
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="1"
+         android:gravity="start|center"
+         android:text="Occupation"
+         android:textSize="14sp" />
+
+     <EditText
+         android:id="@+id/activityProfileOccupationET"
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="2"
+         android:backgroundTint="@color/newDimText"
+         android:enabled="false"
+         android:hint="Direct Input"
+         android:textSize="14sp" />
+
+ </LinearLayout>
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="5dp"
+     android:layout_marginEnd="5dp"
+     android:orientation="horizontal"
+     android:weightSum="3">
+
+     <TextView
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="1"
+         android:gravity="start"
+         android:paddingTop="10dp"
+         android:text="Postal address"
+         android:textSize="14sp" />
+
+     <EditText
+         android:id="@+id/activityProfileAddressET"
+         android:layout_width="0dp"
+         android:layout_height="100dp"
+         android:layout_gravity="start"
+         android:layout_weight="2"
+         android:backgroundTint="@color/newDimText"
+         android:enabled="false"
+         android:gravity="start"
+         android:hint="Type start here"
+         android:textSize="14sp" />
+
+ </LinearLayout>
+
+ <TextView
+     android:id="@+id/activityProfileSaveTV"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_gravity="end"
+     android:padding="10dp"
+     android:text="Save"
+     android:textColor="#00BFFF"
+     android:textSize="18sp"
+     android:visibility="gone" />
 
 </LinearLayout>
+</RelativeLayout>
+
+</android.support.v7.widget.CardView>
+
+</LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>&ndash;&gt;
+-->

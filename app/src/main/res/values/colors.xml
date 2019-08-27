@@ -36,4 +36,8 @@
     <color name="colorWhite">#ffffff</color>
     <color name="darkGreen">#008000</color>
 
+    <color name="bg">#F5F3F3</color>
+    <color name="redLightt">#FF1A00</color>
+    <color name="money">#0675EF</color>
+    <color name="fade">#DEDEDE</color>
 </resources>
