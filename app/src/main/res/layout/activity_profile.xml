@@ -1,5 +1,454 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@color/colorPrimary">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="10dp"
+                        android:text="SaveMemory"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/colorWhite"
+                    app:cardCornerRadius="14dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/activityProfileBackIV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_arrow_blue" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="16dp"
+                            android:padding="8dp"
+                            android:text="Settings"
+                            android:textColor="@color/colorBlack" />
+
+
+                        <TextView
+                            android:id="@+id/paheInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="54dp"
+                            android:text="My Information"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="32sp" />
+
+
+                        <TextView
+                            android:id="@+id/labelEss"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/paheInfo"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="16dp"
+                            android:text="Essential"
+                            android:textColor="@color/redLight"
+                            android:textSize="20sp" />
+
+
+                        <LinearLayout
+                            android:id="@+id/essentials"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/labelEss"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp"
+
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:orientation="vertical">
+
+
+                            <EditText
+                                android:id="@+id/activityProfileFirstNameET"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp"
+                                android:background="@drawable/square_bg"
+                                android:hint="Your full legal name"
+                                android:paddingLeft="20dp" />
+
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp">
+
+                                <Spinner
+                                    android:id="@+id/activityProfileSexSpinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_marginLeft="16dp"
+
+                                    android:layout_marginRight="16dp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/square_bg"
+                                    android:orientation="horizontal"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:id="@+id/genderTv"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="0.10"
+                                        android:background="@null"
+                                        android:hint="Your gender"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="16sp" />
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="10dp"
+                                        android:src="@drawable/down_arrow"
+                                        android:tint="@color/grey" />
+                                </LinearLayout>
+
+                            </FrameLayout>
+
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp">
+
+                                <Spinner
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_marginLeft="16dp"
+
+                                    android:layout_marginRight="16dp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/square_bg"
+                                    android:orientation="horizontal"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="0.10"
+                                        android:background="@null"
+                                        android:hint="Date Of Birth"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="16sp" />
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="10dp"
+                                        android:src="@drawable/down_arrow"
+                                        android:tint="@color/grey" />
+                                </LinearLayout>
+
+                            </FrameLayout>
+
+
+                            <EditText
+                                android:id="@+id/activityProfileEmailET"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp"
+                                android:background="@drawable/square_bg"
+                                android:hint="Email"
+                                android:paddingLeft="20dp" />
+
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/labelOptionals"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/essentials"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="16dp"
+                            android:text="Optional"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/labelOptionals"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp"
+
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:orientation="vertical">
+
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp"
+                                android:background="@drawable/square_bg">
+
+                                <Spinner
+                                    android:id="@+id/activityProfileISDSpinner"
+                                    android:layout_width="32dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="8dp"
+                                    android:background="@null"
+                                    android:backgroundTint="@color/textDark" />
+
+                                <EditText
+                                    android:id="@+id/activityProfilePhoneET"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_toRightOf="@id/activityProfileISDSpinner"
+                                    android:background="@null"
+                                    android:enabled="false"
+                                    android:hint="Phone number"
+                                    android:inputType="phone"
+                                    android:textSize="14sp" />
+
+
+                            </RelativeLayout>
+
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp">
+
+                                <Spinner
+                                    android:id="@+id/activityProfileNationalitySpinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_marginLeft="16dp"
+
+                                    android:layout_marginRight="16dp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/square_bg"
+                                    android:orientation="horizontal"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="0.10"
+                                        android:background="@null"
+                                        android:hint="Nationality"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="16sp" />
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="10dp"
+                                        android:src="@drawable/down_arrow"
+                                        android:tint="@color/grey" />
+                                </LinearLayout>
+
+                            </FrameLayout>
+
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp">
+
+                                <Spinner
+                                    android:id="@+id/activityProfileMaritalStatusSpinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_marginLeft="16dp"
+
+                                    android:layout_marginRight="16dp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/square_bg"
+                                    android:orientation="horizontal"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="0.10"
+                                        android:background="@null"
+                                        android:hint="Marital status"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="16sp" />
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="10dp"
+                                        android:src="@drawable/down_arrow"
+                                        android:tint="@color/grey" />
+                                </LinearLayout>
+
+                            </FrameLayout>
+
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp">
+
+                                <Spinner
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_marginLeft="16dp"
+
+                                    android:layout_marginRight="16dp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/square_bg"
+                                    android:orientation="horizontal"
+                                    android:padding="10dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginLeft="8dp"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="0.10"
+                                        android:background="@null"
+                                        android:hint="Country of residence"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="16sp" />
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="10dp"
+                                        android:src="@drawable/down_arrow"
+                                        android:tint="@color/grey" />
+                                </LinearLayout>
+
+                            </FrameLayout>
+
+
+                            <EditText
+                                android:id="@+id/activityProfileOccupationET"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp"
+                                android:background="@drawable/square_bg"
+                                android:hint="Occupation"
+                                android:paddingLeft="20dp" />
+
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp"
+                                android:background="@drawable/square_bg"
+                                android:hint="Other"
+                                android:paddingLeft="20dp" />
+
+
+                        </LinearLayout>
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/edit"
+                            android:layout_width="80dp"
+                            android:layout_height="30dp"
+                            app:cardCornerRadius="10dp">
+
+                            <ImageView
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:src="@drawable/ic_pencil" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:text="edit"
+                                android:textSize="16sp" />
+                        </android.support.v7.widget.CardView>
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>
+
+    <!--
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -479,4 +928,4 @@
 
     </android.support.v4.widget.NestedScrollView>
 
-</LinearLayout>
+    </LinearLayout>-->
