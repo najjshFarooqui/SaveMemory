@@ -39,7 +39,7 @@
         </provider>
 
         <activity
-            android:name=".SplashActivity"
+            android:name=".MyPageActivity"
             android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
@@ -177,7 +177,7 @@
             android:windowSoftInputMode="stateHidden" />
 
         <activity
-            android:name=".MyPageActivity"
+            android:name=".SplashActivity"
             android:configChanges="keyboardHidden|keyboard|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"

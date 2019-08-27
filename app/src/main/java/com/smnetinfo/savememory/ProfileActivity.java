@@ -112,8 +112,8 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
         activityProfilePhoneET = findViewById(R.id.activityProfilePhoneET);
         activityProfileCountryET = findViewById(R.id.activityProfileCountryET);
         activityProfileAddressET = findViewById(R.id.activityProfileAddressET);
-        activityProfileLastNameET = findViewById(R.id.activityProfileLastNameET);
-        activityProfileFirstNameET = findViewById(R.id.activityProfileFirstNameET);
+        //activityProfileLastNameET = findViewById(R.id.activityProfileLastNameET);
+        //activityProfileFirstNameET = findViewById(R.id.activityProfileFirstNameET);
         activityProfileOccupationET = findViewById(R.id.activityProfileOccupationET);
 
 
