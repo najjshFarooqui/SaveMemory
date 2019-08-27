@@ -1,52 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <TextView
-        android:id="@+id/itemListBeneficiaryNameTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="10dp"
-        android:text="Name" />
-
-    <TextView
-        android:id="@+id/itemListMyBeneficiaryFirstNameTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="10dp"
-        android:layout_toEndOf="@+id/itemListBeneficiaryNameTV" />
-
-    <TextView
-        android:id="@+id/itemListMyBeneficiaryLastNameTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="10dp"
-        android:layout_toEndOf="@+id/itemListMyBeneficiaryFirstNameTV" />
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="2dp">
 
     <LinearLayout
-        android:id="@+id/itemListBeneficiaryDetailsLL"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:orientation="horizontal"
-        android:padding="10dp">
+        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="See Details"
-            android:textColor="@color/newPrimaryColor" />
+            android:layout_gravity="center"
+            android:layout_weight="0.30"
+            android:orientation="horizontal">
 
-        <android.support.v7.widget.AppCompatImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/image_down_arrow"
-            android:tint="@color/newPrimaryColor" />
+            <TextView
+                android:id="@+id/itemListBeneficiaryNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:text="Name" />
+
+            <TextView
+                android:id="@+id/itemListMyBeneficiaryFirstNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/itemListBeneficiaryNameTV" />
+
+            <TextView
+                android:id="@+id/itemListMyBeneficiaryLastNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/itemListMyBeneficiaryFirstNameTV" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/itemListBeneficiaryDetailsLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_weight="0.70"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="See Details"
+                android:textColor="@color/newPrimaryColor" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/image_down_arrow"
+                android:tint="@color/newPrimaryColor" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-</RelativeLayout>
+
+</android.support.v7.widget.CardView>

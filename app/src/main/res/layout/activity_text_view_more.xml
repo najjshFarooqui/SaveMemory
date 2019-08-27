@@ -112,16 +112,18 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:background="@drawable/view_all_back"
             android:layout_below="@+id/activityEditPostMoreCV">
 
             <EditText
                 android:id="@+id/activityViewMoreContentET"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@null"
+                android:layout_height="match_parent"
                 android:enabled="false"
                 android:gravity="start"
+                android:background="@null"
                 android:padding="10dp"
                 android:textColor="@drawable/selector_et_color" />
 

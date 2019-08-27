@@ -184,6 +184,7 @@ public class MemoriesFragment extends Fragment implements WebConstants {
         linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         //linearLayoutManager.setStackFromEnd(true);
         fragmentMemoriesPostsRV.setLayoutManager(linearLayoutManager);
+        //   System.out.println("MY_POST_DATA  "+postsDataSource.getPosts().toString());
         postListRecyclerAdapter = new PostListRecyclerAdapter(getContext(), postsDataSource.getPosts());
         fragmentMemoriesPostsRV.setAdapter(postListRecyclerAdapter);
         fragmentMemoriesPostsRV.scrollToPosition(postListRecyclerAdapter.getItemCount() - 1);
@@ -192,7 +193,6 @@ public class MemoriesFragment extends Fragment implements WebConstants {
             public void onClick(JSONObject jsonObject, int position) {
 
             }
-
             @Override
             public void onLongClick(JSONObject jsonObject, int position) {
                 showPostInfo(jsonObject);
@@ -415,7 +415,7 @@ public class MemoriesFragment extends Fragment implements WebConstants {
                 if (fragmentMemoriesPostAttachmentCV.getVisibility() == View.VISIBLE) {
                     fragmentMemoriesPostAttachmentCV.setVisibility(View.GONE);
                     fragmentMemoriesPostAddAttachmentIV.setRotation(0);
-                    fragmentMemoriesPostAddAttachmentIV.setColorFilter(ContextCompat.getColor(getContext(), R.color.newPrimaryColor), PorterDuff.Mode.SRC_IN);
+                    fragmentMemoriesPostAddAttachmentIV.setColorFilter(ContextCompat.getColor(getContext(), R.color.colorPrimary), PorterDuff.Mode.SRC_IN);
                 } else {
                     fragmentMemoriesPostAttachmentCV.setVisibility(View.VISIBLE);
                     fragmentMemoriesPostAddAttachmentIV.setRotation(45);
@@ -725,6 +725,7 @@ public class MemoriesFragment extends Fragment implements WebConstants {
         dialogDeleteYesCV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                dialog.dismiss();
                 postAllDelete(id);
             }
         });
@@ -948,6 +949,7 @@ public class MemoriesFragment extends Fragment implements WebConstants {
                                 if (jsonObject.getBoolean(STATUS)) {
                                     postsDataSource.deletePost(postId);
                                     progressDialog.dismiss();
+                                    Toast.makeText(getContext(), "Succesfully Deleted", Toast.LENGTH_SHORT).show();
                                     getPostsApi();
                                 }
                             } catch (Exception e) {

@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Base64;
 import android.view.LayoutInflater;
@@ -18,7 +17,6 @@ import android.widget.TextView;
 import com.smnetinfo.savememory.EditWillActivity;
 import com.smnetinfo.savememory.R;
 import com.smnetinfo.savememory.extras.WebConstants;
-import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -59,7 +57,7 @@ public class WillListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
             final JSONObject jsonObject = item.getJSONObject(position);
 
             holder.itemListMyWillTitleTV.setText(jsonObject.getString(TITLE));
-            holder.itemListMyWillDescriptionTV.setText(jsonObject.getString(DESCRIPTION));
+            //  holder.itemListMyWillDescriptionTV.setText(jsonObject.getString(DESCRIPTION));
             holder.itemListMyWillCreatedTV.setText(convertTime(jsonObject.getString(CREATED_AT)));
 
             holder.itemListMyWillMainLL.setOnClickListener(new View.OnClickListener() {
@@ -69,17 +67,17 @@ public class WillListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                 }
             });
 
-            switch (jsonObject.getInt(TYPE)) {
-                case POST_TYPE_TEXT:
-                    holder.itemListMyWillImageIV.setVisibility(View.GONE);
-                    break;
-                case POST_TYPE_IMAGE:
-                    holder.itemListMyWillImageIV.setVisibility(View.VISIBLE);
-                    Picasso.with(context)
-                            .load(jsonObject.getString(CONTENT_URL))
-                            .into(holder.itemListMyWillImageIV);
-                    break;
-            }
+//            switch (jsonObject.getInt(TYPE)) {
+//                case POST_TYPE_TEXT:
+//                    holder.itemListMyWillImageIV.setVisibility(View.GONE);
+//                    break;
+//                case POST_TYPE_IMAGE:
+//                    holder.itemListMyWillImageIV.setVisibility(View.VISIBLE);
+//                    Picasso.with(context)
+//                            .load(jsonObject.getString(CONTENT_URL))
+//                            .into(holder.itemListMyWillImageIV);
+//                    break;
+//            }
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -122,17 +120,17 @@ public class WillListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
     private class RecyclerViewHolders extends RecyclerView.ViewHolder {
 
         LinearLayout itemListMyWillMainLL;
-        AppCompatImageView itemListMyWillImageIV;
-        TextView itemListMyWillTitleTV, itemListMyWillDescriptionTV, itemListMyWillCreatedTV;
+        //  AppCompatImageView itemListMyWillImageIV;
+        TextView itemListMyWillTitleTV, itemListMyWillCreatedTV;
 
         RecyclerViewHolders(View itemView) {
             super(itemView);
 
             itemListMyWillMainLL = itemView.findViewById(R.id.itemListMyWillMainLL);
             itemListMyWillTitleTV = itemView.findViewById(R.id.itemListMyWillTitleTV);
-            itemListMyWillImageIV = itemView.findViewById(R.id.itemListMyWillImageIV);
+            //  itemListMyWillImageIV = itemView.findViewById(R.id.itemListMyWillImageIV);
             itemListMyWillCreatedTV = itemView.findViewById(R.id.itemListMyWillCreatedTV);
-            itemListMyWillDescriptionTV = itemView.findViewById(R.id.itemListMyWillDescriptionTV);
+            // itemListMyWillDescriptionTV = itemView.findViewById(R.id.itemListMyWillDescriptionTV);
 
         }
     }

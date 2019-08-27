@@ -129,7 +129,7 @@ public class ForgotPasswordActivity extends BaseActivity implements WebConstants
     public void chekeEmailPopup() {
         final Dialog dialog = new Dialog(ForgotPasswordActivity.this, android.R.style.Theme_Translucent_NoTitleBar);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.email_sent_popup);
+        dialog.setContentView(R.layout.add_will_popup);
         Window window = dialog.getWindow();
         ImageView cancelIv = (ImageView) window.findViewById(R.id.cancelIv);
         cancelIv.setOnClickListener(new View.OnClickListener() {
