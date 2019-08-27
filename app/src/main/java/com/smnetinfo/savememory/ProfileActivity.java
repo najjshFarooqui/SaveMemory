@@ -16,7 +16,6 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.FileProvider;
-import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
@@ -24,7 +23,7 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -68,8 +67,8 @@ import javax.mail.internet.InternetAddress;
 public class ProfileActivity extends BaseActivity implements WebConstants {
 
     TextView activityProfileSaveTV;
-    LinearLayout activityProfileEditLL;
-    AppCompatImageView activityProfileBackIV;
+    CardView activityProfileEditLL;
+    ImageView activityProfileBackIV;
     Spinner activityProfileDateSpinner, activityProfileMonthSpinner, activityProfileYearSpinner, activityProfileSexSpinner,
             activityProfileNationalitySpinner, activityProfileMaritalStatusSpinner, activityProfileISDSpinner;
     EditText activityProfileFirstNameET, activityProfileLastNameET, activityProfileEmailET, activityProfilePhoneET,
@@ -106,22 +105,22 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
 
         activityProfileSaveTV = findViewById(R.id.activityProfileSaveTV);
 
-        activityProfileEditLL = findViewById(R.id.activityProfileEditLL);
+        activityProfileEditLL = findViewById(R.id.edit);
 
         activityProfileEmailET = findViewById(R.id.activityProfileEmailET);
         activityProfilePhoneET = findViewById(R.id.activityProfilePhoneET);
-        activityProfileCountryET = findViewById(R.id.activityProfileCountryET);
-        activityProfileAddressET = findViewById(R.id.activityProfileAddressET);
-        activityProfileLastNameET = findViewById(R.id.activityProfileLastNameET);
+        //////  activityProfileCountryET = findViewById(R.id.activityProfileCountryET);
+        //// activityProfileAddressET = findViewById(R.id.activityProfileAddressET);
+        ////  activityProfileLastNameET = findViewById(R.id.activityProfileLastNameET);
         activityProfileFirstNameET = findViewById(R.id.activityProfileFirstNameET);
         activityProfileOccupationET = findViewById(R.id.activityProfileOccupationET);
 
 
         activityProfileISDSpinner = findViewById(R.id.activityProfileISDSpinner);
         activityProfileSexSpinner = findViewById(R.id.activityProfileSexSpinner);
-        activityProfileDateSpinner = findViewById(R.id.activityProfileDateSpinner);
-        activityProfileYearSpinner = findViewById(R.id.activityProfileYearSpinner);
-        activityProfileMonthSpinner = findViewById(R.id.activityProfileMonthSpinner);
+        ////   activityProfileDateSpinner = findViewById(R.id.activityProfileDateSpinner);
+        ////  activityProfileYearSpinner = findViewById(R.id.activityProfileYearSpinner);
+        ////   activityProfileMonthSpinner = findViewById(R.id.activityProfileMonthSpinner);
         activityProfileNationalitySpinner = findViewById(R.id.activityProfileNationalitySpinner);
         activityProfileMaritalStatusSpinner = findViewById(R.id.activityProfileMaritalStatusSpinner);
 
@@ -414,7 +413,7 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
         try {
             isDOBSet = true;
             if (!jsonObject.isNull(FIRST_NAME)) {
-                activityProfileFirstNameET.setText(jsonObject.getString(FIRST_NAME));
+                activityProfileFirstNameET.setText(jsonObject.getString(FIRST_NAME) + " " + jsonObject.getString(LAST_NAME));
             }
             if (!jsonObject.isNull(LAST_NAME)) {
                 activityProfileLastNameET.setText(jsonObject.getString(LAST_NAME));
