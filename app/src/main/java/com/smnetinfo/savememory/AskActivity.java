@@ -1,9 +1,7 @@
-package com.smnetinfo;
+package com.smnetinfo.savememory;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-
-import com.smnetinfo.savememory.R;
 
 public class AskActivity extends AppCompatActivity {
 

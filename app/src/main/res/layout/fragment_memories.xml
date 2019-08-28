@@ -52,7 +52,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_margin="5dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="5dp"
                     android:layout_toStartOf="@+id/fragmentMemoriesPostCV"
                     android:background="#F1F1F1">
 
@@ -74,18 +75,16 @@
                                 android:layout_width="45dp"
                                 android:layout_height="45dp"
                                 android:layout_centerVertical="true"
-                                android:layout_margin="5dp"
                                 android:visibility="visible"
-                                app:cardCornerRadius="15dp"
+                                app:cardCornerRadius="22.5dp"
                                 app:cardElevation="0dp">
 
                                 <android.support.v7.widget.AppCompatImageView
                                     android:id="@+id/fragmentMemoriesPostAddAttachmentIV"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:padding="2dp"
                                     android:src="@drawable/plus_larg"
-                                    android:tint="@color/newPrimaryColor" />
+                                    android:tint="@color/colorPrimary" />
 
                             </android.support.v7.widget.CardView>
 
@@ -188,8 +187,8 @@
                                 <!--android:src="@drawable/img_larg" />-->
                                 <android.support.v7.widget.CardView
                                     android:id="@+id/fragmentMemoriesPostGalleryImageCV"
-                                    android:layout_width="70dp"
-                                    android:layout_height="70dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
                                     android:layout_centerHorizontal="true"
                                     app:cardBackgroundColor="@color/colorWhite"
                                     app:cardElevation="0dp">
@@ -224,8 +223,8 @@
                                 <!--android:src="@drawable/video_larg"/>-->
                                 <android.support.v7.widget.CardView
                                     android:id="@+id/fragmentMemoriesPostGalleryVideoCV"
-                                    android:layout_width="70dp"
-                                    android:layout_height="70dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
                                     android:layout_centerHorizontal="true"
                                     app:cardBackgroundColor="@color/colorWhite"
                                     app:cardElevation="0dp">
@@ -253,8 +252,8 @@
 
                                 <android.support.v7.widget.CardView
                                     android:id="@+id/fragmentMemoriesPostGalleryAudioCV"
-                                    android:layout_width="70dp"
-                                    android:layout_height="70dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
                                     android:layout_centerHorizontal="true"
                                     app:cardBackgroundColor="@color/textPrimary"
                                     app:cardElevation="0dp">
@@ -262,7 +261,7 @@
                                     <android.support.v7.widget.AppCompatImageView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:padding="20dp"
+                                        android:padding="10dp"
                                         android:src="@drawable/audio_larg"
                                         android:tint="@color/colorWhite" />
 
@@ -292,8 +291,8 @@
 
                                 <android.support.v7.widget.CardView
                                     android:id="@+id/fragmentMemoriesPostDocCV"
-                                    android:layout_width="70dp"
-                                    android:layout_height="70dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
                                     android:layout_centerHorizontal="true"
                                     app:cardBackgroundColor="#f6a230"
                                     app:cardElevation="0dp">
@@ -301,7 +300,7 @@
                                     <android.support.v7.widget.AppCompatImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:padding="20dp"
+                                        android:padding="10dp"
                                         android:src="@drawable/file_larg"
                                         android:tint="@color/colorWhite" />
 
@@ -325,8 +324,8 @@
 
                                 <android.support.v7.widget.CardView
                                     android:id="@+id/fragmentMemoriesPostCameraCV"
-                                    android:layout_width="70dp"
-                                    android:layout_height="70dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
                                     android:layout_centerHorizontal="true"
                                     app:cardBackgroundColor="#A52E1B"
                                     app:cardElevation="0dp">
@@ -334,7 +333,7 @@
                                     <android.support.v7.widget.AppCompatImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:padding="20dp"
+                                        android:padding="10dp"
                                         android:src="@drawable/image_camera" />
 
                                 </android.support.v7.widget.CardView>
@@ -355,16 +354,16 @@
 
                                 <android.support.v7.widget.CardView
                                     android:id="@+id/fragmentMemoriesPostAudioRecorderCV"
-                                    android:layout_width="70dp"
-                                    android:layout_height="70dp"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
                                     android:layout_centerHorizontal="true"
                                     app:cardBackgroundColor="#000040"
                                     app:cardElevation="0dp">
 
                                     <android.support.v7.widget.AppCompatImageView
                                         android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:padding="20dp"
+                                        android:layout_height="wrap_content"
+                                        android:padding="10dp"
                                         android:src="@drawable/image_microphone" />
 
                                 </android.support.v7.widget.CardView>
@@ -467,6 +466,7 @@
                 android:id="@+id/fragmentMemoriesAudioRecCloseIV"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_alignParentRight="true"
                 android:padding="7dp"
                 android:src="@drawable/image_close" />
 
@@ -479,15 +479,6 @@
                 android:textColor="@android:color/black"
                 android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/fragmentMemoriesAudioRecTimerTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/fragmentMemoriesAudioRecInternalRL"
-                android:layout_centerHorizontal="true"
-                android:textColor="@color/red"
-                android:textSize="14sp" />
-
             <RelativeLayout
                 android:id="@+id/fragmentMemoriesAudioRecInternalRL"
                 android:layout_width="match_parent"
@@ -495,9 +486,21 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="15dp">
 
+                <TextView
+                    android:id="@+id/fragmentMemoriesAudioRecTimerTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_toLeftOf="@+id/dabba"
+                    android:textColor="@color/red"
+                    android:textSize="14sp" />
+
                 <android.support.v7.widget.CardView
                     android:layout_width="70dp"
                     android:layout_height="70dp"
+                    android:id="@+id/dabba"
                     android:layout_centerInParent="true"
                     app:cardBackgroundColor="@android:color/white"
                     app:cardCornerRadius="35dp"

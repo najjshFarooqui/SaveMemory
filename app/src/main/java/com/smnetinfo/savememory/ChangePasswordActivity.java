@@ -1,4 +1,4 @@
-package com.smnetinfo;
+package com.smnetinfo.savememory;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,9 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-
-import com.smnetinfo.savememory.MyPageActivity;
-import com.smnetinfo.savememory.R;
 
 public class ChangePasswordActivity extends AppCompatActivity {
     EditText oldPassword, newPassword, confirmNewPassword;

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-    android:orientation="vertical">
+    android:background="@android:color/white">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:cardBackgroundColor="@color/newPrimaryColor"
+        android:id="@+id/topLayout"
+        android:layout_alignParentTop="true"
+        app:cardBackgroundColor="@color/colorPrimary"
         app:cardCornerRadius="0dp"
         app:cardElevation="2dp">
 
@@ -42,154 +43,25 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/topLayout"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/curve_shape"
         android:orientation="vertical">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:layout_toStartOf="@+id/activityMyWillSaveCV"
-                app:cardBackgroundColor="@color/grey"
-                app:cardCornerRadius="0dp"
-                app:cardElevation="0dp">
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="1dp"
-                    android:layout_toStartOf="@+id/activityMyWillSaveCV"
-                    app:cardBackgroundColor="@android:color/white"
-                    app:cardCornerRadius="0dp"
-                    app:cardElevation="0dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:weightSum="3">
-
-                        <LinearLayout
-                            android:id="@+id/activityMyWillImageLL"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
-                            android:gravity="center">
-
-                            <android.support.v7.widget.AppCompatImageView
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:src="@drawable/image_gallery_image"
-                                android:tint="#A2A2A2" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:text="Image"
-                                android:textColor="#A2A2A2"
-                                android:textSize="16sp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/activityMyWillDocLL"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
-                            android:gravity="center">
-
-                            <android.support.v7.widget.AppCompatImageView
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:src="@drawable/image_doc"
-                                android:tint="#A2A2A2" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:text="Doc"
-                                android:textColor="#A2A2A2"
-                                android:textSize="16sp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/activityMyWillVideoLL"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
-                            android:gravity="center">
-
-                            <android.support.v7.widget.AppCompatImageView
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_gravity="center"
-                                android:layout_marginEnd="4dp"
-                                android:gravity="center"
-                                android:src="@drawable/image_video"
-                                android:tint="#A2A2A2" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:text="Video"
-                                android:textColor="#A2A2A2"
-                                android:textSize="16sp" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/activityMyWillSaveCV"
-                android:layout_width="60dp"
-                android:layout_height="30dp"
-                android:layout_alignParentEnd="true"
-                android:layout_margin="5dp"
-                app:cardBackgroundColor="@color/newPrimaryColor"
-                app:cardCornerRadius="0dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="SAVE"
-                    android:textColor="@android:color/white" />
-
-            </android.support.v7.widget.CardView>
-
-        </RelativeLayout>
 
         <EditText
             android:id="@+id/activityMyWillTitleET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
-            android:backgroundTint="#ACACAC"
-            android:hint="Enter title"
-            android:textColor="#676767" />
+            android:hint="Will Title"
+            android:paddingLeft="10dp"
+            android:textColor="@color/colorBlack"
+            android:textColorHint="#676767" />
 
         <EditText
             android:id="@+id/activityMyWillContentET"
@@ -201,10 +73,203 @@
             android:background="@null"
             android:backgroundTint="#ACACAC"
             android:gravity="start"
-            android:hint="Enter will"
+            android:hint="Description"
             android:padding="5dp"
+            android:paddingLeft="10dp"
             android:textColor="#676767" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.20">
+
+            <ImageView
+                android:id="@+id/vAddIv"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/plus_larg"
+                android:tint="@color/colorPrimary" />
+
+            <ImageView
+                android:id="@+id/vCancelIv"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/delete_larg"
+                android:visibility="invisible" />
+
+        </FrameLayout>
+        <!--<android.support.v7.widget.CardView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="30dp"-->
+        <!--android:layout_margin="5dp"-->
+        <!--android:layout_toStartOf="@+id/activityMyWillSaveCV"-->
+        <!--app:cardBackgroundColor="@color/grey"-->
+        <!--app:cardCornerRadius="0dp"-->
+        <!--app:cardElevation="0dp">-->
+
+        <!--<android.support.v7.widget.CardView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="0.25"-->
+        <!--app:cardBackgroundColor="@android:color/white"-->
+        <!--app:cardCornerRadius="0dp"-->
+        <!--app:cardElevation="0dp">-->
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:weightSum="3">-->
+
+        <LinearLayout
+            android:id="@+id/activityMyWillImageLL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="3dp"
+            android:layout_weight="0.20"
+            android:background="@drawable/will_item_back"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="3dp"
+            android:visibility="invisible">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:src="@drawable/image_gallery_image"
+                android:tint="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Image"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/activityMyWillDocLL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="3dp"
+            android:layout_weight="0.20"
+            android:background="@drawable/will_item_back"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="3dp"
+            android:visibility="invisible">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:src="@drawable/image_doc"
+                android:tint="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Doc"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/activityMyWillVideoLL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="3dp"
+            android:layout_weight="0.20"
+            android:background="@drawable/will_item_back"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="3dp"
+            android:visibility="invisible">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="4dp"
+                android:gravity="center"
+                android:src="@drawable/image_video"
+                android:tint="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Video"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <!--</LinearLayout>-->
+
+        <!--</android.support.v7.widget.CardView>-->
+
+        <!--</android.support.v7.widget.CardView>-->
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/activityMyWillSaveCV"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight="0.20"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="2dp"
+                    android:src="@drawable/file_larg"
+                    android:tint="@color/colorWhite" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="2dp"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:text="SAVE"
+                    android:textColor="@android:color/white" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
 
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

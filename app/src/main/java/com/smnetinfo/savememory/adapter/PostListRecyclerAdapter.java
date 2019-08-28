@@ -85,6 +85,7 @@ public class PostListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                     holder.itemListPostContentVideoCV.setVisibility(View.VISIBLE);
                     holder.itemListPostSplitDateRL.setVisibility(View.GONE);
                     holder.itemListPostContentDocCV.setVisibility(View.GONE);
+                    holder.documentTv.setVisibility(View.GONE);
                     holder.itemListPostContentTextTV.setVisibility(View.GONE);
                     holder.itemListPostContentAudioCV.setVisibility(View.GONE);
                     holder.itemListPostContentImage4LL.setVisibility(View.GONE);
@@ -115,6 +116,7 @@ public class PostListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
 
                     holder.itemListPostSplitDateRL.setVisibility(View.GONE);
                     holder.itemListPostContentDocCV.setVisibility(View.GONE);
+                    holder.documentTv.setVisibility(View.GONE);
                     holder.itemListPostContentVideoCV.setVisibility(View.GONE);
                     holder.itemListPostContentAudioCV.setVisibility(View.GONE);
                     holder.itemListPostContentImage4LL.setVisibility(View.GONE);
@@ -130,6 +132,7 @@ public class PostListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                     holder.itemListPostMainLL.setVisibility(View.VISIBLE);
                     holder.itemListPostSplitDateRL.setVisibility(View.GONE);
                     holder.itemListPostContentDocCV.setVisibility(View.GONE);
+                    holder.documentTv.setVisibility(View.GONE);
                     holder.itemListPostContentTextTV.setVisibility(View.GONE);
                     holder.itemListPostContentViewMoreCV.setVisibility(View.GONE);
                     holder.itemListPostContentVideoCV.setVisibility(View.GONE);
@@ -815,6 +818,7 @@ public class PostListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                     holder.itemListPostContentAudioCV.setVisibility(View.VISIBLE);
                     holder.itemListPostSplitDateRL.setVisibility(View.GONE);
                     holder.itemListPostContentDocCV.setVisibility(View.GONE);
+                    holder.documentTv.setVisibility(View.GONE);
                     holder.itemListPostContentTextTV.setVisibility(View.GONE);
                     holder.itemListPostContentViewMoreCV.setVisibility(View.GONE);
                     holder.itemListPostContentVideoCV.setVisibility(View.GONE);
@@ -825,6 +829,7 @@ public class PostListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                 case POST_TYPE_DOC:
                     holder.itemListPostMainLL.setVisibility(View.VISIBLE);
                     holder.itemListPostContentDocCV.setVisibility(View.VISIBLE);
+                    holder.documentTv.setVisibility(View.VISIBLE);
                     holder.itemListPostSplitDateRL.setVisibility(View.GONE);
                     holder.itemListPostContentTextTV.setVisibility(View.GONE);
                     holder.itemListPostContentVideoCV.setVisibility(View.GONE);
@@ -993,14 +998,22 @@ public class PostListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                             if (mediaPlayer.isPlaying()) {
                                 holder.itemListPostAudioPlayIV.setImageResource(R.drawable.image_play);
                                 audioLength[viewHolder.getAdapterPosition()] = pauseAudio();
+                                holder.playCv.setVisibility(View.INVISIBLE);
+                                holder.playAudioCv.setVisibility(View.INVISIBLE);
+//                                holder.playCv.setBackgroundResource(R.color.newBlue);
+//                                holder.playAudioCv.setBackgroundResource(R.color.newBlue);
                             } else {
                                 holder.itemListPostAudioPlayIV.setImageResource(R.drawable.image_pause);
                                 resumeAudio(audioLength[viewHolder.getAdapterPosition()], holder.itemListPostAudioSB, holder.itemListPostAudioTimeTV);
+                                holder.playCv.setVisibility(View.VISIBLE);
+                                holder.playAudioCv.setVisibility(View.VISIBLE);
                             }
                         } else {
                             currentAudio = viewHolder.getAdapterPosition();
                             holder.itemListPostAudioPlayIV.setImageResource(R.drawable.image_pause);
                             playAudio(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(0).getString(CONTENT_URL), holder.itemListPostAudioSB, holder.itemListPostAudioTimeTV);
+                            holder.playCv.setVisibility(View.VISIBLE);
+                            holder.playAudioCv.setVisibility(View.VISIBLE);
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -1289,8 +1302,8 @@ public class PostListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
         CardView itemListPostContentVideoCV, itemListPostContentAudioCV, itemListPostContentDocCV,
                 itemListPostMainCV, itemListPostContentViewMoreCV, itemListPostImage42CV, itemListPostImage43CV,
                 itemListPostImage44CV, itemListPostImage45CV, itemListPostImage46CV, itemListPostImage47CV,
-                itemListPostImage48CV, itemListPostContentVideoIconCV;
-        TextView itemListPostCreatedAtTV, itemListPostContentTextTV, itemListPostSplitDateTV,
+                itemListPostImage48CV, itemListPostContentVideoIconCV, playAudioCv, playCv;
+        TextView itemListPostCreatedAtTV, itemListPostContentTextTV, itemListPostSplitDateTV, documentTv,
                 itemListPostMultipleImage4TV, itemListPostAudioTimeTV, itemListPostContentViewMoreTV;
         AppCompatImageView itemListPostAudioPlayIV, itemListPostVideoThumbIV,
                 itemListPostImage41IV, itemListPostImage42IV, itemListPostImage43IV, itemListPostImage44IV,
@@ -1322,6 +1335,7 @@ public class PostListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
             itemListPostAudioPlayIV = itemView.findViewById(R.id.itemListPostAudioPlayIV);
             itemListPostCreatedAtTV = itemView.findViewById(R.id.itemListPostCreatedAtTV);
             itemListPostAudioTimeTV = itemView.findViewById(R.id.itemListPostAudioTimeTV);
+            documentTv = itemView.findViewById(R.id.documentTv);
             itemListPostVideoThumbIV = itemView.findViewById(R.id.itemListPostVideoThumbIV);
             itemListPostContentDocCV = itemView.findViewById(R.id.itemListPostContentDocCV);
             itemListPostContentTextTV = itemView.findViewById(R.id.itemListPostContentTextTV);
@@ -1332,6 +1346,8 @@ public class PostListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
             itemListPostContentViewMoreCV = itemView.findViewById(R.id.itemListPostContentViewMoreCV);
             itemListPostContentViewMoreTV = itemView.findViewById(R.id.itemListPostContentViewMoreTV);
             itemListPostContentVideoIconCV = itemView.findViewById(R.id.itemListPostContentVideoIconCV);
+            playAudioCv = itemView.findViewById(R.id.playAudioCv);
+            playCv = itemView.findViewById(R.id.playCv);
 
         }
     }

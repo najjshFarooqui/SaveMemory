@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:gravity="center"
-        android:text="This Memory will not be able to be restored and will be completely Erased."
-        android:textColor="#2899BF"
+        android:text="This Memory will not be able to be restored and will be completely Deleted."
+        android:textColor="@color/colorBlack"
         android:textSize="17sp" />
 
     <LinearLayout
@@ -23,29 +23,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
         android:orientation="horizontal">
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/dialogDeleteCancelCV"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardBackgroundColor="#2899BF"
-            app:cardCornerRadius="20dp"
-            app:cardElevation=".5dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="Cancel"
-                android:textColor="@android:color/white"
-                android:textStyle="bold" />
-
-        </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
             android:id="@+id/dialogDeleteYesCV"
@@ -64,7 +41,29 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="Yes"
+                android:text="DELETE"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/dialogDeleteCancelCV"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/darkGreen"
+            app:cardCornerRadius="20dp"
+            app:cardElevation=".5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="CANCEL"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
 

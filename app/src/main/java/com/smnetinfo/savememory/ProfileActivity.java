@@ -57,17 +57,20 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 
 public class ProfileActivity extends BaseActivity implements WebConstants {
+
+    TextView genderTv;
+    TextView tvNationality;
+    TextView tvMaritalStatus;
+
 
     CardView activityProfileSaveTV;
     CardView activityProfileEditLL;
@@ -108,6 +111,9 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
         userDataSource = UserDataSource.sharedInstance(this);
         calanderDateLayout = findViewById(R.id.calanderDateLayout);
         calanderTv = findViewById(R.id.calanderTv);
+        genderTv = findViewById(R.id.genderTv);
+        tvNationality = findViewById(R.id.tvNationality);
+        tvMaritalStatus = findViewById(R.id.tvMaritalStatus);
 
 
         activityProfileBackIV = findViewById(R.id.activityProfileBackIV);
@@ -115,6 +121,7 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
         activityProfileSaveTV = findViewById(R.id.save);
 
         activityProfileEditLL = findViewById(R.id.edit);
+
 
         activityProfileEmailET = findViewById(R.id.activityProfileEmailET);
         activityProfilePhoneET = findViewById(R.id.activityProfilePhoneET);
@@ -227,6 +234,8 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
                 } else {
                     isGenderSet = true;
                     setJsonObject(GENDER, sexArrayList.get(i));
+                    System.out.println("najish");
+                    genderTv.setText(activityProfileSexSpinner.getSelectedItem().toString());
                 }
             }
 
@@ -250,6 +259,7 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
                     removeKey(MARITAL_STATUS);
                 } else {
                     setJsonObject(MARITAL_STATUS, martialArrayList.get(i));
+                    tvMaritalStatus.setText(activityProfileMaritalStatusSpinner.getSelectedItem().toString());
                 }
             }
 
@@ -319,7 +329,10 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
                 if (i == 0) {
                     removeKey(NATIONALITY);
                 } else {
+
+
                     setJsonObject(NATIONALITY, nationalityArrayList.get(i));
+                    tvNationality.setText(activityProfileNationalitySpinner.getSelectedItem().toString());
                 }
             }
 
@@ -383,13 +396,14 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
                                         //     calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
                                         // SimpleDateFormat simpleDateFormat = new SimpleDateFormat(DATE_SUB_FORMAT, Locale.getDefault());
                                         setJsonObject(DOB, calanderTv.getText().toString());
-                                            setJsonObject(PHONE_NO, activityProfilePhoneET.getText().toString());
-                                            setJsonObject(FIRST_NAME, activityProfileFirstNameET.getText().toString());
-                                            setJsonObject(LAST_NAME, activityProfileLastNameET.getText().toString());
-                                            setJsonObject(ADDRESS, activityProfileAddressET.getText().toString());
-                                            setJsonObject(OCCUPATION, activityProfileOccupationET.getText().toString());
-                                            setJsonObject(CURRENT_COUNTRY, activityProfileCountryET.getText().toString());
-                                            updateUserApi();
+                                        setJsonObject(PHONE_NO, activityProfilePhoneET.getText().toString());
+                                        setJsonObject(FIRST_NAME, activityProfileFirstNameET.getText().toString());
+                                        setJsonObject(LAST_NAME, activityProfileLastNameET.getText().toString());
+                                        setJsonObject(ADDRESS, activityProfileAddressET.getText().toString());
+                                        setJsonObject(OCCUPATION, activityProfileOccupationET.getText().toString());
+                                        setJsonObject(CURRENT_COUNTRY, activityProfileCountryET.getText().toString());
+                                        setJsonObject(EMAIL, activityProfileEmailET.getText().toString());
+                                        updateUserApi();
                                         // }     else {
                                         //     removeKey(DOB);
                                         //     isDOBSet = false;
@@ -430,21 +444,31 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
         try {
             isDOBSet = true;
             if (!jsonObject.isNull(FIRST_NAME)) {
-                activityProfileFirstNameET.setText(jsonObject.getString(FIRST_NAME) + " " + jsonObject.getString(LAST_NAME));
+                activityProfileFirstNameET.setText(jsonObject.getString(FIRST_NAME));
+                System.out.print("My email is  najish" + jsonObject.getString(FIRST_NAME));
             }
             if (!jsonObject.isNull(LAST_NAME)) {
                 activityProfileLastNameET.setText(jsonObject.getString(LAST_NAME));
             }
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
-            Calendar dateCal = Calendar.getInstance();
+            //  SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+            // Calendar dateCal = Calendar.getInstance();
+            // if (!jsonObject.isNull(DOB)) {
+            //     dateCal.setTime(simpleDateFormat.parse(jsonObject.getString(DOB)));
+            //     activityProfileDateSpinner.setSelection(getIndex(activityProfileDateSpinner, String.valueOf(dateCal.get(Calendar.DAY_OF_MONTH))));
+            //     activityProfileMonthSpinner.setSelection(getIndex(activityProfileMonthSpinner, String.valueOf(dateCal.get(Calendar.MONTH))) + 1);
+            //     activityProfileYearSpinner.setSelection(getIndex(activityProfileYearSpinner, String.valueOf(dateCal.get(Calendar.YEAR))));
+
+
+
+
             if (!jsonObject.isNull(DOB)) {
-                dateCal.setTime(simpleDateFormat.parse(jsonObject.getString(DOB)));
-                activityProfileDateSpinner.setSelection(getIndex(activityProfileDateSpinner, String.valueOf(dateCal.get(Calendar.DAY_OF_MONTH))));
-                activityProfileMonthSpinner.setSelection(getIndex(activityProfileMonthSpinner, String.valueOf(dateCal.get(Calendar.MONTH))) + 1);
-                activityProfileYearSpinner.setSelection(getIndex(activityProfileYearSpinner, String.valueOf(dateCal.get(Calendar.YEAR))));
+                calanderTv.setText(jsonObject.getString(DOB));
             }
+
             if (!jsonObject.isNull(EMAIL)) {
+
                 activityProfileEmailET.setText(jsonObject.getString(EMAIL));
+
             }
             if (!jsonObject.isNull(PHONE_NO)) {
                 activityProfilePhoneET.setText(jsonObject.getString(PHONE_NO));
@@ -453,9 +477,11 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
                 activityProfileISDSpinner.setSelection(isdArrayList.indexOf(jsonObject.getString(ISD_CODE)));
             }
             if (!jsonObject.isNull(NATIONALITY)) {
+                tvNationality.setText(jsonObject.getString(NATIONALITY));
                 activityProfileNationalitySpinner.setSelection(getIndex(activityProfileNationalitySpinner, jsonObject.getString(NATIONALITY)));
             }
             if (!jsonObject.isNull(MARITAL_STATUS)) {
+                tvMaritalStatus.setText(jsonObject.getString(MARITAL_STATUS));
                 activityProfileMaritalStatusSpinner.setSelection(getIndex(activityProfileMaritalStatusSpinner, jsonObject.getString(MARITAL_STATUS)));
             }
             if (!jsonObject.isNull(CURRENT_COUNTRY)) {
@@ -463,6 +489,9 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
             }
             if (!jsonObject.isNull(GENDER)) {
                 activityProfileSexSpinner.setSelection(getIndex(activityProfileSexSpinner, jsonObject.getString(GENDER)));
+                System.out.print("selected gender is" + jsonObject.getString(GENDER));
+                genderTv.setText(jsonObject.getString(GENDER));
+
             }
         } catch (Exception e) {
             e.printStackTrace();

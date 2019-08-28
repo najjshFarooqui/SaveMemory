@@ -9,7 +9,6 @@ import android.support.v7.widget.AppCompatImageView;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import com.smnetinfo.ChangePasswordActivity;
 import com.smnetinfo.savememory.database.PostsDataSource;
 import com.smnetinfo.savememory.database.SettingsDataSource;
 import com.smnetinfo.savememory.database.UserDataSource;
@@ -60,6 +59,23 @@ public class MyPageActivity extends BaseActivity implements WebConstants {
             }
         });
 
+
+        activityChangeLanguage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ChangeLanguageActivity.class));
+
+
+            }
+        });
+
+        activityFontSize.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), FontAndSizeActivity.class));
+
+            }
+        });
 
         activityPayment.setOnClickListener(new View.OnClickListener() {
             @Override

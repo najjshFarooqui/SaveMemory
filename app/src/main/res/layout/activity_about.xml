@@ -34,7 +34,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="40dp"
         android:layout_marginRight="16dp"
-        android:background="@color/colorWhite"
+        app:cardBackgroundColor="#F5F3F3"
         app:cardCornerRadius="14dp">
 
         <RelativeLayout
@@ -128,6 +128,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="56dp"
                         android:layout_marginTop="8dp"
                         android:text="Our company is located in San Francisco, USA. Our team is consisted of members from different countries (eg: USA, South Korea, Japan, India, Indonesia, and etc.) to offer excellent service to its users." />
 

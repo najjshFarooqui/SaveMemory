@@ -62,7 +62,7 @@
     <string name="how_savememory_works_a_user_you_b_heir_s_the_people_you_want_to_share_your_memories_with_c_savememory_a_will_save_various_records_in_the_application_of_c_and_let_b_know_that_the_records_are_here_in_the_future_if_b_visits_c_and_asks_to_view_the_records_c_will_give_access_to_b">A. User (You)\nB. Inheritor(s) – The people you want share your memories with.\nC. SaveMemory\nThe user will save various records to SaveMemory. The user will let the inheritor(s) know of these records. In the future, if the inheritor(s) contacts a representative of SaveMemory and asks permission to view the records, SaveMemory will grant access to the inheritor(s) after seeing an official document (eg: relationship certificate).</string>
     <string name="please_include_your_name_the_name_on_your_family_relationship_certificate_this_can_be_changed_at_any_time_in_your_settings_page">Please include your name (the name on your family relationship certificate).\n\n This can be changed at any time in your settings page</string>
     <string name="email_address_verification_needed_before_you_can_login_please_check_your_email_to_activate_user_account">Email address verification needed. Before you can login, Please check your email to activate user account.</string>
-    <string name="you_save_we_deliver">You save, We Deliver</string>
+    <string name="you_save_we_deliver">You Save, We Deliver</string>
     <string name="first_pager_title">Unique &amp; Private Storage</string>
     <string name="second_pager_title">How SaveMemory Works</string>
     <string name="thired_pager_title">Notification Services</string>
@@ -76,12 +76,12 @@
     <string name="profile_com_title">Please provide the following information:</string>
     <string name="verify_email_text">We sent you an activation code.\n Check your email and cilick on the\n link to verify.</string>
     <string name="email_sent_text">An email has been sent to your register email address.\nFollow the direction in the email to reset your password</string>
-    <string name="item_removed_message">please fill all the fields carefully</string>
+    <string name="add_will_text">Your will has been\nsuccessfully added</string>
+    <array name="cards_array">
+        <item>choose card type</item>
+        <item>Credit Card</item>
+        <item>Debit Card</item>
 
-
-    <string-array name="cards_array">
-        <item>Visa Card</item>
-        <item>Master Card</item>
-    </string-array>
+    </array>
 
 </resources>

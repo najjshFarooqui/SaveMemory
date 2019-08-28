@@ -1,14 +1,19 @@
 package com.smnetinfo.savememory;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,8 +37,9 @@ public class EditWillActivity extends BaseActivity implements WebConstants {
 
     EditText activityEditWillTitleET, activityEditWillDescriptionET;
     AppCompatImageView activityEditWillBackIV;
-    TextView activityEditWillDeleteTV, activityEditWillEditTV, activityEditWillOpenAttachTV;
-    CardView activityEditWillMoreCV, activityEditWillMoreContentCV, activityEditWillOpenAttachCV;
+    TextView activityEditWillOpenAttachTV, editWillTv;
+    CardView activityEditWillOpenAttachCV;
+    LinearLayout activityEditWillEditTV, activityEditWillDeleteTV;
 
     ProgressDialog progressDialog;
 
@@ -56,13 +62,15 @@ public class EditWillActivity extends BaseActivity implements WebConstants {
         activityEditWillDeleteTV = findViewById(R.id.activityEditWillDeleteTV);
         activityEditWillOpenAttachTV = findViewById(R.id.activityEditWillOpenAttachTV);
 
-        activityEditWillMoreCV = findViewById(R.id.activityEditWillMoreCV);
+        //  activityEditWillMoreCV = findViewById(R.id.activityEditWillMoreCV);
         activityEditWillOpenAttachCV = findViewById(R.id.activityEditWillOpenAttachCV);
-        activityEditWillMoreContentCV = findViewById(R.id.activityEditWillMoreContentCV);
+        //  activityEditWillMoreContentCV = findViewById(R.id.activityEditWillMoreContentCV);
+        editWillTv = findViewById(R.id.editWillTv);
 
         //init
         try {
             currentWillJSONObject = new JSONObject(getIntent().getExtras().getString(DATA));
+            //     System.out.println("MY_JSON "+currentWillJSONObject.toString());
 
             activityEditWillTitleET.setText(currentWillJSONObject.getString(TITLE));
             activityEditWillDescriptionET.setText(currentWillJSONObject.getString(DESCRIPTION));
@@ -143,22 +151,22 @@ public class EditWillActivity extends BaseActivity implements WebConstants {
             }
         });*/
 
-        activityEditWillMoreCV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (activityEditWillMoreContentCV.getVisibility() == View.VISIBLE) {
-                    activityEditWillMoreContentCV.setVisibility(View.GONE);
-                } else {
-                    activityEditWillMoreContentCV.setVisibility(View.VISIBLE);
-                }
-            }
-        });
+//        activityEditWillMoreCV.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (activityEditWillMoreContentCV.getVisibility() == View.VISIBLE) {
+//                    activityEditWillMoreContentCV.setVisibility(View.GONE);
+//                } else {
+//                    activityEditWillMoreContentCV.setVisibility(View.VISIBLE);
+//                }
+//            }
+//        });
 
         activityEditWillEditTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (activityEditWillTitleET.isEnabled()) {
-                    activityEditWillEditTV.setText("Edit");
+                    editWillTv.setText("EDIT");
                     activityEditWillTitleET.setEnabled(false);
                     activityEditWillDescriptionET.setEnabled(false);
                     try {
@@ -177,19 +185,20 @@ public class EditWillActivity extends BaseActivity implements WebConstants {
                         e.printStackTrace();
                     }
                 } else {
-                    activityEditWillEditTV.setText("Update");
+                    editWillTv.setText("SAVE");
                     activityEditWillTitleET.setEnabled(true);
                     activityEditWillDescriptionET.setEnabled(true);
                 }
-                activityEditWillMoreContentCV.setVisibility(View.GONE);
+                // activityEditWillMoreContentCV.setVisibility(View.GONE);
             }
         });
 
         activityEditWillDeleteTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                deleteWillApi();
-                activityEditWillMoreContentCV.setVisibility(View.GONE);
+                deleteDialog();
+
+                //  activityEditWillMoreContentCV.setVisibility(View.GONE);
             }
         });
 
@@ -213,7 +222,8 @@ public class EditWillActivity extends BaseActivity implements WebConstants {
                             try {
                                 JSONObject jsonObject = new JSONObject(response);
                                 if (jsonObject.getBoolean(STATUS)) {
-
+                                    Toast.makeText(EditWillActivity.this, "Will Updated", Toast.LENGTH_SHORT).show();
+                                    finish();
                                 }
                             } catch (Exception e) {
                                 e.printStackTrace();
@@ -256,6 +266,7 @@ public class EditWillActivity extends BaseActivity implements WebConstants {
                             try {
                                 JSONObject jsonObject = new JSONObject(response);
                                 if (jsonObject.getBoolean(STATUS)) {
+                                    Toast.makeText(EditWillActivity.this, "Successfully Deleted", Toast.LENGTH_SHORT).show();
                                     finish();
                                 }
                             } catch (Exception e) {
@@ -293,5 +304,37 @@ public class EditWillActivity extends BaseActivity implements WebConstants {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
+
+
+    private void deleteDialog() {
+        final Dialog dialog = new Dialog(EditWillActivity.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_delete);
+        if (dialog.getWindow() != null) {
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        }
+        dialog.setCancelable(true);
+        dialog.show();
+
+        CardView dialogDeleteYesCV = dialog.findViewById(R.id.dialogDeleteYesCV);
+        CardView dialogDeleteCancelCV = dialog.findViewById(R.id.dialogDeleteCancelCV);
+
+        dialogDeleteYesCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                deleteWillApi();
+            }
+        });
+
+        dialogDeleteCancelCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+    }
+
 
 }

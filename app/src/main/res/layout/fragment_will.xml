@@ -18,25 +18,44 @@
         android:id="@+id/fragmentWillRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="5dp"
         android:clipToPadding="false"
         android:paddingBottom="70dp" />
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/fragmentWillAddCV"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_margin="10dp"
-        app:cardBackgroundColor="@color/newPrimaryColor"
-        app:cardCornerRadius="25dp">
+        android:layout_centerInParent="true"
+        android:background="@color/textShade"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp">
 
-        <android.support.v7.widget.AppCompatImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="10dp"
-            android:src="@drawable/image_add" />
+        <android.support.v7.widget.CardView
+            android:id="@+id/fragmentWillAddCV"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="18dp">
 
-    </android.support.v7.widget.CardView>
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:src="@drawable/image_add" />
+
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:text="Create will"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp" />
+    </LinearLayout>
+
 
 </RelativeLayout>

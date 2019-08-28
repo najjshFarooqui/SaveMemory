@@ -1,286 +1,435 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/change"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".PaymentActivity">
+    android:layout_height="match_parent">
 
-
-    <ImageView
-        android:id="@+id/iv"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/comman_page" />
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnSubscription"
+        android:layout_marginBottom="16dp">
 
-
-    <TextView
-        android:id="@+id/paymentLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/iv"
-        android:layout_centerHorizontal="true"
-        android:text="Payment for Subscription"
-        android:textColor="@color/colorPrimary"
-        android:textSize="32sp" />
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/paymentLabel"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="80dp">
-
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/oneMonth"
-            android:layout_width="120dp"
-            android:layout_height="140dp"
-            android:layout_alignParentLeft="true"
-
-            app:cardCornerRadius="6dp"
-            app:cardElevation="2dp">
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <RelativeLayout
-                android:id="@+id/one"
+                android:id="@+id/change"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@color/money">
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                tools:context=".PaymentActivity">
+
+
+                <ImageView
+                    android:id="@+id/iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/comman_page" />
+
 
                 <TextView
+                    android:id="@+id/paymentLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv"
                     android:layout_centerHorizontal="true"
-                    android:text="1"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="48sp"
-                    android:textStyle="bold" />
+                    android:text="Payment for Subscription"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="24sp" />
 
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="8dp"
-                    android:text="Month"
-                    android:textColor="@color/newBlue"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:layout_below="@+id/paymentLabel"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="50dp">
+
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/offerOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/money"
+                        app:cardCornerRadius="4dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/saveOne"
+                                android:layout_width="wrap_content"
+                                android:layout_height="24dp"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center"
+                                android:text="Save 10%"
+                                android:textColor="@color/colorWhite"
+                                android:visibility="gone" />
+
+
+                            <android.support.v7.widget.CardView
+
+                                android:id="@+id/oneCard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/saveOne"
+                                android:layout_margin="2dp"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="2dp">
+
+
+                                <RelativeLayout
+                                    android:id="@+id/oneRR"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:background="@color/money">
+
+                                    <TextView
+                                        android:id="@+id/oneTv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="6dp"
+                                        android:text="1"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="48sp"
+                                        android:textStyle="bold" />
+
+
+                                    <TextView
+                                        android:id="@+id/oneMonth"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:paddingLeft="14dp"
+                                        android:paddingRight="14dp"
+                                        android:text="Month "
+                                        android:textColor="@color/newBlue"
+                                        android:textSize="24sp"
+                                        android:textStyle="bold" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="32dp"
+                                    android:layout_marginTop="100dp"
+                                    android:background="@color/fade">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:text="$40"
+                                        android:textColor="@color/money"
+                                        android:textSize="24sp"
+                                        android:textStyle="bold" />
+                                </RelativeLayout>
+
+
+                            </android.support.v7.widget.CardView>
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/offerThree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        app:cardBackgroundColor="@color/money"
+                        app:cardCornerRadius="4dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/saveThree"
+                                android:layout_width="wrap_content"
+                                android:layout_height="24dp"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center"
+                                android:text="Save 10%"
+                                android:textColor="@color/money"
+                                android:visibility="gone" />
+
+
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/threeCard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/saveThree"
+                                android:layout_margin="2dp"
+                                app:cardBackgroundColor="@color/money"
+                                app:cardCornerRadius="4dp"
+                                app:cardElevation="2dp">
+
+
+                                <RelativeLayout
+                                    android:id="@+id/threeRR"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:background="@color/money">
+
+                                    <TextView
+                                        android:id="@+id/threeTv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="6dp"
+                                        android:text="3"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="48sp"
+                                        android:textStyle="bold" />
+
+
+                                    <TextView
+                                        android:id="@+id/threeMonths"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:paddingLeft="14dp"
+                                        android:paddingRight="14dp"
+                                        android:text="Months"
+                                        android:textColor="@color/newBlue"
+                                        android:textSize="24sp"
+                                        android:textStyle="bold" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="32dp"
+                                    android:layout_marginTop="100dp"
+                                    android:background="@color/fade">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:text="$120"
+                                        android:textColor="@color/money"
+                                        android:textSize="24sp"
+                                        android:textStyle="bold" />
+                                </RelativeLayout>
+
+
+                            </android.support.v7.widget.CardView>
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/offerSix"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/offerOne"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="16dp"
+                        app:cardBackgroundColor="@color/money"
+                        app:cardCornerRadius="4dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/saveSix"
+                                android:layout_width="wrap_content"
+                                android:layout_height="24dp"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center"
+                                android:text="Save 10%"
+                                android:textColor="@color/colorWhite"
+                                android:visibility="gone" />
+
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/sixCard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/saveSix"
+                                android:layout_margin="2dp"
+                                app:cardBackgroundColor="@color/money"
+                                app:cardCornerRadius="4dp"
+                                app:cardElevation="2dp">
+
+
+                                <RelativeLayout
+                                    android:id="@+id/sixRR"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:background="@color/money">
+
+                                    <TextView
+                                        android:id="@+id/sixTv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="6dp"
+                                        android:text="6"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="48sp"
+                                        android:textStyle="bold" />
+
+
+                                    <TextView
+                                        android:id="@+id/sixMonths"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:paddingLeft="14dp"
+                                        android:paddingRight="14dp"
+                                        android:text="Months"
+                                        android:textColor="@color/newBlue"
+                                        android:textSize="24sp"
+                                        android:textStyle="bold" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="32dp"
+                                    android:layout_marginTop="100dp"
+                                    android:background="@color/fade">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:text="$240"
+                                        android:textColor="@color/money"
+                                        android:textSize="24sp"
+                                        android:textStyle="bold" />
+                                </RelativeLayout>
+                            </android.support.v7.widget.CardView>
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/offerTwelve"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/offerThree"
+                        android:layout_alignParentRight="true"
+
+                        android:layout_marginTop="16dp"
+                        app:cardBackgroundColor="@color/money"
+                        app:cardCornerRadius="4dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/saveTwelve"
+                                android:layout_width="wrap_content"
+                                android:layout_height="24dp"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center"
+                                android:text="Save 10%"
+                                android:textColor="@color/colorWhite"
+                                android:visibility="gone" />
+
+
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/twelveCard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/saveTwelve"
+                                android:layout_margin="2dp"
+                                app:cardBackgroundColor="@color/money"
+                                app:cardCornerRadius="4dp"
+                                app:cardElevation="2dp">
+
+
+                                <RelativeLayout
+                                    android:id="@+id/twelveRR"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:background="@color/money">
+
+                                    <TextView
+                                        android:id="@+id/twelveTv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="6dp"
+                                        android:text="12"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="48sp"
+                                        android:textStyle="bold" />
+
+
+                                    <TextView
+                                        android:id="@+id/twelveMonth"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_centerHorizontal="true"
+
+                                        android:paddingLeft="14dp"
+                                        android:paddingRight="14dp"
+                                        android:text="Months"
+                                        android:textColor="@color/newBlue"
+                                        android:textSize="24sp"
+                                        android:textStyle="bold" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="32dp"
+                                    android:layout_marginTop="100dp"
+                                    android:background="@color/fade">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:text="$480"
+                                        android:textColor="@color/money"
+                                        android:textSize="24sp"
+                                        android:textStyle="bold" />
+                                </RelativeLayout>
+
+                            </android.support.v7.widget.CardView>
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+
+                </RelativeLayout>
+
+
             </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="100dp"
-                android:background="@color/fade">
+        </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="$40"
-                    android:textColor="@color/money"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
-
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/threeMonth"
-            android:layout_width="120dp"
-            android:layout_height="140dp"
-            android:layout_alignParentRight="true"
-            app:cardBackgroundColor="@color/money"
-            app:cardCornerRadius="4dp"
-            app:cardElevation="2dp">
-
-
-            <RelativeLayout
-                android:id="@+id/two"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@color/money">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:text="3"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="48sp"
-                    android:textStyle="bold" />
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="8dp"
-                    android:text="Months"
-                    android:textColor="@color/newBlue"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="100dp"
-                android:background="@color/fade">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="$120"
-                    android:textColor="@color/money"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
-
-        </android.support.v7.widget.CardView>
-
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/sixMonth"
-            android:layout_width="120dp"
-            android:layout_height="140dp"
-            android:layout_below="@+id/oneMonth"
-            android:layout_alignParentLeft="true"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/money"
-            app:cardCornerRadius="4dp"
-            app:cardElevation="2dp">
-
-
-            <RelativeLayout
-                android:id="@+id/two"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@color/money">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:text="6"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="48sp"
-                    android:textStyle="bold" />
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="8dp"
-                    android:text="Months"
-                    android:textColor="@color/newBlue"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="100dp"
-                android:background="@color/fade">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="$240"
-                    android:textColor="@color/money"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
-
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/twelveMonth"
-            android:layout_width="120dp"
-            android:layout_height="140dp"
-            android:layout_below="@+id/threeMonth"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/money"
-            app:cardCornerRadius="4dp"
-            app:cardElevation="2dp">
-
-
-            <RelativeLayout
-                android:id="@+id/two"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@color/money">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:text="12"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="48sp"
-                    android:textStyle="bold" />
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="8dp"
-                    android:text="Months"
-                    android:textColor="@color/newBlue"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="100dp"
-                android:background="@color/fade">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="$480"
-                    android:textColor="@color/money"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
-        </android.support.v7.widget.CardView>
-
-
-    </RelativeLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/btnSubscription"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/payment_btn"
         android:text="Buy Subscription"
         android:textColor="@color/fade"
         android:textSize="24sp" />
+
 </RelativeLayout>

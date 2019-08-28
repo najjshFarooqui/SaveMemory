@@ -2,6 +2,7 @@ package com.smnetinfo.savememory;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -19,8 +20,12 @@ import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.CardView;
 import android.util.Base64;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -63,6 +68,7 @@ public class AddWillActivity extends BaseActivity implements WebConstants {
     AppCompatImageView activityMyWillBackIV;
     EditText activityMyWillTitleET, activityMyWillContentET;
     LinearLayout activityMyWillImageLL, activityMyWillDocLL, activityMyWillVideoLL;
+    ImageView vAddIv, vCancelIv;
 
     AmazonS3 amazonS3;
     ProgressDialog progressDialog;
@@ -92,6 +98,9 @@ public class AddWillActivity extends BaseActivity implements WebConstants {
 
         activityMyWillTitleET = findViewById(R.id.activityMyWillTitleET);
         activityMyWillContentET = findViewById(R.id.activityMyWillContentET);
+
+        vCancelIv = (ImageView) findViewById(R.id.vCancelIv);
+        vAddIv = (ImageView) findViewById(R.id.vAddIv);
 
         activityMyWillImageLL.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -216,6 +225,27 @@ public class AddWillActivity extends BaseActivity implements WebConstants {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+            }
+        });
+
+        vAddIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activityMyWillImageLL.setVisibility(View.VISIBLE);
+                activityMyWillDocLL.setVisibility(View.VISIBLE);
+                activityMyWillVideoLL.setVisibility(View.VISIBLE);
+                vCancelIv.setVisibility(View.VISIBLE);
+                vAddIv.setVisibility(View.INVISIBLE);
+            }
+        });
+        vCancelIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activityMyWillImageLL.setVisibility(View.INVISIBLE);
+                activityMyWillDocLL.setVisibility(View.INVISIBLE);
+                activityMyWillVideoLL.setVisibility(View.INVISIBLE);
+                vCancelIv.setVisibility(View.INVISIBLE);
+                vAddIv.setVisibility(View.VISIBLE);
             }
         });
 
@@ -381,7 +411,8 @@ public class AddWillActivity extends BaseActivity implements WebConstants {
                                 JSONObject jsonObject = new JSONObject(response);
                                 if (jsonObject.getBoolean(STATUS)) {
                                     progressDialog.dismiss();
-                                    finish();
+                                    addWillPopup();
+                                    //   finish();
                                 }
                             } catch (Exception e) {
                                 e.printStackTrace();
@@ -525,5 +556,37 @@ public class AddWillActivity extends BaseActivity implements WebConstants {
             e.printStackTrace();
             return "";
         }
+    }
+
+
+    public void addWillPopup() {
+        final Dialog dialog = new Dialog(AddWillActivity.this, android.R.style.Theme_Translucent_NoTitleBar);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.add_will_popup);
+        Window window = dialog.getWindow();
+        LinearLayout closeLayout = (LinearLayout) window.findViewById(R.id.closeLayout);
+        LinearLayout addAnotherLayout = (LinearLayout) window.findViewById(R.id.addAnotherLayout);
+        addAnotherLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                Intent intent = new Intent(AddWillActivity.this, AddWillActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        closeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                finish();
+            }
+        });
+        WindowManager.LayoutParams wlp = window.getAttributes();
+        wlp.gravity = Gravity.CENTER;
+        wlp.flags &= ~WindowManager.LayoutParams.FLAG_BLUR_BEHIND;
+        window.setAttributes(wlp);
+        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+        dialog.show();
     }
 }

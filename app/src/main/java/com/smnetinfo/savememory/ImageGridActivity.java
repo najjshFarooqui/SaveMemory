@@ -24,8 +24,11 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -60,7 +63,7 @@ import java.util.Map;
 
 public class ImageGridActivity extends BaseActivity implements WebConstants {
 
-    TextView activityImagesGridEditTV;
+    TextView activityImagesGridEditTV, headingTv;
     RecyclerView activityImagesGridRV;
     AppCompatImageView activityImagesGridBackIV;
     CardView activityImagesGridEditCV, activityImagesGridAddCV, activityImagesGridDeleteCV;
@@ -103,6 +106,7 @@ public class ImageGridActivity extends BaseActivity implements WebConstants {
         activityImagesGridDeleteCV = findViewById(R.id.activityImagesGridDeleteCV);
 
         activityImagesGridBackIV = findViewById(R.id.activityImagesGridBackIV);
+        headingTv = (TextView) findViewById(R.id.headingTv);
 
         try {
             postId = getIntent().getExtras().getString(ID);
@@ -110,6 +114,12 @@ public class ImageGridActivity extends BaseActivity implements WebConstants {
             DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
             float screenWidth = displayMetrics.widthPixels;
             cardSize = (int) (screenWidth / gridSize);
+            if (imagesJSONArray.length() == 1) {
+                headingTv.setText(imagesJSONArray.length() + " Image");
+            } else {
+                headingTv.setText(imagesJSONArray.length() + " Images");
+            }
+
             imagesGridRecyclerAdapter = new ImagesGridRecyclerAdapter(this, imagesJSONArray, cardSize, isEdit);
             activityImagesGridRV.setLayoutManager(new GridLayoutManager(this, gridSize));
             activityImagesGridRV.setAdapter(imagesGridRecyclerAdapter);
@@ -154,6 +164,7 @@ public class ImageGridActivity extends BaseActivity implements WebConstants {
             activityImagesGridDeleteCV.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
                     if (selectedImages.size() > 0) {
                         selectedContentArray = new JSONArray();
                         for (int i = 0; i < selectedImages.size(); i++) {
@@ -164,7 +175,8 @@ public class ImageGridActivity extends BaseActivity implements WebConstants {
                             }
                         }
                         if (selectedContentArray.length() > 0) {
-                            postDelete();
+                            chekeEmailPopup(selectedContentArray.length());
+
                         } else {
                             Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
                         }
@@ -521,6 +533,41 @@ public class ImageGridActivity extends BaseActivity implements WebConstants {
         }
         File file = new File(Environment.getExternalStorageDirectory() + ROOT_PATH + "temp_attach_img" + EXT_IMAGE);
         return FileProvider.getUriForFile(ImageGridActivity.this, getApplicationContext().getPackageName() + ".provider", file);
+    }
+
+
+    public void chekeEmailPopup(int imgLength) {
+        final Dialog dialog = new Dialog(ImageGridActivity.this, android.R.style.Theme_Translucent_NoTitleBar);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.delete_video_popup);
+        Window window = dialog.getWindow();
+        TextView deleteImgTv = (TextView) window.findViewById(R.id.deleteImgTv);
+        if (imgLength == 1) {
+            deleteImgTv.setText("Delete " + imgLength + " Image");
+        } else {
+            deleteImgTv.setText("Delete " + imgLength + " Images");
+        }
+        Button deleteButton = (Button) window.findViewById(R.id.deleteButton);
+        Button cancelButton = (Button) window.findViewById(R.id.cancelButton);
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                postDelete();
+            }
+        });
+        WindowManager.LayoutParams wlp = window.getAttributes();
+        wlp.gravity = Gravity.CENTER;
+        wlp.flags &= ~WindowManager.LayoutParams.FLAG_BLUR_BEHIND;
+        window.setAttributes(wlp);
+        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+        dialog.show();
     }
 
 }
