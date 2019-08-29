@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -19,12 +20,21 @@ public class PaymentActivity extends AppCompatActivity {
     TextView oneMonth, threeMonths, sixMonths, twelveMonths;
     TextView oneTv, threeTv, sixTv, twelveTv;
 
+    ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
         btnSubscription = findViewById(R.id.btnSubscription);
+        back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), MyPageActivity.class));
+                finish();
+            }
+        });
 
 
         offerOne = findViewById(R.id.offerOne);

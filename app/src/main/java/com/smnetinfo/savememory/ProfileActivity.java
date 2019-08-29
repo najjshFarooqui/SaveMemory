@@ -57,8 +57,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -72,8 +74,8 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
     TextView tvMaritalStatus;
 
 
-    CardView activityProfileSaveTV;
-    CardView activityProfileEditLL;
+    LinearLayout activityProfileSaveTV;
+    LinearLayout activityProfileEditLL;
     ImageView activityProfileBackIV;
     LinearLayout calanderDateLayout;
     Spinner activityProfileDateSpinner, activityProfileMonthSpinner, activityProfileYearSpinner, activityProfileSexSpinner,
@@ -295,6 +297,7 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
                     removeKey(ISD_CODE);
                 } else {
                     setJsonObject(ISD_CODE, isdArrayList.get(i));
+
                 }
             }
 
@@ -462,7 +465,12 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
 
 
             if (!jsonObject.isNull(DOB)) {
-                calanderTv.setText(jsonObject.getString(DOB));
+                String date = jsonObject.getString(DOB);
+                SimpleDateFormat spf = new SimpleDateFormat("dd-MM-yyyy");
+                Date newDate = spf.parse(date);
+                spf = new SimpleDateFormat("yyyy-MM-dd");
+                date = spf.format(newDate);
+                calanderTv.setText(date);
             }
 
             if (!jsonObject.isNull(EMAIL)) {

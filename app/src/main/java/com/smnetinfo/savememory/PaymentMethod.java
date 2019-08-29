@@ -2,6 +2,7 @@ package com.smnetinfo.savememory;
 
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -26,6 +28,8 @@ public class PaymentMethod extends AppCompatActivity implements AdapterView.OnIt
     String amount = "";
     TextView amountTv;
     RelativeLayout cardSelected, payaplSelected;
+    ImageView back;
+    TextView cardTypeTv;
 
 
     @Override
@@ -39,6 +43,16 @@ public class PaymentMethod extends AppCompatActivity implements AdapterView.OnIt
         amountTv = findViewById(R.id.tvAmount);
         payaplSelected = findViewById(R.id.payaplSelected);
         cardSelected = findViewById(R.id.cardSelected);
+        back = findViewById(R.id.back);
+        cardTypeTv = findViewById(R.id.cardTypeTv);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), PaymentActivity.class));
+                finish();
+            }
+        });
 
 
         amount = getIntent().getStringExtra("AMOUNT");
@@ -86,12 +100,9 @@ public class PaymentMethod extends AppCompatActivity implements AdapterView.OnIt
         }
 
 
-        // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.cards_array, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
         cardType.setAdapter(adapter);
 
 
@@ -101,6 +112,9 @@ public class PaymentMethod extends AppCompatActivity implements AdapterView.OnIt
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         getCard = adapterView.getItemAtPosition(i).toString();
         cardType.setSelection(i);
+        cardTypeTv.setText(cardType.getSelectedItem().toString());
+
+
     }
 
     @Override

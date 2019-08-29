@@ -34,7 +34,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="40dp"
         android:layout_marginRight="16dp"
-        android:background="@color/colorWhite"
+        app:cardBackgroundColor="#F5F3F3"
         app:cardCornerRadius="14dp">
 
         <RelativeLayout
@@ -91,6 +91,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/rr"
+                                app:cardBackgroundColor="#F5F3F3"
 
                                 app:cardCornerRadius="10dp">
 
@@ -111,8 +112,8 @@
                                             android:layout_height="54dp"
                                             android:layout_marginLeft="16dp"
                                             android:padding="12dp"
-                                            android:src="@drawable/image_back"
-                                            android:tint="@color/newPrimaryColor" />
+                                            android:src="@drawable/ic_arrow_blue"
+                                            android:tint="#007AFF" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
@@ -132,13 +133,13 @@
                                         <LinearLayout
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
-                                            android:layout_margin="32dp"
+                                            android:layout_margin="20dp"
                                             android:orientation="vertical">
 
                                             <TextView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
-                                                android:layout_marginBottom="20dp"
+                                                android:layout_marginBottom="16dp"
                                                 android:text="Account"
                                                 android:textColor="@android:color/black"
                                                 android:textSize="23sp" />
@@ -147,7 +148,6 @@
                                                 android:id="@+id/activityMyPageProfileLL"
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
-
                                                 android:orientation="horizontal">
 
                                                 <android.support.v7.widget.AppCompatImageView
@@ -176,7 +176,7 @@
                                             <View
                                                 style="@style/horizontal_line"
                                                 android:layout_alignBottom="@+id/activityMyPageProfileLL"
-                                                android:layout_marginTop="8dp" />
+                                                android:layout_marginTop="4dp" />
 
                                             <LinearLayout
                                                 android:id="@+id/activityMyPageMyBeneficiaryLL"
@@ -255,13 +255,13 @@
                                             <View
                                                 style="@style/horizontal_line"
                                                 android:layout_alignBottom="@+id/activityMyPageMyStorageLL"
-                                                android:layout_marginTop="8dp" />
+                                                android:layout_marginTop="4dp" />
 
                                             <TextView
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
-                                                android:layout_marginTop="20dp"
-                                                android:layout_marginBottom="20dp"
+                                                android:layout_marginTop="24dp"
+                                                android:layout_marginBottom="16dp"
                                                 android:text=" General Settings"
                                                 android:textColor="@color/colorBlack"
                                                 android:textSize="23sp" />
@@ -271,17 +271,17 @@
                                                 android:id="@+id/activityAboutSaveMemory"
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
-                                                android:layout_marginTop="16dp"
+
                                                 android:orientation="horizontal">
 
                                                 <android.support.v7.widget.AppCompatImageView
                                                     android:id="@+id/abtSv"
-                                                    android:layout_width="30dp"
-                                                    android:layout_height="30dp"
+                                                    android:layout_width="24dp"
+                                                    android:layout_height="24dp"
                                                     android:tint="#0088FF"
+                                                    android:layout_marginLeft="4dp"
                                                     android:layout_centerVertical="true"
-                                                    android:padding="5dp"
-                                                    android:src="@drawable/ic_businessman" />
+                                                    android:src="@drawable/face" />
 
 
                                                 <TextView
@@ -289,8 +289,9 @@
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:layout_centerVertical="true"
-                                                    android:layout_marginStart="10dp"
-                                                    android:layout_marginLeft="32dp"
+
+                                                    android:layout_gravity="start|center"
+                                                    android:layout_marginStart="24dp"
                                                     android:layout_toRightOf="@+id/abtSv"
                                                     android:text="About SaveMemory"
                                                     android:textSize="15sp" />
@@ -300,7 +301,7 @@
                                             <View
                                                 style="@style/horizontal_line"
                                                 android:layout_alignBottom="@+id/activityMyPageMyStorageLL"
-                                                android:layout_marginTop="8dp" />
+                                                android:layout_marginTop="4dp" />
 
 
                                             <RelativeLayout
@@ -326,7 +327,7 @@
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:layout_gravity="start|center"
-                                                    android:layout_marginStart="10dp"
+                                                    android:layout_marginStart="24dp"
                                                     android:layout_toRightOf="@+id/ivChangePassword"
                                                     android:text="Change Password"
                                                     android:textSize="15sp" />
@@ -336,7 +337,7 @@
                                             <View
                                                 style="@style/horizontal_line"
                                                 android:layout_alignBottom="@+id/activityMyPageMyStorageLL"
-                                                android:layout_marginTop="8dp" />
+                                                android:layout_marginTop="4dp" />
 
 
                                             <RelativeLayout
@@ -359,7 +360,7 @@
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:layout_gravity="start|center"
-                                                    android:layout_marginStart="10dp"
+                                                    android:layout_marginStart="24dp"
                                                     android:layout_toRightOf="@+id/icLock"
                                                     android:text="Lock Screen"
                                                     android:tint="#0088FF"
@@ -371,7 +372,7 @@
                                             <View
                                                 style="@style/horizontal_line"
                                                 android:layout_alignBottom="@+id/activityMyPageMyStorageLL"
-                                                android:layout_marginTop="8dp" />
+                                                android:layout_marginTop="4dp" />
 
 
                                             <RelativeLayout
@@ -396,7 +397,7 @@
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:layout_gravity="start|center"
-                                                    android:layout_marginStart="10dp"
+                                                    android:layout_marginStart="24dp"
                                                     android:layout_toRightOf="@+id/ivPayment"
                                                     android:text="Payment"
                                                     android:textSize="15sp" />
@@ -406,7 +407,7 @@
                                             <View
                                                 style="@style/horizontal_line"
                                                 android:layout_alignBottom="@+id/activityMyPageMyStorageLL"
-                                                android:layout_marginTop="8dp" />
+                                                android:layout_marginTop="4dp" />
 
                                             <RelativeLayout
                                                 android:id="@+id/activityChangeLanguage"
@@ -417,12 +418,11 @@
 
                                                 <android.support.v7.widget.AppCompatImageView
                                                     android:id="@+id/ivChangeLanguage"
-                                                    android:layout_width="30dp"
-                                                    android:layout_height="30dp"
-                                                    android:padding="5dp"
+                                                    android:layout_width="18dp"
+                                                    android:layout_height="18dp"
                                                     android:tint="#0088FF"
-
-                                                    android:src="@drawable/ic_language" />
+                                                    android:layout_marginLeft="8dp"
+                                                    android:src="@drawable/language" />
 
 
                                                 <TextView
@@ -430,7 +430,7 @@
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:layout_gravity="start|center"
-                                                    android:layout_marginStart="10dp"
+                                                    android:layout_marginStart="32dp"
                                                     android:layout_toRightOf="@+id/ivChangeLanguage"
                                                     android:text="Change Language"
                                                     android:textSize="15sp" />
@@ -440,7 +440,7 @@
                                             <View
                                                 style="@style/horizontal_line"
                                                 android:layout_alignBottom="@+id/activityMyPageMyStorageLL"
-                                                android:layout_marginTop="8dp" />
+                                                android:layout_marginTop="4dp" />
 
                                             <RelativeLayout
                                                 android:id="@+id/activityFontSize"
@@ -451,11 +451,11 @@
 
                                                 <android.support.v7.widget.AppCompatImageView
                                                     android:id="@+id/ivFont"
-                                                    android:layout_width="30dp"
-                                                    android:layout_height="30dp"
-                                                    android:padding="5dp"
+                                                    android:layout_width="18dp"
+                                                    android:layout_height="18dp"
                                                     android:tint="#0088FF"
-                                                    android:src="@drawable/ic_font" />
+                                                    android:layout_marginLeft="4dp"
+                                                    android:src="@drawable/fontt" />
 
 
                                                 <TextView
@@ -463,7 +463,7 @@
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:layout_gravity="start|center"
-                                                    android:layout_marginStart="10dp"
+                                                    android:layout_marginStart="32dp"
                                                     android:layout_toRightOf="@+id/ivFont"
                                                     android:text="Font and Font Size"
                                                     android:textSize="15sp" />
@@ -473,7 +473,7 @@
                                             <View
                                                 style="@style/horizontal_line"
                                                 android:layout_alignBottom="@+id/activityMyPageMyStorageLL"
-                                                android:layout_marginTop="8dp" />
+                                                android:layout_marginTop="4dp" />
 
 
                                             <RelativeLayout
@@ -488,6 +488,7 @@
                                                     android:layout_width="30dp"
                                                     android:layout_height="30dp"
                                                     android:padding="5dp"
+                                                    android:tint="#0088FF"
                                                     android:src="@drawable/ic_info" />
 
 
@@ -496,7 +497,7 @@
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:layout_gravity="start|center"
-                                                    android:layout_marginStart="10dp"
+                                                    android:layout_marginStart="24dp"
                                                     android:layout_toRightOf="@+id/ivAsk"
                                                     android:text="Ask"
                                                     android:textSize="15sp" />
@@ -506,7 +507,7 @@
                                             <View
                                                 style="@style/horizontal_line"
                                                 android:layout_alignBottom="@+id/activityMyPageMyStorageLL"
-                                                android:layout_marginTop="8dp" />
+                                                android:layout_marginTop="4dp" />
 
 
                                             <RelativeLayout
@@ -521,6 +522,7 @@
                                                     android:layout_width="30dp"
                                                     android:layout_height="30dp"
                                                     android:padding="5dp"
+                                                    android:tint="#0088FF"
                                                     android:src="@drawable/ic_help" />
 
 
@@ -529,7 +531,7 @@
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:layout_gravity="start|center"
-                                                    android:layout_marginStart="10dp"
+                                                    android:layout_marginStart="24dp"
                                                     android:layout_toRightOf="@+id/ivFaq"
                                                     android:text="FAQ"
                                                     android:textSize="15sp" />
@@ -539,7 +541,7 @@
                                             <View
                                                 style="@style/horizontal_line"
                                                 android:layout_alignBottom="@+id/activityMyPageMyStorageLL"
-                                                android:layout_marginTop="8dp" />
+                                                android:layout_marginTop="4dp" />
 
 
                                             <RelativeLayout
@@ -547,7 +549,7 @@
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
                                                 android:layout_gravity="right"
-                                                android:layout_marginTop="100dp">
+                                                android:layout_marginTop="50dp">
 
                                                 <ImageView
                                                     android:layout_width="20dp"

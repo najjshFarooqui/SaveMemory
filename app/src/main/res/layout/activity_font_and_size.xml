@@ -43,9 +43,12 @@
                 android:id="@+id/activityAboutBackCV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:padding="8dp"
-                android:src="@drawable/ic_arrow_blue" />
+                android:src="@drawable/ic_arrow_blue"
+                android:tint="@color/colorPrimary" />
 
 
             <TextView
@@ -87,54 +90,48 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
-                        android:layout_gravity="center_vertical"
+                        android:layout_gravity="center"
                         android:layout_marginLeft="32dp"
-                        android:text="Font style"
+                        android:text="Font-style"
                         android:textSize="18sp" />
 
                     <FrameLayout
                         android:id="@+id/card"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="40dp"
                         android:layout_marginLeft="16dp"
-                        android:layout_marginRight="50dp"
+                        android:layout_marginRight="40dp"
                         android:layout_toRightOf="@+id/labelOne">
 
                         <Spinner
                             android:id="@+id/styleSpinner"
                             android:layout_width="match_parent"
-                            android:layout_height="50dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
                             android:layout_marginLeft="16dp"
-
                             android:layout_marginRight="16dp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="44dp"
-                            android:background="@drawable/edit_back"
-                            android:orientation="horizontal"
-                            android:padding="10dp">
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/bg_rounded"
+                            android:orientation="horizontal">
 
                             <TextView
                                 android:id="@+id/styleTv"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
+                                android:layout_gravity="center"
                                 android:layout_marginLeft="8dp"
                                 android:layout_marginRight="10dp"
                                 android:layout_weight="0.10"
                                 android:background="@null"
                                 android:hint="select font style"
                                 android:textColor="@color/colorPrimaryDark"
-                                android:textSize="18sp" />
+                                android:textSize="14sp" />
 
-                            <ImageView
-                                android:layout_width="12dp"
-                                android:layout_height="12dp"
-                                android:layout_gravity="center"
-                                android:layout_marginRight="10dp"
-                                android:src="@drawable/down_arrow"
-                                android:tint="@color/grey" />
+
                         </LinearLayout>
 
                     </FrameLayout>
@@ -146,7 +143,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/font"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="32dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -154,16 +151,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
-                        android:layout_gravity="center_vertical"
+                        android:layout_gravity="center"
                         android:layout_marginLeft="32dp"
-                        android:text="Font size"
+                        android:text="Font-size"
                         android:textSize="18sp" />
 
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_marginLeft="16dp"
-                        android:layout_marginRight="50dp"
+                        android:layout_marginRight="40dp"
                         android:layout_toRightOf="@+id/labelOne">
 
                         <Spinner
@@ -176,10 +173,10 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="44dp"
-                            android:background="@drawable/edit_back"
-                            android:orientation="horizontal"
-                            android:padding="10dp">
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/bg_rounded"
+                            android:orientation="horizontal">
 
                             <TextView
                                 android:id="@+id/sizeTv"
@@ -192,15 +189,9 @@
                                 android:background="@null"
                                 android:hint="select font size"
                                 android:textColor="@color/colorPrimaryDark"
-                                android:textSize="18sp" />
+                                android:textSize="14sp" />
 
-                            <ImageView
-                                android:layout_width="12dp"
-                                android:layout_height="12dp"
-                                android:layout_gravity="center"
-                                android:layout_marginRight="10dp"
-                                android:src="@drawable/down_arrow"
-                                android:tint="@color/grey" />
+
                         </LinearLayout>
 
                     </FrameLayout>

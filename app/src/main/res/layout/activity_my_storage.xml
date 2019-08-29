@@ -24,7 +24,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="40dp"
         android:layout_marginRight="16dp"
-        android:background="@color/colorWhite"
+        app:cardBackgroundColor="#F5F3F3"
         app:cardCornerRadius="14dp">
 
         <RelativeLayout
@@ -37,6 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:padding="8dp"
+                android:tint="@color/colorPrimary"
                 android:src="@drawable/ic_arrow_blue" />
 
 

@@ -43,10 +43,10 @@
                 <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="16dp"
                     android:layout_marginTop="40dp"
                     android:layout_marginRight="16dp"
-                    android:background="@color/colorWhite"
+                    android:layout_marginLeft="16dp"
+                    app:cardBackgroundColor="#F5F3F3"
                     app:cardCornerRadius="14dp">
 
                     <RelativeLayout
@@ -59,6 +59,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="16dp"
                             android:padding="8dp"
+                            android:tint="@color/colorPrimary"
                             android:src="@drawable/ic_arrow_blue" />
 
 
@@ -80,7 +81,7 @@
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="54dp"
                             android:text="My Information"
-                            android:textColor="@color/colorAccent"
+                            android:textColor="#6FA6FF"
                             android:textSize="32sp" />
 
 
@@ -240,9 +241,8 @@
                             android:layout_below="@+id/labelOptionals"
                             android:layout_marginLeft="16dp"
                             android:layout_marginTop="8dp"
-
                             android:layout_marginRight="16dp"
-                            android:layout_marginBottom="60dp"
+                            android:layout_marginBottom="40dp"
                             android:orientation="vertical">
 
 
@@ -406,26 +406,25 @@
 
                         </LinearLayout>
 
-                        <android.support.v7.widget.CardView
+                        <LinearLayout
                             android:id="@+id/edit"
                             android:layout_width="80dp"
                             android:layout_height="30dp"
                             android:layout_alignParentRight="true"
                             android:layout_alignParentBottom="true"
-                            android:layout_margin="5dp"
-                            app:cardCornerRadius="10dp">
+                            android:layout_marginBottom="20dp"
+                            android:background="@drawable/bg_rounded"
+                            android:visibility="visible">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
-
 
                                 <ImageView
                                     android:layout_width="28dp"
                                     android:layout_height="28dp"
                                     android:layout_alignParentLeft="true"
                                     android:padding="4dp"
-
                                     android:src="@drawable/ic_pencil" />
 
                                 <TextView
@@ -438,35 +437,44 @@
                                     android:textSize="24sp" />
                             </RelativeLayout>
 
-                        </android.support.v7.widget.CardView>
+                        </LinearLayout>
 
 
-                        <android.support.v7.widget.CardView
+                        <LinearLayout
                             android:id="@+id/save"
                             android:layout_width="80dp"
                             android:layout_height="30dp"
                             android:layout_alignParentRight="true"
                             android:layout_alignParentBottom="true"
-                            android:layout_margin="5dp"
-                            android:visibility="gone"
-                            app:cardCornerRadius="10dp">
+                            android:layout_marginBottom="20dp"
+                            android:background="@drawable/edit_bg"
+                            android:visibility="gone">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
 
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="2dp"
+                                    android:src="@drawable/ic_save" />
+
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_gravity="center"
+                                    android:layout_centerInParent="true"
+                                    android:layout_centerVertical="true"
                                     android:text="save"
-                                    android:textColor="@color/colorBlack"
-                                    android:textSize="24sp" />
+                                    android:layout_marginLeft="32dp"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="18sp" />
                             </RelativeLayout>
 
-                        </android.support.v7.widget.CardView>
+                        </LinearLayout>
 
 
                     </RelativeLayout>

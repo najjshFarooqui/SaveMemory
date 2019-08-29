@@ -37,23 +37,30 @@ public class ChangePasswordActivity extends AppCompatActivity {
             }
         });
 
-        if (oldPassword.getText().toString().isEmpty() || newPassword.getText().toString().isEmpty() ||
-                confirmNewPassword.getText().toString().isEmpty()) {
-            Snackbar snackbar = Snackbar
-                    .make(change, "please fill all the fields ", Snackbar.LENGTH_LONG);
-            snackbar.show();
+        changePasswordButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (oldPassword.getText().toString().isEmpty() || newPassword.getText().toString().isEmpty() ||
+                        confirmNewPassword.getText().toString().isEmpty()) {
+                    Snackbar snackbar = Snackbar
+                            .make(change, "please fill all the fields ", Snackbar.LENGTH_LONG);
+                    snackbar.show();
 
-        } else {
-            AlertDialog alertDialog = new AlertDialog.Builder(ChangePasswordActivity.this).create();
+                } else {
+                    AlertDialog alertDialog = new AlertDialog.Builder(ChangePasswordActivity.this).create();
 
-            alertDialog.setMessage("Your password has been changed successfully");
-            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    });
-            alertDialog.show();
-        }
+                    alertDialog.setMessage("Your password has been changed successfully");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+                    alertDialog.show();
+                }
+            }
+        });
+
+
     }
 }

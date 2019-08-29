@@ -47,6 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:padding="8dp"
+                android:tint="@color/colorPrimary"
                 android:src="@drawable/ic_arrow_blue" />
 
 
