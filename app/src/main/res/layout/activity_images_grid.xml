@@ -8,7 +8,7 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:cardBackgroundColor="@color/newPrimaryColor"
+        app:cardBackgroundColor="@color/colorPrimary"
         app:cardCornerRadius="0dp"
         app:cardElevation="2dp">
 
@@ -43,16 +43,19 @@
                 android:animateLayoutChanges="true"
                 android:orientation="horizontal">
 
-                <android.support.v7.widget.CardView
-                    android:id="@+id/activityImagesGridDeleteCV"
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:layout_marginEnd="10dp"
-                    android:visibility="gone"
-                    app:cardBackgroundColor="@color/redLight"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="0dp">
+                    android:id="@+id/activityImagesGridDeleteCV"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/delete_icn"
+                        android:tint="@color/colorWhite" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -64,13 +67,36 @@
                         android:textColor="@android:color/white"
                         android:textSize="12sp"
                         android:textStyle="bold" />
+                </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+                <!--<android.support.v7.widget.CardView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="20dp"-->
+                <!--android:layout_marginEnd="10dp"-->
+                <!--android:visibility="gone"-->
+                <!--app:cardBackgroundColor="@color/redLight"-->
+                <!--app:cardCornerRadius="10dp"-->
+                <!--app:cardElevation="0dp">-->
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:gravity="center"-->
+                <!--android:paddingStart="10dp"-->
+                <!--android:paddingEnd="10dp"-->
+                <!--android:text="@string/delete"-->
+                <!--android:textColor="@android:color/white"-->
+                <!--android:textSize="12sp"-->
+                <!--android:textStyle="bold" />-->
+
+                <!--</android.support.v7.widget.CardView>-->
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/activityImagesGridEditCV"
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
+                    android:layout_gravity="center"
                     android:layout_marginEnd="10dp"
                     app:cardBackgroundColor="@color/newBlue"
                     app:cardCornerRadius="10dp"
@@ -94,6 +120,7 @@
                 <android.support.v7.widget.CardView
                     android:id="@+id/activityImagesGridAddCV"
                     android:layout_width="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_height="20dp"
                     android:layout_marginEnd="10dp"
                     app:cardBackgroundColor="@color/newBlue"

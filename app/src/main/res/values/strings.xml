@@ -44,7 +44,7 @@
     <string name="add_heritor">Add Heritor</string>
     <string name="create_heritor">Create Heritor</string>
     <string name="edit">Edit</string>
-    <string name="delete">Delete</string>
+    <string name="delete">DELETE</string>
     <string name="font">Font</string>
     <string name="wallpaper">Wallpaper</string>
     <string name="small">Small</string>
@@ -76,6 +76,13 @@
     <string name="profile_com_title">Please provide the following information:</string>
     <string name="verify_email_text">We sent you an activation code.\n Check your email and cilick on the\n link to verify.</string>
     <string name="email_sent_text">An email has been sent to your register email address.\nFollow the direction in the email to reset your password</string>
-    <string name="add_will_text">Your will has been\nsuccessfully added</string>
+    <string name="add_will_text">Your will has been\nsuccessfully added.</string>
+    <string name="add_inheritor_text">Your inheritor has been\nsuccessfully added.</string>
 
+    <array name="cards_array">
+        <item>choose card type</item>
+        <item>Credit Card</item>
+        <item>Debit Card</item>
+
+    </array>
 </resources>

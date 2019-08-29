@@ -21,9 +21,9 @@ public class AboutActivity extends BaseActivity implements WebConstants {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-        activityAboutBackCV = findViewById(R.id.activityAboutBackCV);
-
-        activityAboutWebView = findViewById(R.id.activityAboutWebView);
+//        activityAboutBackCV = findViewById(R.id.activityAboutBackCV);
+//
+//        activityAboutWebView = findViewById(R.id.activityAboutWebView);
 
         activityAboutWebView.loadUrl(ABOUT_URL);
         activityAboutWebView.setWebViewClient(new WebViewClient() {

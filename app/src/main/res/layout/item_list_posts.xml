@@ -79,6 +79,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="#F9FAFF"
                         android:layout_margin="5dp"
                         android:orientation="vertical">
 
@@ -86,11 +87,12 @@
                             android:id="@+id/itemListPostContentTextTV"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:lineSpacingMultiplier="1.25"
                             android:layout_margin="5dp"
                             android:ellipsize="end"
-                            android:maxLines="10"
-                            android:textColor="@android:color/black"
-                            android:textSize="15sp" />
+                            android:maxLines="4"
+                            android:textColor="#8E8E8E"
+                            android:textSize="14sp" />
 
                         <LinearLayout
                             android:id="@+id/itemListPostContentImage4LL"
@@ -104,12 +106,13 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:longClickable="false"
+                                android:gravity="center"
                                 android:orientation="horizontal"
-                                android:weightSum="4">
+                                android:weightSum="3">
 
                                 <android.support.v7.widget.CardView
                                     android:layout_width="0dp"
-                                    android:layout_height="100dp"
+                                    android:layout_height="120dp"
                                     android:layout_marginEnd="2dp"
                                     android:layout_weight="1"
                                     android:longClickable="false"
@@ -129,7 +132,7 @@
                                 <android.support.v7.widget.CardView
                                     android:id="@+id/itemListPostImage42CV"
                                     android:layout_width="0dp"
-                                    android:layout_height="100dp"
+                                    android:layout_height="120dp"
                                     android:layout_marginEnd="2dp"
                                     android:layout_weight="1"
                                     android:longClickable="false"
@@ -145,11 +148,19 @@
                                         android:scaleType="centerCrop" />
 
                                 </android.support.v7.widget.CardView>
-
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:longClickable="false"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="2dp"
+                                android:gravity="center"
+                                android:weightSum="3">
                                 <android.support.v7.widget.CardView
                                     android:id="@+id/itemListPostImage43CV"
                                     android:layout_width="0dp"
-                                    android:layout_height="100dp"
+                                    android:layout_height="120dp"
                                     android:layout_marginEnd="2dp"
                                     android:layout_weight="1"
                                     android:longClickable="false"
@@ -169,7 +180,7 @@
                                 <android.support.v7.widget.CardView
                                     android:id="@+id/itemListPostImage44CV"
                                     android:layout_width="0dp"
-                                    android:layout_height="100dp"
+                                    android:layout_height="120dp"
                                     android:layout_weight="1"
                                     android:longClickable="false"
                                     app:cardBackgroundColor="@color/kakaoPrimaryDark"
@@ -183,99 +194,10 @@
                                         android:longClickable="true"
                                         android:scaleType="centerCrop" />
 
-                                </android.support.v7.widget.CardView>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:longClickable="false"
-                                android:orientation="horizontal"
-                                android:weightSum="4">
-
-                                <android.support.v7.widget.CardView
-                                    android:id="@+id/itemListPostImage45CV"
-                                    android:layout_width="0dp"
-                                    android:layout_height="100dp"
-                                    android:layout_marginEnd="2dp"
-                                    android:layout_weight="1"
-                                    android:longClickable="false"
-                                    app:cardBackgroundColor="@color/kakaoPrimaryDark"
-                                    app:cardCornerRadius="1dp"
-                                    app:cardElevation="0dp">
-
-                                    <android.support.v7.widget.AppCompatImageView
-                                        android:id="@+id/itemListPostImage45IV"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:longClickable="true"
-                                        android:scaleType="centerCrop" />
-
-                                </android.support.v7.widget.CardView>
-
-                                <android.support.v7.widget.CardView
-                                    android:id="@+id/itemListPostImage46CV"
-                                    android:layout_width="0dp"
-                                    android:layout_height="100dp"
-                                    android:layout_marginEnd="2dp"
-                                    android:layout_weight="1"
-                                    android:longClickable="false"
-                                    app:cardBackgroundColor="@color/kakaoPrimaryDark"
-                                    app:cardCornerRadius="1dp"
-                                    app:cardElevation="0dp">
-
-                                    <android.support.v7.widget.AppCompatImageView
-                                        android:id="@+id/itemListPostImage46IV"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:longClickable="true"
-                                        android:scaleType="centerCrop" />
-
-                                </android.support.v7.widget.CardView>
-
-                                <android.support.v7.widget.CardView
-                                    android:id="@+id/itemListPostImage47CV"
-                                    android:layout_width="0dp"
-                                    android:layout_height="100dp"
-                                    android:layout_marginEnd="2dp"
-                                    android:layout_weight="1"
-                                    android:longClickable="false"
-                                    app:cardBackgroundColor="@color/kakaoPrimaryDark"
-                                    app:cardCornerRadius="1dp"
-                                    app:cardElevation="0dp">
-
-                                    <android.support.v7.widget.AppCompatImageView
-                                        android:id="@+id/itemListPostImage47IV"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:longClickable="true"
-                                        android:scaleType="centerCrop" />
-
-                                </android.support.v7.widget.CardView>
-
-                                <android.support.v7.widget.CardView
-                                    android:id="@+id/itemListPostImage48CV"
-                                    android:layout_width="0dp"
-                                    android:layout_height="100dp"
-                                    android:layout_weight="1"
-                                    android:longClickable="true"
-                                    app:cardBackgroundColor="@color/kakaoPrimaryDark"
-                                    app:cardCornerRadius="1dp"
-                                    app:cardElevation="0dp">
-
-                                    <android.support.v7.widget.AppCompatImageView
-                                        android:id="@+id/itemListPostImage48IV"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:longClickable="true"
-                                        android:scaleType="centerCrop" />
-
                                     <TextView
                                         android:id="@+id/itemListPostMultipleImage4TV"
                                         android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
+                                        android:layout_height="match_parent"
                                         android:layout_gravity="center"
                                         android:background="@color/colorBlackAlpha"
                                         android:gravity="center"
@@ -283,17 +205,120 @@
                                         android:paddingEnd="10dp"
                                         android:text="20+"
                                         android:textColor="@android:color/white"
-                                        android:textSize="12sp"
+                                        android:textSize="22sp"
                                         android:textStyle="bold" />
 
                                 </android.support.v7.widget.CardView>
-
                             </LinearLayout>
+
+                            <!--<LinearLayout-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginTop="2dp"-->
+                            <!--android:longClickable="false"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:weightSum="4">-->
+
+                            <!--<android.support.v7.widget.CardView-->
+                            <!--android:id="@+id/itemListPostImage45CV"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="100dp"-->
+                            <!--android:layout_marginEnd="2dp"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:longClickable="false"-->
+                            <!--app:cardBackgroundColor="@color/kakaoPrimaryDark"-->
+                            <!--app:cardCornerRadius="1dp"-->
+                            <!--app:cardElevation="0dp">-->
+
+                            <!--<android.support.v7.widget.AppCompatImageView-->
+                            <!--android:id="@+id/itemListPostImage45IV"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:longClickable="true"-->
+                            <!--android:scaleType="centerCrop" />-->
+
+                            <!--</android.support.v7.widget.CardView>-->
+
+                            <!--<android.support.v7.widget.CardView-->
+                            <!--android:id="@+id/itemListPostImage46CV"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="100dp"-->
+                            <!--android:layout_marginEnd="2dp"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:longClickable="false"-->
+                            <!--app:cardBackgroundColor="@color/kakaoPrimaryDark"-->
+                            <!--app:cardCornerRadius="1dp"-->
+                            <!--app:cardElevation="0dp">-->
+
+                            <!--<android.support.v7.widget.AppCompatImageView-->
+                            <!--android:id="@+id/itemListPostImage46IV"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:longClickable="true"-->
+                            <!--android:scaleType="centerCrop" />-->
+
+                            <!--</android.support.v7.widget.CardView>-->
+
+                            <!--<android.support.v7.widget.CardView-->
+                            <!--android:id="@+id/itemListPostImage47CV"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="100dp"-->
+                            <!--android:layout_marginEnd="2dp"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:longClickable="false"-->
+                            <!--app:cardBackgroundColor="@color/kakaoPrimaryDark"-->
+                            <!--app:cardCornerRadius="1dp"-->
+                            <!--app:cardElevation="0dp">-->
+
+                            <!--<android.support.v7.widget.AppCompatImageView-->
+                            <!--android:id="@+id/itemListPostImage47IV"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:longClickable="true"-->
+                            <!--android:scaleType="centerCrop" />-->
+
+                            <!--</android.support.v7.widget.CardView>-->
+
+                            <!--<android.support.v7.widget.CardView-->
+                            <!--android:id="@+id/itemListPostImage48CV"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="100dp"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:longClickable="true"-->
+                            <!--app:cardBackgroundColor="@color/kakaoPrimaryDark"-->
+                            <!--app:cardCornerRadius="1dp"-->
+                            <!--app:cardElevation="0dp">-->
+
+                            <!--<android.support.v7.widget.AppCompatImageView-->
+                            <!--android:id="@+id/itemListPostImage48IV"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:longClickable="true"-->
+                            <!--android:scaleType="centerCrop" />-->
+
+                            <!--<TextView-->
+                            <!--android:id="@+id/itemListPostMultipleImage4TV"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:background="@color/colorBlackAlpha"-->
+                            <!--android:gravity="center"-->
+                            <!--android:paddingStart="10dp"-->
+                            <!--android:paddingEnd="10dp"-->
+                            <!--android:text="20+"-->
+                            <!--android:textColor="@android:color/white"-->
+                            <!--android:textSize="12sp"-->
+                            <!--android:textStyle="bold" />-->
+
+                            <!--</android.support.v7.widget.CardView>-->
+
+                            <!--</LinearLayout>-->
 
                         </LinearLayout>
 
                         <android.support.v7.widget.CardView
                             android:id="@+id/itemListPostContentVideoCV"
+                            android:layout_gravity="center"
                             android:layout_width="104dp"
                             android:layout_height="104dp"
                             android:layout_margin="3dp"
@@ -519,7 +544,7 @@
                                 android:id="@+id/itemListPostContentViewMoreCV"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                app:cardCornerRadius="5dp">
+                                app:cardCornerRadius="0dp">
 
                                 <TextView
                                     android:id="@+id/itemListPostContentViewMoreTV"
@@ -527,7 +552,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_margin="5dp"
                                     android:text="View All"
-                                    android:textColor="@android:color/holo_blue_dark"
+                                    android:textColor="@color/colorPrimary"
                                     android:textSize="13sp" />
 
                             </android.support.v7.widget.CardView>

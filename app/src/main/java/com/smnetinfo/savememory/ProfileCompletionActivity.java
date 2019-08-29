@@ -59,7 +59,7 @@ public class ProfileCompletionActivity extends BaseActivity implements WebConsta
     TextView dobTv;
 
     JSONObject jsonObject = new JSONObject();
-    String[] countryNames = {"Select Gender", "Male", "Female", "Other"};
+    String[] genderNames = {"Select Gender", "Male", "Female", "Other"};
     int flags[] = {R.drawable.gender_sel, R.drawable.male_icon, R.drawable.female_icon, R.drawable.other_icon};
     private int mYear = -1, mMonth = -1, mDay = -1;
 
@@ -84,7 +84,7 @@ public class ProfileCompletionActivity extends BaseActivity implements WebConsta
         genderTv = (TextView) findViewById(R.id.genderTv);
         calendarLayout = (LinearLayout) findViewById(R.id.calendarLayout);
         dobTv = (TextView) findViewById(R.id.dobTv);
-        SpinnerAdapter customAdapter = new SpinnerAdapter(getApplicationContext(), flags, countryNames);
+        SpinnerAdapter customAdapter = new SpinnerAdapter(getApplicationContext(), flags, genderNames);
         activityProfileCompletionSexSpinner.setAdapter(customAdapter);
 
         activityProfileCompletionSexSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -92,8 +92,8 @@ public class ProfileCompletionActivity extends BaseActivity implements WebConsta
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (genderChek > 0 && position != 0) {
                     isGenderSet = true;
-                    genderTv.setText(countryNames[position]);
-                    setJsonObject(GENDER, countryNames[position]);
+                    genderTv.setText(genderNames[position]);
+                    setJsonObject(GENDER, genderNames[position]);
                 }
                 genderChek++;
             }

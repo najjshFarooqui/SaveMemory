@@ -103,7 +103,7 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
 
         activityProfileBackIV = findViewById(R.id.activityProfileBackIV);
 
-        activityProfileSaveTV = findViewById(R.id.activityProfileSaveTV);
+        //  activityProfileSaveTV = findViewById(R.id.activityProfileSaveTV);
 
         activityProfileEditLL = findViewById(R.id.edit);
 

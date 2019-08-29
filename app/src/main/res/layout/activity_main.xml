@@ -100,7 +100,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:orientation="horizontal"
                 android:weightSum="3">
 
@@ -108,6 +108,9 @@
                     android:id="@+id/activityMainMemoryTabRL"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/tab_background"
                     android:layout_weight="1">
 
                     <TextView
@@ -116,16 +119,16 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:text="@string/memories"
-                        android:textColor="@android:color/white" />
+                        android:textColor="@color/colorPrimary" />
 
-                    <View
-                        android:id="@+id/activityMainMemoryTabView"
-                        android:layout_width="match_parent"
-                        android:layout_height="3dp"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginEnd="30dp"
-                        android:background="@android:color/white" />
+                    <!--<View-->
+                    <!--android:id="@+id/activityMainMemoryTabView"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="3dp"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:layout_marginStart="30dp"-->
+                    <!--android:layout_marginEnd="30dp"-->
+                    <!--android:background="@android:color/white" />-->
 
                 </RelativeLayout>
 
@@ -133,6 +136,9 @@
                     android:id="@+id/activityMainWillTabRL"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/tab_background"
                     android:layout_weight="1">
 
                     <TextView
@@ -141,7 +147,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:text="WILL"
-                        android:textColor="@color/newDimText" />
+                        android:textColor="@color/grey" />
 
                     <View
                         android:id="@+id/activityMainWillTabView"
@@ -159,6 +165,9 @@
                     android:id="@+id/activityMainInheritorTabRL"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/tab_background"
                     android:layout_weight="1">
 
                     <TextView
@@ -167,7 +176,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:text="INHERITOR"
-                        android:textColor="@color/newDimText" />
+                        android:textColor="@color/grey" />
 
                     <View
                         android:id="@+id/activityMainInheritorTabView"

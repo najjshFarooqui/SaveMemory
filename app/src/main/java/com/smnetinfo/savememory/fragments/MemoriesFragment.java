@@ -251,7 +251,7 @@ public class MemoriesFragment extends Fragment implements WebConstants {
                     getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
                     fragmentMemoriesPostAttachmentCV.setVisibility(View.GONE);
                     fragmentMemoriesPostAddAttachmentIV.setRotation(0);
-                    fragmentMemoriesPostAddAttachmentIV.setColorFilter(ContextCompat.getColor(getContext(), R.color.newPrimaryColor), PorterDuff.Mode.SRC_IN);
+                    fragmentMemoriesPostAddAttachmentIV.setColorFilter(ContextCompat.getColor(getContext(), R.color.colorPrimary), PorterDuff.Mode.SRC_IN);
                 }
                 return false;
             }
@@ -263,7 +263,7 @@ public class MemoriesFragment extends Fragment implements WebConstants {
                 if (focused) {
                     fragmentMemoriesPostAttachmentCV.setVisibility(View.GONE);
                     fragmentMemoriesPostAddAttachmentIV.setRotation(0);
-                    fragmentMemoriesPostAddAttachmentIV.setColorFilter(ContextCompat.getColor(getContext(), R.color.newPrimaryColor), PorterDuff.Mode.SRC_IN);
+                    fragmentMemoriesPostAddAttachmentIV.setColorFilter(ContextCompat.getColor(getContext(), R.color.colorPrimary), PorterDuff.Mode.SRC_IN);
                 }
             }
         });
@@ -420,6 +420,7 @@ public class MemoriesFragment extends Fragment implements WebConstants {
                     fragmentMemoriesPostAttachmentCV.setVisibility(View.VISIBLE);
                     fragmentMemoriesPostAddAttachmentIV.setRotation(45);
                     fragmentMemoriesPostAddAttachmentIV.setColorFilter(ContextCompat.getColor(getContext(), R.color.red), PorterDuff.Mode.SRC_IN);
+                    fragmentMemoriesPostsRV.scrollToPosition(postListRecyclerAdapter.getItemCount() - 1);
                 }
                 fragmentMemoriesPostET.clearFocus();
                 InputMethodManager inputMethodManager = (InputMethodManager) getContext().getSystemService(Activity.INPUT_METHOD_SERVICE);

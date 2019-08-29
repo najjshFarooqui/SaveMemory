@@ -92,6 +92,7 @@
                                 android:id="@+id/fragmentMemoriesPostET"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
                                 android:layout_toEndOf="@+id/fragmentMemoriesPostAddAttachmentCV"
                                 android:background="@null"
                                 android:hint="@string/type_a_message"

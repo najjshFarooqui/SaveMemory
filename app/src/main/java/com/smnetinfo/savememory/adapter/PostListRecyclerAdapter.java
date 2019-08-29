@@ -106,11 +106,11 @@ public class PostListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                     holder.itemListPostContentTextTV.setText(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(0).getString(CONTENT_URL));
                     holder.itemListPostContentTextTV.setTextSize(settingsDataSource.getFontSize());
                     holder.itemListPostContentTextTV.setVisibility(View.VISIBLE);
-                    if (holder.itemListPostContentTextTV.getText().length() < 500) {
+                    if (holder.itemListPostContentTextTV.getText().length() < 100) {
                         holder.itemListPostContentTextTV.setSingleLine(false);
                         holder.itemListPostContentViewMoreCV.setVisibility(View.GONE);
                     } else {
-                        holder.itemListPostContentTextTV.setLines(10);
+                        holder.itemListPostContentTextTV.setLines(4);
                         holder.itemListPostContentViewMoreCV.setVisibility(View.VISIBLE);
                     }
 
@@ -155,10 +155,10 @@ public class PostListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                         holder.itemListPostImage42CV.setVisibility(View.GONE);
                         holder.itemListPostImage43CV.setVisibility(View.GONE);
                         holder.itemListPostImage44CV.setVisibility(View.GONE);
-                        holder.itemListPostImage45CV.setVisibility(View.GONE);
-                        holder.itemListPostImage46CV.setVisibility(View.GONE);
-                        holder.itemListPostImage47CV.setVisibility(View.GONE);
-                        holder.itemListPostImage48CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage45CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage46CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage47CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage48CV.setVisibility(View.GONE);
                         holder.itemListPostMultipleImage4TV.setVisibility(View.GONE);
                         holder.itemListPostContentImage4LL.setVisibility(View.VISIBLE);
                     } else if (jsonObject.getJSONArray(CONTENT_ARRAY).length() == 2) {
@@ -191,10 +191,10 @@ public class PostListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
 
                         holder.itemListPostImage43CV.setVisibility(View.GONE);
                         holder.itemListPostImage44CV.setVisibility(View.GONE);
-                        holder.itemListPostImage45CV.setVisibility(View.GONE);
-                        holder.itemListPostImage46CV.setVisibility(View.GONE);
-                        holder.itemListPostImage47CV.setVisibility(View.GONE);
-                        holder.itemListPostImage48CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage45CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage46CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage47CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage48CV.setVisibility(View.GONE);
                         holder.itemListPostImage42CV.setVisibility(View.VISIBLE);
                         holder.itemListPostMultipleImage4TV.setVisibility(View.GONE);
                         holder.itemListPostContentImage4LL.setVisibility(View.VISIBLE);
@@ -240,10 +240,10 @@ public class PostListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                         });
 
                         holder.itemListPostImage44CV.setVisibility(View.GONE);
-                        holder.itemListPostImage45CV.setVisibility(View.GONE);
-                        holder.itemListPostImage46CV.setVisibility(View.GONE);
-                        holder.itemListPostImage47CV.setVisibility(View.GONE);
-                        holder.itemListPostImage48CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage45CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage46CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage47CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage48CV.setVisibility(View.GONE);
                         holder.itemListPostImage42CV.setVisibility(View.VISIBLE);
                         holder.itemListPostImage43CV.setVisibility(View.VISIBLE);
                         holder.itemListPostMultipleImage4TV.setVisibility(View.GONE);
@@ -302,16 +302,398 @@ public class PostListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                             }
                         });
 
-                        holder.itemListPostImage45CV.setVisibility(View.GONE);
-                        holder.itemListPostImage46CV.setVisibility(View.GONE);
-                        holder.itemListPostImage47CV.setVisibility(View.GONE);
-                        holder.itemListPostImage48CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage45CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage46CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage47CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage48CV.setVisibility(View.GONE);
                         holder.itemListPostImage44CV.setVisibility(View.VISIBLE);
                         holder.itemListPostImage42CV.setVisibility(View.VISIBLE);
                         holder.itemListPostImage43CV.setVisibility(View.VISIBLE);
                         holder.itemListPostMultipleImage4TV.setVisibility(View.GONE);
                         holder.itemListPostContentImage4LL.setVisibility(View.VISIBLE);
-                    } else if (jsonObject.getJSONArray(CONTENT_ARRAY).length() == 5) {
+//                    } else if (jsonObject.getJSONArray(CONTENT_ARRAY).length() == 5) {
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(0).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage41IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(1).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage42IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(2).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage43IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(3).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage44IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(4).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage45IV);
+//
+//                        holder.itemListPostImage41IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage42IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage43IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage44IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage45IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage46CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage47CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage48CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage45CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage44CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage42CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage43CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostMultipleImage4TV.setVisibility(View.GONE);
+//                        holder.itemListPostContentImage4LL.setVisibility(View.VISIBLE);
+//                    } else if (jsonObject.getJSONArray(CONTENT_ARRAY).length() == 6) {
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(0).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage41IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(1).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage42IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(2).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage43IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(3).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage44IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(4).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage45IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(5).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage46IV);
+//
+//                        holder.itemListPostImage41IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage42IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage43IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage44IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage45IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage46IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage47CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage48CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage46CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage45CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage44CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage42CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage43CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostMultipleImage4TV.setVisibility(View.GONE);
+//                        holder.itemListPostContentImage4LL.setVisibility(View.VISIBLE);
+//                    } else if (jsonObject.getJSONArray(CONTENT_ARRAY).length() == 7) {
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(0).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage41IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(1).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage42IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(2).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage43IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(3).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage44IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(4).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage45IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(5).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage46IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(6).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage47IV);
+//
+//                        holder.itemListPostImage41IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage42IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage43IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage44IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage45IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage46IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage47IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage48CV.setVisibility(View.GONE);
+//                        holder.itemListPostImage42CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage43CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage44CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage45CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage46CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage47CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostMultipleImage4TV.setVisibility(View.GONE);
+//                        holder.itemListPostContentImage4LL.setVisibility(View.VISIBLE);
+//                    } else if (jsonObject.getJSONArray(CONTENT_ARRAY).length() == 8) {
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(0).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage41IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(1).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage42IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(2).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage43IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(3).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage44IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(4).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage45IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(5).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage46IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(6).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage47IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(7).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage48IV);
+//
+//                        holder.itemListPostImage41IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage42IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage43IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage44IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage45IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage46IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage47IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage48IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage42CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage43CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage44CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage45CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage46CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage47CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage48CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostMultipleImage4TV.setVisibility(View.GONE);
+//                        holder.itemListPostContentImage4LL.setVisibility(View.VISIBLE);
+                    } else if (jsonObject.getJSONArray(CONTENT_ARRAY).length() > 4) {
                         Picasso.with(context)
                                 .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(0).getString(CONTENT_URL))
                                 .resize(128, 128)
@@ -332,11 +714,26 @@ public class PostListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                                 .resize(128, 128)
                                 .centerInside()
                                 .into(holder.itemListPostImage44IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(4).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage45IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(4).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage45IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(5).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage46IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(6).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage47IV);
+//                        Picasso.with(context)
+//                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(7).getString(CONTENT_URL))
+//                                .resize(128, 128)
+//                                .centerInside()
+//                                .into(holder.itemListPostImage48IV);
 
                         holder.itemListPostImage41IV.setOnLongClickListener(new View.OnLongClickListener() {
                             @Override
@@ -370,444 +767,47 @@ public class PostListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                             }
                         });
 
-                        holder.itemListPostImage45IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
+//                        holder.itemListPostImage45IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage46IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage47IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
+//
+//                        holder.itemListPostImage48IV.setOnLongClickListener(new View.OnLongClickListener() {
+//                            @Override
+//                            public boolean onLongClick(View view) {
+//                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
+//                                return false;
+//                            }
+//                        });
 
-                        holder.itemListPostImage46CV.setVisibility(View.GONE);
-                        holder.itemListPostImage47CV.setVisibility(View.GONE);
-                        holder.itemListPostImage48CV.setVisibility(View.GONE);
-                        holder.itemListPostImage45CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage44CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage42CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage43CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostMultipleImage4TV.setVisibility(View.GONE);
-                        holder.itemListPostContentImage4LL.setVisibility(View.VISIBLE);
-                    } else if (jsonObject.getJSONArray(CONTENT_ARRAY).length() == 6) {
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(0).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage41IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(1).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage42IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(2).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage43IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(3).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage44IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(4).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage45IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(5).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage46IV);
-
-                        holder.itemListPostImage41IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage42IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage43IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage44IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage45IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage46IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage47CV.setVisibility(View.GONE);
-                        holder.itemListPostImage48CV.setVisibility(View.GONE);
-                        holder.itemListPostImage46CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage45CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage44CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage42CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage43CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostMultipleImage4TV.setVisibility(View.GONE);
-                        holder.itemListPostContentImage4LL.setVisibility(View.VISIBLE);
-                    } else if (jsonObject.getJSONArray(CONTENT_ARRAY).length() == 7) {
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(0).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage41IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(1).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage42IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(2).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage43IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(3).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage44IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(4).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage45IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(5).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage46IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(6).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage47IV);
-
-                        holder.itemListPostImage41IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage42IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage43IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage44IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage45IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage46IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage47IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage48CV.setVisibility(View.GONE);
-                        holder.itemListPostImage42CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage43CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage44CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage45CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage46CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage47CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostMultipleImage4TV.setVisibility(View.GONE);
-                        holder.itemListPostContentImage4LL.setVisibility(View.VISIBLE);
-                    } else if (jsonObject.getJSONArray(CONTENT_ARRAY).length() == 8) {
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(0).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage41IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(1).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage42IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(2).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage43IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(3).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage44IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(4).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage45IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(5).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage46IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(6).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage47IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(7).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage48IV);
-
-                        holder.itemListPostImage41IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage42IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage43IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage44IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage45IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage46IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage47IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage48IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
+                        holder.itemListPostMultipleImage4TV.setText("+" + (jsonObject.getJSONArray(CONTENT_ARRAY).length() - 4));
 
                         holder.itemListPostImage42CV.setVisibility(View.VISIBLE);
                         holder.itemListPostImage43CV.setVisibility(View.VISIBLE);
                         holder.itemListPostImage44CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage45CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage46CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage47CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage48CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostMultipleImage4TV.setVisibility(View.GONE);
-                        holder.itemListPostContentImage4LL.setVisibility(View.VISIBLE);
-                    } else if (jsonObject.getJSONArray(CONTENT_ARRAY).length() > 8) {
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(0).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage41IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(1).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage42IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(2).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage43IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(3).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage44IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(4).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage45IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(5).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage46IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(6).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage47IV);
-                        Picasso.with(context)
-                                .load(jsonObject.getJSONArray(CONTENT_ARRAY).getJSONObject(7).getString(CONTENT_URL))
-                                .resize(128, 128)
-                                .centerInside()
-                                .into(holder.itemListPostImage48IV);
-
-                        holder.itemListPostImage41IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage42IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage43IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage44IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage45IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage46IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage47IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostImage48IV.setOnLongClickListener(new View.OnLongClickListener() {
-                            @Override
-                            public boolean onLongClick(View view) {
-                                onClickListener.onLongClick(jsonObject, viewHolder.getAdapterPosition());
-                                return false;
-                            }
-                        });
-
-                        holder.itemListPostMultipleImage4TV.setText("+" + (jsonObject.getJSONArray(CONTENT_ARRAY).length() - 8));
-
-                        holder.itemListPostImage42CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage43CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage44CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage45CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage46CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage47CV.setVisibility(View.VISIBLE);
-                        holder.itemListPostImage48CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage45CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage46CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage47CV.setVisibility(View.VISIBLE);
+//                        holder.itemListPostImage48CV.setVisibility(View.VISIBLE);
                         holder.itemListPostContentImage4LL.setVisibility(View.VISIBLE);
                         holder.itemListPostMultipleImage4TV.setVisibility(View.VISIBLE);
                     }
@@ -905,65 +905,65 @@ public class PostListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                 }
             });
 
-            holder.itemListPostImage45IV.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    try {
-                        Intent intent = new Intent(context, ImagesActivity.class);
-                        intent.putExtra(ID, jsonObject.getString(ID));
-                        intent.putExtra(DATA, jsonObject.getJSONArray(CONTENT_ARRAY).toString());
-                        intent.putExtra(POSITION, 4);
-                        context.startActivity(intent);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
+//            holder.itemListPostImage45IV.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    try {
+//                        Intent intent = new Intent(context, ImagesActivity.class);
+//                        intent.putExtra(ID, jsonObject.getString(ID));
+//                        intent.putExtra(DATA, jsonObject.getJSONArray(CONTENT_ARRAY).toString());
+//                        intent.putExtra(POSITION, 4);
+//                        context.startActivity(intent);
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            });
 
-            holder.itemListPostImage46IV.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    try {
-                        Intent intent = new Intent(context, ImagesActivity.class);
-                        intent.putExtra(ID, jsonObject.getString(ID));
-                        intent.putExtra(DATA, jsonObject.getJSONArray(CONTENT_ARRAY).toString());
-                        intent.putExtra(POSITION, 5);
-                        context.startActivity(intent);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
+//            holder.itemListPostImage46IV.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    try {
+//                        Intent intent = new Intent(context, ImagesActivity.class);
+//                        intent.putExtra(ID, jsonObject.getString(ID));
+//                        intent.putExtra(DATA, jsonObject.getJSONArray(CONTENT_ARRAY).toString());
+//                        intent.putExtra(POSITION, 5);
+//                        context.startActivity(intent);
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            });
 
-            holder.itemListPostImage47IV.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    try {
-                        Intent intent = new Intent(context, ImagesActivity.class);
-                        intent.putExtra(ID, jsonObject.getString(ID));
-                        intent.putExtra(DATA, jsonObject.getJSONArray(CONTENT_ARRAY).toString());
-                        intent.putExtra(POSITION, 6);
-                        context.startActivity(intent);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-
-            holder.itemListPostImage48IV.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    try {
-                        Intent intent = new Intent(context, ImagesActivity.class);
-                        intent.putExtra(ID, jsonObject.getString(ID));
-                        intent.putExtra(DATA, jsonObject.getJSONArray(CONTENT_ARRAY).toString());
-                        intent.putExtra(POSITION, 7);
-                        context.startActivity(intent);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
+//            holder.itemListPostImage47IV.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    try {
+//                        Intent intent = new Intent(context, ImagesActivity.class);
+//                        intent.putExtra(ID, jsonObject.getString(ID));
+//                        intent.putExtra(DATA, jsonObject.getJSONArray(CONTENT_ARRAY).toString());
+//                        intent.putExtra(POSITION, 6);
+//                        context.startActivity(intent);
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            });
+//
+//            holder.itemListPostImage48IV.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    try {
+//                        Intent intent = new Intent(context, ImagesActivity.class);
+//                        intent.putExtra(ID, jsonObject.getString(ID));
+//                        intent.putExtra(DATA, jsonObject.getJSONArray(CONTENT_ARRAY).toString());
+//                        intent.putExtra(POSITION, 7);
+//                        context.startActivity(intent);
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            });
 
             holder.itemListPostContentVideoCV.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -1301,13 +1301,12 @@ public class PostListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
         LinearLayout itemListPostMainLL, itemListPostContentImage4LL;
         CardView itemListPostContentVideoCV, itemListPostContentAudioCV, itemListPostContentDocCV,
                 itemListPostMainCV, itemListPostContentViewMoreCV, itemListPostImage42CV, itemListPostImage43CV,
-                itemListPostImage44CV, itemListPostImage45CV, itemListPostImage46CV, itemListPostImage47CV,
-                itemListPostImage48CV, itemListPostContentVideoIconCV, playAudioCv, playCv;
+                itemListPostImage44CV, itemListPostContentVideoIconCV, playAudioCv, playCv;  // itemListPostImage45CV, itemListPostImage46CV, itemListPostImage47CV,itemListPostImage48CV,
         TextView itemListPostCreatedAtTV, itemListPostContentTextTV, itemListPostSplitDateTV, documentTv,
                 itemListPostMultipleImage4TV, itemListPostAudioTimeTV, itemListPostContentViewMoreTV;
         AppCompatImageView itemListPostAudioPlayIV, itemListPostVideoThumbIV,
-                itemListPostImage41IV, itemListPostImage42IV, itemListPostImage43IV, itemListPostImage44IV,
-                itemListPostImage45IV, itemListPostImage46IV, itemListPostImage47IV, itemListPostImage48IV;
+                itemListPostImage41IV, itemListPostImage42IV, itemListPostImage43IV, itemListPostImage44IV;
+        // itemListPostImage45IV, itemListPostImage46IV, itemListPostImage47IV, itemListPostImage48IV;
 
         RecyclerViewHolders(View itemView) {
             super(itemView);
@@ -1318,18 +1317,18 @@ public class PostListRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
             itemListPostImage42CV = itemView.findViewById(R.id.itemListPostImage42CV);
             itemListPostImage43CV = itemView.findViewById(R.id.itemListPostImage43CV);
             itemListPostImage44CV = itemView.findViewById(R.id.itemListPostImage44CV);
-            itemListPostImage45CV = itemView.findViewById(R.id.itemListPostImage45CV);
-            itemListPostImage46CV = itemView.findViewById(R.id.itemListPostImage46CV);
-            itemListPostImage47CV = itemView.findViewById(R.id.itemListPostImage47CV);
-            itemListPostImage48CV = itemView.findViewById(R.id.itemListPostImage48CV);
+//            itemListPostImage45CV = itemView.findViewById(R.id.itemListPostImage45CV);
+//            itemListPostImage46CV = itemView.findViewById(R.id.itemListPostImage46CV);
+//            itemListPostImage47CV = itemView.findViewById(R.id.itemListPostImage47CV);
+//            itemListPostImage48CV = itemView.findViewById(R.id.itemListPostImage48CV);
             itemListPostImage41IV = itemView.findViewById(R.id.itemListPostImage41IV);
             itemListPostImage42IV = itemView.findViewById(R.id.itemListPostImage42IV);
             itemListPostImage43IV = itemView.findViewById(R.id.itemListPostImage43IV);
             itemListPostImage44IV = itemView.findViewById(R.id.itemListPostImage44IV);
-            itemListPostImage45IV = itemView.findViewById(R.id.itemListPostImage45IV);
-            itemListPostImage46IV = itemView.findViewById(R.id.itemListPostImage46IV);
-            itemListPostImage47IV = itemView.findViewById(R.id.itemListPostImage47IV);
-            itemListPostImage48IV = itemView.findViewById(R.id.itemListPostImage48IV);
+//            itemListPostImage45IV = itemView.findViewById(R.id.itemListPostImage45IV);
+//            itemListPostImage46IV = itemView.findViewById(R.id.itemListPostImage46IV);
+//            itemListPostImage47IV = itemView.findViewById(R.id.itemListPostImage47IV);
+//            itemListPostImage48IV = itemView.findViewById(R.id.itemListPostImage48IV);
             itemListPostSplitDateRL = itemView.findViewById(R.id.itemListPostSplitDateRL);
             itemListPostSplitDateTV = itemView.findViewById(R.id.itemListPostSplitDateTV);
             itemListPostAudioPlayIV = itemView.findViewById(R.id.itemListPostAudioPlayIV);

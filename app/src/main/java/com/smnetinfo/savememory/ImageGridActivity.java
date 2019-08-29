@@ -29,6 +29,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -66,25 +67,19 @@ public class ImageGridActivity extends BaseActivity implements WebConstants {
     TextView activityImagesGridEditTV, headingTv;
     RecyclerView activityImagesGridRV;
     AppCompatImageView activityImagesGridBackIV;
-    CardView activityImagesGridEditCV, activityImagesGridAddCV, activityImagesGridDeleteCV;
-
+    CardView activityImagesGridEditCV, activityImagesGridAddCV;
+    LinearLayout activityImagesGridDeleteCV;
     ImagesGridRecyclerAdapter imagesGridRecyclerAdapter;
-
     int cardSize;
     String postId;
     int gridSize = 1;
     boolean isEdit = false;
-
     AmazonS3 amazonS3;
-
     JSONArray imagesJSONArray = new JSONArray();
     JSONArray selectedContentArray = new JSONArray();
-
     ProgressDialog progressDialog;
-
     UserDataSource userDataSource;
     PostsDataSource postsDataSource;
-
     List<JSONObject> selectedImages = new ArrayList<>();
 
     @Override

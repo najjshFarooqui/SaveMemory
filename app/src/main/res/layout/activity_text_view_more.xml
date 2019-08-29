@@ -10,7 +10,7 @@
         android:id="@+id/activityViewMoreTopCV"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:cardBackgroundColor="@color/newPrimaryColor"
+        app:cardBackgroundColor="@color/colorPrimary"
         app:cardCornerRadius="0dp"
         app:cardElevation="2dp">
 
@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_toEndOf="@+id/activityViewMoreBackIV"
-                android:text=""
+                android:text="View All"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -52,7 +52,7 @@
             android:layout_alignParentEnd="true"
             android:layout_gravity="end"
             android:layout_margin="5dp"
-            app:cardBackgroundColor="@color/newPrimaryColor"
+            app:cardBackgroundColor="@color/colorPrimary"
             app:cardCornerRadius="0dp">
 
             <TextView
@@ -121,11 +121,13 @@
                 android:id="@+id/activityViewMoreContentET"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:lineSpacingMultiplier="1.50"
                 android:enabled="false"
                 android:gravity="start"
                 android:background="@null"
                 android:padding="10dp"
-                android:textColor="@drawable/selector_et_color" />
+                android:textColor="#8E8E8E"
+                android:textSize="14sp" />
 
         </ScrollView>
 

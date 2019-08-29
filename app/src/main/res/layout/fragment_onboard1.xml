@@ -28,7 +28,7 @@
                 android:layout_margin="15dp"
                 android:gravity="center"
                 android:text="@string/first_pager_title"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorAccent"
                 android:textSize="18sp" />
 
             <TextView

@@ -42,7 +42,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:src="@drawable/msg_icon"
-                android:tint="@color/textPrimary" />
+                android:tint="@color/colorPrimary" />
 
             <EditText
                 android:id="@+id/activityLoginEmailET"
@@ -53,10 +53,11 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="0.10"
                 android:background="@null"
+                android:text="applligent.fahim@yahoo.com"
                 android:hint="@string/enter_your_email_id"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/colorPrimaryDark"
-                android:textColorHint="#272727"
+                android:textColorHint="@color/hintColor"
                 android:textSize="15sp" />
 
         </LinearLayout>
@@ -75,7 +76,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:src="@drawable/key_icon"
-                android:tint="@color/textPrimary" />
+                android:tint="@color/colorPrimary" />
 
             <EditText
                 android:id="@+id/activityLoginPasswordET"
@@ -86,10 +87,11 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="0.10"
                 android:background="@null"
+                android:text="12345678"
                 android:hint="@string/enter_your_password"
                 android:inputType="textPassword"
                 android:textColor="@color/colorPrimaryDark"
-                android:textColorHint="#272727"
+                android:textColorHint="@color/hintColor"
                 android:textSize="15sp" />
 
         </LinearLayout>

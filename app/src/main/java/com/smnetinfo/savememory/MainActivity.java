@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements WebConstants {
     EditText activityMainSearchET;
     ViewPager activityMainViewPager;
     TextView activityMainMemoryTabTV, activityMainWillTabTV, activityMainInheritorTabTV;
-    View activityMainMemoryTabView, activityMainWillTabView, activityMainInheritorTabView;
+    //View activityMainMemoryTabView, activityMainWillTabView, activityMainInheritorTabView;
     RelativeLayout activityMainMemoryTabRL, activityMainWillTabRL, activityMainInheritorTabRL;
     AppCompatImageView activityMainProfileImageIV, activityMainWallpaperIV, activityMainSearchIV;
 
@@ -80,9 +80,9 @@ public class MainActivity extends AppCompatActivity implements WebConstants {
         activityMainMemoryTabRL = findViewById(R.id.activityMainMemoryTabRL);
         activityMainInheritorTabRL = findViewById(R.id.activityMainInheritorTabRL);
 
-        activityMainWillTabView = findViewById(R.id.activityMainWillTabView);
-        activityMainMemoryTabView = findViewById(R.id.activityMainMemoryTabView);
-        activityMainInheritorTabView = findViewById(R.id.activityMainInheritorTabView);
+//        activityMainWillTabView = findViewById(R.id.activityMainWillTabView);
+//        activityMainMemoryTabView = findViewById(R.id.activityMainMemoryTabView);
+//        activityMainInheritorTabView = findViewById(R.id.activityMainInheritorTabView);
 
         //init
         mainViewPagerAdapter = new MainViewPagerAdapter(getSupportFragmentManager());
@@ -97,28 +97,28 @@ public class MainActivity extends AppCompatActivity implements WebConstants {
             public void onPageSelected(int position) {
                 switch (position) {
                     case 0:
-                        activityMainWillTabView.setVisibility(View.GONE);
-                        activityMainMemoryTabView.setVisibility(View.VISIBLE);
-                        activityMainInheritorTabView.setVisibility(View.GONE);
-                        activityMainWillTabTV.setTextColor(getResources().getColor(R.color.newDimText));
-                        activityMainMemoryTabTV.setTextColor(getResources().getColor(android.R.color.white));
-                        activityMainInheritorTabTV.setTextColor(getResources().getColor(R.color.newDimText));
+//                        activityMainWillTabView.setVisibility(View.GONE);
+//                        activityMainMemoryTabView.setVisibility(View.VISIBLE);
+//                        activityMainInheritorTabView.setVisibility(View.GONE);
+                        activityMainWillTabTV.setTextColor(getResources().getColor(R.color.grey));
+                        activityMainMemoryTabTV.setTextColor(getResources().getColor(R.color.colorPrimary));
+                        activityMainInheritorTabTV.setTextColor(getResources().getColor(R.color.grey));
                         break;
                     case 1:
-                        activityMainMemoryTabView.setVisibility(View.GONE);
-                        activityMainWillTabView.setVisibility(View.VISIBLE);
-                        activityMainInheritorTabView.setVisibility(View.GONE);
-                        activityMainMemoryTabTV.setTextColor(getResources().getColor(R.color.newDimText));
-                        activityMainWillTabTV.setTextColor(getResources().getColor(android.R.color.white));
-                        activityMainInheritorTabTV.setTextColor(getResources().getColor(R.color.newDimText));
+//                        activityMainMemoryTabView.setVisibility(View.GONE);
+//                        activityMainWillTabView.setVisibility(View.VISIBLE);
+//                        activityMainInheritorTabView.setVisibility(View.GONE);
+                        activityMainMemoryTabTV.setTextColor(getResources().getColor(R.color.grey));
+                        activityMainWillTabTV.setTextColor(getResources().getColor(R.color.colorPrimary));
+                        activityMainInheritorTabTV.setTextColor(getResources().getColor(R.color.grey));
                         break;
                     case 2:
-                        activityMainWillTabView.setVisibility(View.GONE);
-                        activityMainMemoryTabView.setVisibility(View.GONE);
-                        activityMainInheritorTabView.setVisibility(View.VISIBLE);
-                        activityMainWillTabTV.setTextColor(getResources().getColor(R.color.newDimText));
-                        activityMainMemoryTabTV.setTextColor(getResources().getColor(R.color.newDimText));
-                        activityMainInheritorTabTV.setTextColor(getResources().getColor(android.R.color.white));
+//                        activityMainWillTabView.setVisibility(View.GONE);
+//                        activityMainMemoryTabView.setVisibility(View.GONE);
+//                        activityMainInheritorTabView.setVisibility(View.VISIBLE);
+                        activityMainWillTabTV.setTextColor(getResources().getColor(R.color.grey));
+                        activityMainMemoryTabTV.setTextColor(getResources().getColor(R.color.grey));
+                        activityMainInheritorTabTV.setTextColor(getResources().getColor(R.color.colorPrimary));
                         break;
                 }
             }
