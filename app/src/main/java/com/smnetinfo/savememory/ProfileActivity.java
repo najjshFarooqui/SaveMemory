@@ -1,6 +1,7 @@
 package com.smnetinfo.savememory;
 
 import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -22,8 +23,10 @@ import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -57,8 +60,8 @@ import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 import javax.mail.internet.AddressException;
@@ -66,9 +69,15 @@ import javax.mail.internet.InternetAddress;
 
 public class ProfileActivity extends BaseActivity implements WebConstants {
 
-    TextView activityProfileSaveTV;
-    CardView activityProfileEditLL;
+    TextView genderTv;
+    TextView tvNationality;
+    TextView tvMaritalStatus;
+
+
+    LinearLayout activityProfileSaveTV;
+    LinearLayout activityProfileEditLL;
     ImageView activityProfileBackIV;
+    LinearLayout calanderDateLayout;
     Spinner activityProfileDateSpinner, activityProfileMonthSpinner, activityProfileYearSpinner, activityProfileSexSpinner,
             activityProfileNationalitySpinner, activityProfileMaritalStatusSpinner, activityProfileISDSpinner;
     EditText activityProfileFirstNameET, activityProfileLastNameET, activityProfileEmailET, activityProfilePhoneET,
@@ -76,6 +85,7 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
 
     AmazonS3 amazonS3;
     ProgressDialog progressDialog;
+    TextView calanderTv;
 
     boolean isDOBSet = false;
     boolean isGenderSet = false;
@@ -85,6 +95,7 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
     int year;
     int dayOfMonth;
     int monthOfYear;
+    private int mYear = -1, mMonth = -1, mDay = -1;
 
     String userImageUrl;
 
@@ -100,18 +111,25 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
         progressDialog = new ProgressDialog(this);
         amazonS3 = new AwsS3Util().getS3Client(this);
         userDataSource = UserDataSource.sharedInstance(this);
+        calanderDateLayout = findViewById(R.id.calanderDateLayout);
+        calanderTv = findViewById(R.id.calanderTv);
+        genderTv = findViewById(R.id.genderTv);
+        tvNationality = findViewById(R.id.tvNationality);
+        tvMaritalStatus = findViewById(R.id.tvMaritalStatus);
+
 
         activityProfileBackIV = findViewById(R.id.activityProfileBackIV);
 
-        //  activityProfileSaveTV = findViewById(R.id.activityProfileSaveTV);
+        activityProfileSaveTV = findViewById(R.id.save);
 
         activityProfileEditLL = findViewById(R.id.edit);
 
+
         activityProfileEmailET = findViewById(R.id.activityProfileEmailET);
         activityProfilePhoneET = findViewById(R.id.activityProfilePhoneET);
-        //////  activityProfileCountryET = findViewById(R.id.activityProfileCountryET);
-        //// activityProfileAddressET = findViewById(R.id.activityProfileAddressET);
-        ////  activityProfileLastNameET = findViewById(R.id.activityProfileLastNameET);
+        activityProfileCountryET = findViewById(R.id.activityProfileCountryET);
+        activityProfileAddressET = findViewById(R.id.activityProfileAddressET);
+        activityProfileLastNameET = findViewById(R.id.activityProfileLastNameET);
         activityProfileFirstNameET = findViewById(R.id.activityProfileFirstNameET);
         activityProfileOccupationET = findViewById(R.id.activityProfileOccupationET);
 
@@ -130,66 +148,74 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
         for (int j = 1; j < 32; j++) {
             dateArrayList.add("" + j);
         }
-        ArrayAdapter<String> dateSpinnerArrayAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, dateArrayList);
-        activityProfileDateSpinner.setAdapter(dateSpinnerArrayAdapter);
-        activityProfileDateSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        ArrayAdapter<String> dateSpinnerArrayAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.spinner_item, dateArrayList);
+        //activityProfileDateSpinner.setAdapter(dateSpinnerArrayAdapter);
+        //activityProfileDateSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        //    @Override
+        //    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        //        if (i == 0) {
+        //            isDOBSet = false;
+        //        } else {
+        //            dayOfMonth = Integer.parseInt(dateArrayList.get(i));
+        //        }
+        //    }
+//
+        //    @Override
+        //    public void onNothingSelected(AdapterView<?> adapterView) {
+//
+        //    }
+        //});
+//
+        //final ArrayList<String> monthArrayList = new ArrayList<>();
+        //monthArrayList.add("Month");
+        //for (int j = 1; j < 13; j++) {
+        //    monthArrayList.add("" + j);
+        //}
+        //ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, monthArrayList);
+        //activityProfileMonthSpinner.setAdapter(spinnerArrayAdapter);
+        //activityProfileMonthSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        //    @Override
+        //    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        //        if (i == 0) {
+        //            isDOBSet = false;
+        //        } else {
+        //            monthOfYear = Integer.parseInt(monthArrayList.get(i)) - 1;
+        //        }
+        //    }
+//
+        //    @Override
+        //    public void onNothingSelected(AdapterView<?> adapterView) {
+//
+        //    }
+        //});
+//
+        //final ArrayList<String> yearArrayList = new ArrayList<>();
+        //yearArrayList.add("Year");
+        //for (int j = 1940; j < 2031; j++) {
+        //    yearArrayList.add("" + j);
+        //}
+        //ArrayAdapter<String> yearArrayAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, yearArrayList);
+        //activityProfileYearSpinner.setAdapter(yearArrayAdapter);
+        //activityProfileYearSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        //    @Override
+        //    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        //        if (i == 0) {
+        //            isDOBSet = false;
+        //        } else {
+        //            year = Integer.parseInt(yearArrayList.get(i));
+        //        }
+        //    }
+//
+        //    @Override
+        //    public void onNothingSelected(AdapterView<?> adapterView) {
+//
+        //    }
+        //});
+
+        calanderDateLayout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (i == 0) {
-                    isDOBSet = false;
-                } else {
-                    dayOfMonth = Integer.parseInt(dateArrayList.get(i));
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        final ArrayList<String> monthArrayList = new ArrayList<>();
-        monthArrayList.add("Month");
-        for (int j = 1; j < 13; j++) {
-            monthArrayList.add("" + j);
-        }
-        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, monthArrayList);
-        activityProfileMonthSpinner.setAdapter(spinnerArrayAdapter);
-        activityProfileMonthSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (i == 0) {
-                    isDOBSet = false;
-                } else {
-                    monthOfYear = Integer.parseInt(monthArrayList.get(i)) - 1;
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        final ArrayList<String> yearArrayList = new ArrayList<>();
-        yearArrayList.add("Year");
-        for (int j = 1940; j < 2031; j++) {
-            yearArrayList.add("" + j);
-        }
-        ArrayAdapter<String> yearArrayAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, yearArrayList);
-        activityProfileYearSpinner.setAdapter(yearArrayAdapter);
-        activityProfileYearSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (i == 0) {
-                    isDOBSet = false;
-                } else {
-                    year = Integer.parseInt(yearArrayList.get(i));
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+            public void onClick(View view) {
+                showDate();
 
             }
         });
@@ -199,7 +225,7 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
         sexArrayList.add("Male");
         sexArrayList.add("Female");
         sexArrayList.add("Others");
-        ArrayAdapter<String> sexSpinnerArrayAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, sexArrayList);
+        ArrayAdapter<String> sexSpinnerArrayAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.spinner_item, sexArrayList);
         activityProfileSexSpinner.setAdapter(sexSpinnerArrayAdapter);
         activityProfileSexSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -210,6 +236,8 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
                 } else {
                     isGenderSet = true;
                     setJsonObject(GENDER, sexArrayList.get(i));
+                    System.out.println("najish");
+                    genderTv.setText(activityProfileSexSpinner.getSelectedItem().toString());
                 }
             }
 
@@ -224,7 +252,7 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
         martialArrayList.add("Single");
         martialArrayList.add("Married");
         martialArrayList.add("Divorced");
-        ArrayAdapter<String> martialSpinnerArrayAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, martialArrayList);
+        ArrayAdapter<String> martialSpinnerArrayAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.spinner_item, martialArrayList);
         activityProfileMaritalStatusSpinner.setAdapter(martialSpinnerArrayAdapter);
         activityProfileMaritalStatusSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -233,6 +261,7 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
                     removeKey(MARITAL_STATUS);
                 } else {
                     setJsonObject(MARITAL_STATUS, martialArrayList.get(i));
+                    tvMaritalStatus.setText(activityProfileMaritalStatusSpinner.getSelectedItem().toString());
                 }
             }
 
@@ -268,6 +297,7 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
                     removeKey(ISD_CODE);
                 } else {
                     setJsonObject(ISD_CODE, isdArrayList.get(i));
+
                 }
             }
 
@@ -294,7 +324,7 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        ArrayAdapter<String> nationalitySpinnerArrayAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, nationalityArrayList);
+        ArrayAdapter<String> nationalitySpinnerArrayAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.spinner_item, nationalityArrayList);
         activityProfileNationalitySpinner.setAdapter(nationalitySpinnerArrayAdapter);
         activityProfileNationalitySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -302,7 +332,10 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
                 if (i == 0) {
                     removeKey(NATIONALITY);
                 } else {
+
+
                     setJsonObject(NATIONALITY, nationalityArrayList.get(i));
+                    tvNationality.setText(activityProfileNationalitySpinner.getSelectedItem().toString());
                 }
             }
 
@@ -359,25 +392,26 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
                                 setJsonObject(EMAIL, activityProfileEmailET.getText().toString());
                                 if (isGenderSet) {
                                     if (isDOBSet) {
-                                        Calendar calendar = Calendar.getInstance();
-                                        if (calendar.get(Calendar.YEAR) > (year + 2)) {
-                                            calendar.set(Calendar.YEAR, year);
-                                            calendar.set(Calendar.MONTH, monthOfYear);
-                                            calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                                            SimpleDateFormat simpleDateFormat = new SimpleDateFormat(DATE_SUB_FORMAT, Locale.getDefault());
-                                            setJsonObject(DOB, simpleDateFormat.format(calendar.getTime()));
-                                            setJsonObject(PHONE_NO, activityProfilePhoneET.getText().toString());
-                                            setJsonObject(FIRST_NAME, activityProfileFirstNameET.getText().toString());
-                                            setJsonObject(LAST_NAME, activityProfileLastNameET.getText().toString());
-                                            setJsonObject(ADDRESS, activityProfileAddressET.getText().toString());
-                                            setJsonObject(OCCUPATION, activityProfileOccupationET.getText().toString());
-                                            setJsonObject(CURRENT_COUNTRY, activityProfileCountryET.getText().toString());
-                                            updateUserApi();
-                                        } else {
-                                            removeKey(DOB);
-                                            isDOBSet = false;
-                                            Toast.makeText(getApplicationContext(), "Selected date is out of Bound", Toast.LENGTH_SHORT).show();
-                                        }
+                                        // Calendar calendar = Calendar.getInstance();
+                                        //z if (calendar.get(Calendar.YEAR) > (year + 2)) {
+                                        //     calendar.set(Calendar.YEAR, year);
+                                        //     calendar.set(Calendar.MONTH, monthOfYear);
+                                        //     calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                                        // SimpleDateFormat simpleDateFormat = new SimpleDateFormat(DATE_SUB_FORMAT, Locale.getDefault());
+                                        setJsonObject(DOB, calanderTv.getText().toString());
+                                        setJsonObject(PHONE_NO, activityProfilePhoneET.getText().toString());
+                                        setJsonObject(FIRST_NAME, activityProfileFirstNameET.getText().toString());
+                                        setJsonObject(LAST_NAME, activityProfileLastNameET.getText().toString());
+                                        setJsonObject(ADDRESS, activityProfileAddressET.getText().toString());
+                                        setJsonObject(OCCUPATION, activityProfileOccupationET.getText().toString());
+                                        setJsonObject(CURRENT_COUNTRY, activityProfileCountryET.getText().toString());
+                                        setJsonObject(EMAIL, activityProfileEmailET.getText().toString());
+                                        updateUserApi();
+                                        // }     else {
+                                        //     removeKey(DOB);
+                                        //     isDOBSet = false;
+                                        //     Toast.makeText(getApplicationContext(), "Selected date is out of Bound", Toast.LENGTH_SHORT).show();
+                                        //      }
                                     } else {
                                         removeKey(DOB);
                                         Toast.makeText(getApplicationContext(), "DOB not set", Toast.LENGTH_SHORT).show();
@@ -413,21 +447,36 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
         try {
             isDOBSet = true;
             if (!jsonObject.isNull(FIRST_NAME)) {
-                activityProfileFirstNameET.setText(jsonObject.getString(FIRST_NAME) + " " + jsonObject.getString(LAST_NAME));
+                activityProfileFirstNameET.setText(jsonObject.getString(FIRST_NAME));
+                System.out.print("My email is  najish" + jsonObject.getString(FIRST_NAME));
             }
             if (!jsonObject.isNull(LAST_NAME)) {
                 activityProfileLastNameET.setText(jsonObject.getString(LAST_NAME));
             }
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
-            Calendar dateCal = Calendar.getInstance();
+            //  SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+            // Calendar dateCal = Calendar.getInstance();
+            // if (!jsonObject.isNull(DOB)) {
+            //     dateCal.setTime(simpleDateFormat.parse(jsonObject.getString(DOB)));
+            //     activityProfileDateSpinner.setSelection(getIndex(activityProfileDateSpinner, String.valueOf(dateCal.get(Calendar.DAY_OF_MONTH))));
+            //     activityProfileMonthSpinner.setSelection(getIndex(activityProfileMonthSpinner, String.valueOf(dateCal.get(Calendar.MONTH))) + 1);
+            //     activityProfileYearSpinner.setSelection(getIndex(activityProfileYearSpinner, String.valueOf(dateCal.get(Calendar.YEAR))));
+
+
+
+
             if (!jsonObject.isNull(DOB)) {
-                dateCal.setTime(simpleDateFormat.parse(jsonObject.getString(DOB)));
-                activityProfileDateSpinner.setSelection(getIndex(activityProfileDateSpinner, String.valueOf(dateCal.get(Calendar.DAY_OF_MONTH))));
-                activityProfileMonthSpinner.setSelection(getIndex(activityProfileMonthSpinner, String.valueOf(dateCal.get(Calendar.MONTH))) + 1);
-                activityProfileYearSpinner.setSelection(getIndex(activityProfileYearSpinner, String.valueOf(dateCal.get(Calendar.YEAR))));
+                String date = jsonObject.getString(DOB);
+                SimpleDateFormat spf = new SimpleDateFormat("dd-MM-yyyy");
+                Date newDate = spf.parse(date);
+                spf = new SimpleDateFormat("yyyy-MM-dd");
+                date = spf.format(newDate);
+                calanderTv.setText(date);
             }
+
             if (!jsonObject.isNull(EMAIL)) {
+
                 activityProfileEmailET.setText(jsonObject.getString(EMAIL));
+
             }
             if (!jsonObject.isNull(PHONE_NO)) {
                 activityProfilePhoneET.setText(jsonObject.getString(PHONE_NO));
@@ -436,9 +485,11 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
                 activityProfileISDSpinner.setSelection(isdArrayList.indexOf(jsonObject.getString(ISD_CODE)));
             }
             if (!jsonObject.isNull(NATIONALITY)) {
+                tvNationality.setText(jsonObject.getString(NATIONALITY));
                 activityProfileNationalitySpinner.setSelection(getIndex(activityProfileNationalitySpinner, jsonObject.getString(NATIONALITY)));
             }
             if (!jsonObject.isNull(MARITAL_STATUS)) {
+                tvMaritalStatus.setText(jsonObject.getString(MARITAL_STATUS));
                 activityProfileMaritalStatusSpinner.setSelection(getIndex(activityProfileMaritalStatusSpinner, jsonObject.getString(MARITAL_STATUS)));
             }
             if (!jsonObject.isNull(CURRENT_COUNTRY)) {
@@ -446,6 +497,9 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
             }
             if (!jsonObject.isNull(GENDER)) {
                 activityProfileSexSpinner.setSelection(getIndex(activityProfileSexSpinner, jsonObject.getString(GENDER)));
+                System.out.print("selected gender is" + jsonObject.getString(GENDER));
+                genderTv.setText(jsonObject.getString(GENDER));
+
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -822,6 +876,25 @@ public class ProfileActivity extends BaseActivity implements WebConstants {
                 setJsonObject(AVATAR_PATH, userImageUrl);
             }
         }
+    }
+
+
+    public void showDate() {
+        final Calendar c = Calendar.getInstance();
+        mYear = c.get(Calendar.YEAR);
+        mMonth = c.get(Calendar.MONTH);
+        mDay = c.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year,
+                                          int monthOfYear, int dayOfMonth) {
+                        calanderTv.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
+                    }
+                }, mYear, mMonth, mDay);
+        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+        datePickerDialog.show();
     }
 
 }

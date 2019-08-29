@@ -1,426 +1,594 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/white"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/newPrimaryColor">
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/set" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="15dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="10dp"
             android:text="SaveMemory"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorWhite"
             android:textSize="18sp" />
-
     </RelativeLayout>
 
-    <android.support.v4.widget.NestedScrollView
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="16dp"
+        app:cardBackgroundColor="#F5F3F3"
+        app:cardCornerRadius="14dp">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <android.support.v7.widget.AppCompatImageView
-                    android:id="@+id/activityMyPageBackIV"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:padding="12dp"
-                    android:src="@drawable/image_back"
-                    android:tint="@color/newPrimaryColor" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="Settings"
-                    android:textColor="@android:color/black"
-                    android:textSize="15sp" />
-
-            </RelativeLayout>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/activityAboutBackCV"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                app:cardBackgroundColor="@android:color/white"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="4dp">
+                android:layout_margin="16dp"
+                android:padding="8dp"
+                android:src="@drawable/ic_arrow_blue" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="16dp"
+                android:padding="8dp"
+                android:text="Settings"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/textLabel">
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
+                    android:layout_height="match_parent"
+
+                    android:layout_margin="16dp"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
-                        android:text="Account"
-                        android:textColor="@android:color/black"
-                        android:textSize="23sp" />
 
-                    <LinearLayout
-                        android:id="@+id/activityMyPageProfileLL"
+                    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_height="match_parent">
 
-                        <android.support.v7.widget.AppCompatImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:padding="5dp"
-                            android:src="@drawable/image_my_information" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start|center"
-                            android:layout_marginStart="10dp"
-                            android:text="My Information"
-                            android:textColor="@android:color/black"
-                            android:textSize="15sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/activityMyPageMyBeneficiaryLL"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:visibility="gone">
-
-                        <android.support.v7.widget.AppCompatImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:padding="5dp"
-                            android:src="@drawable/image_my_heritor" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start|center"
-                            android:layout_marginStart="10dp"
-                            android:text="My heritor/beneficiary"
-                            android:textColor="@android:color/black"
-                            android:textSize="15sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/activityMyPageMyWillLL"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:visibility="gone">
-
-                        <android.support.v7.widget.AppCompatImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:padding="5dp"
-                            android:src="@drawable/image_my_last_word" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start|center"
-                            android:layout_marginStart="10dp"
-                            android:text="My Will"
-                            android:textColor="@android:color/black"
-                            android:textSize="15sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/activityMyPageMyStorageLL"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <android.support.v7.widget.AppCompatImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:padding="5dp"
-                            android:src="@drawable/image_my_storage" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start|center"
-                            android:layout_marginStart="10dp"
-                            android:text="My Storage"
-                            android:textColor="@android:color/black"
-                            android:textSize="15sp" />
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="20dp"
-                        android:text="Settings"
-                        android:textColor="@android:color/black"
-                        android:textSize="23sp" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:orientation="horizontal">
-
-                        <android.support.v7.widget.AppCompatImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:padding="5dp"
-                            android:src="@drawable/image_notification" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start|center"
-                            android:layout_marginStart="10dp"
-                            android:text="Notification"
-                            android:textColor="@android:color/black"
-                            android:textSize="15sp" />
-
-                        <RelativeLayout
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
 
-                            <Switch
-                                android:layout_width="wrap_content"
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:thumbTint="@color/green" />
+                                android:layout_below="@+id/rr"
+                                app:cardBackgroundColor="#F5F3F3"
 
-                        </RelativeLayout>
+                                app:cardCornerRadius="10dp">
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/activityMyPageSkinLL"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <android.support.v7.widget.AppCompatImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:padding="5dp"
-                            android:src="@drawable/image_skin" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start|center"
-                            android:layout_marginStart="10dp"
-                            android:text="Skin"
-                            android:textColor="@android:color/black"
-                            android:textSize="15sp" />
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
+                                <LinearLayout
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginEnd="5dp"
-                                    android:text="Light"
-                                    android:textColor="@android:color/black" />
+                                    android:orientation="vertical">
 
-                                <android.support.v7.widget.AppCompatImageView
-                                    android:layout_width="30dp"
-                                    android:layout_height="30dp"
-                                    android:src="@drawable/image_arrow_right"
-                                    android:tint="@android:color/black" />
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="24dp">
 
-                            </LinearLayout>
 
-                        </RelativeLayout>
+                                        <android.support.v7.widget.AppCompatImageView
+                                            android:id="@+id/activityMyPageBackIV"
+                                            android:layout_width="54dp"
+                                            android:layout_height="54dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:padding="12dp"
+                                            android:src="@drawable/ic_arrow_blue"
+                                            android:tint="#007AFF" />
 
-                    </LinearLayout>
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerInParent="true"
+                                            android:text="Settings"
+                                            android:textColor="@android:color/black"
+                                            android:textSize="32sp" />
 
-                    <LinearLayout
-                        android:id="@+id/activityMyPageThemeLL"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="30dp"
-                        android:orientation="horizontal">
+                                    </RelativeLayout>
 
-                        <android.support.v7.widget.AppCompatImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:padding="5dp"
-                            android:src="@drawable/image_font" />
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="15dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start|center"
-                            android:layout_marginStart="10dp"
-                            android:text="Font"
-                            android:textColor="@android:color/black"
-                            android:textSize="15sp" />
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="20dp"
+                                            android:orientation="vertical">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="16dp"
+                                                android:text="Account"
+                                                android:textColor="@android:color/black"
+                                                android:textSize="23sp" />
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:orientation="horizontal">
+                                            <RelativeLayout
+                                                android:id="@+id/activityMyPageProfileLL"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="horizontal">
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginEnd="5dp"
-                                    android:text="Roboto"
-                                    android:textColor="@android:color/black" />
+                                                <android.support.v7.widget.AppCompatImageView
+                                                    android:id="@+id/iv_info"
+                                                    android:layout_width="30dp"
+                                                    android:layout_height="30dp"
+                                                    android:layout_centerVertical="true"
+                                                    android:padding="5dp"
+                                                    android:tint="#0088FF"
+                                                    android:src="@drawable/ic_user" />
 
-                                <android.support.v7.widget.AppCompatImageView
-                                    android:layout_width="30dp"
-                                    android:layout_height="30dp"
-                                    android:src="@drawable/image_arrow_right"
-                                    android:tint="@android:color/black" />
+                                                <TextView
+                                                    style="@style/bluetext"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="start|center"
+                                                    android:layout_marginStart="10dp"
+                                                    android:layout_toRightOf="@id/iv_info"
 
-                            </LinearLayout>
+                                                    android:text="My Information"
+                                                    android:textSize="16sp" />
 
-                        </RelativeLayout>
 
-                    </LinearLayout>
+                                            </RelativeLayout>
 
-                    <LinearLayout
-                        android:id="@+id/activityMyPageQNALL"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                                            <View
+                                                style="@style/horizontal_line"
+                                                android:layout_alignBottom="@+id/activityMyPageProfileLL"
+                                                android:layout_marginTop="4dp" />
 
-                        <android.support.v7.widget.AppCompatImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:padding="5dp"
-                            android:src="@drawable/image_faq" />
+                                            <LinearLayout
+                                                android:id="@+id/activityMyPageMyBeneficiaryLL"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="horizontal"
+                                                android:visibility="gone">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start|center"
-                            android:layout_marginStart="10dp"
-                            android:text="Ask"
-                            android:textColor="@android:color/black"
-                            android:textSize="15sp" />
+                                                <android.support.v7.widget.AppCompatImageView
+                                                    android:layout_width="30dp"
+                                                    android:layout_height="30dp"
+                                                    android:padding="5dp"
+                                                    android:src="@drawable/image_my_heritor" />
 
-                    </LinearLayout>
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="start|center"
+                                                    android:layout_marginStart="10dp"
+                                                    android:text="My heritor/beneficiary"
+                                                    android:textSize="15sp" />
 
-                    <LinearLayout
-                        android:id="@+id/activityMyPageFAQLL"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                                            </LinearLayout>
 
-                        <android.support.v7.widget.AppCompatImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:padding="5dp"
-                            android:src="@drawable/image_qnq" />
+                                            <LinearLayout
+                                                android:id="@+id/activityMyPageMyWillLL"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="horizontal"
+                                                android:visibility="gone">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start|center"
-                            android:layout_marginStart="10dp"
-                            android:text="FAQ"
-                            android:textColor="@android:color/black"
-                            android:textSize="15sp" />
+                                                <android.support.v7.widget.AppCompatImageView
+                                                    android:layout_width="30dp"
+                                                    android:layout_height="30dp"
+                                                    android:padding="5dp"
+                                                    android:src="@drawable/image_my_last_word" />
 
-                    </LinearLayout>
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="start|center"
+                                                    android:layout_marginStart="10dp"
+                                                    android:text="My Will"
+                                                    android:textSize="15sp" />
 
-                    <LinearLayout
-                        android:id="@+id/activityMyPageAboutLL"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                                            </LinearLayout>
 
-                        <TextView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:text="SM"
-                            android:textColor="@android:color/black"
-                            android:textSize="15sp" />
+                                            <RelativeLayout
+                                                android:id="@+id/activityMyPageMyStorageLL"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="16dp"
+                                                android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start|center"
-                            android:layout_marginStart="10dp"
-                            android:text="About SM"
-                            android:textColor="@android:color/black"
-                            android:textSize="15sp" />
+                                                <android.support.v7.widget.AppCompatImageView
+                                                    android:id="@+id/id_storage"
+                                                    android:layout_width="30dp"
+                                                    android:layout_height="30dp"
+                                                    android:layout_centerVertical="true"
+                                                    android:padding="5dp"
+                                                    android:src="@drawable/ic_database" />
 
-                    </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/activityMyPageLogoutLL"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="start|center"
+                                                    android:layout_marginStart="10dp"
+                                                    android:layout_toRightOf="@+id/id_storage"
+                                                    android:text="My Storage"
+                                                    android:textColor="@color/colorAccent"
+                                                    android:textSize="15sp" />
 
-                        <android.support.v7.widget.AppCompatImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:padding="5dp"
-                            android:src="@drawable/image_logout" />
+                                            </RelativeLayout>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start|center"
-                            android:layout_marginStart="10dp"
-                            android:text="Logout"
-                            android:textColor="@android:color/black"
-                            android:textSize="15sp" />
+                                            <View
+                                                style="@style/horizontal_line"
+                                                android:layout_alignBottom="@+id/activityMyPageMyStorageLL"
+                                                android:layout_marginTop="4dp" />
 
-                    </LinearLayout>
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="24dp"
+                                                android:layout_marginBottom="16dp"
+                                                android:text=" General Settings"
+                                                android:textColor="@color/colorBlack"
+                                                android:textSize="23sp" />
 
+
+                                            <RelativeLayout
+                                                android:id="@+id/activityAboutSaveMemory"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+
+                                                android:orientation="horizontal">
+
+                                                <android.support.v7.widget.AppCompatImageView
+                                                    android:id="@+id/abtSv"
+                                                    android:layout_width="24dp"
+                                                    android:layout_height="24dp"
+                                                    android:tint="#0088FF"
+                                                    android:layout_marginLeft="4dp"
+                                                    android:layout_centerVertical="true"
+                                                    android:src="@drawable/face" />
+
+
+                                                <TextView
+                                                    style="@style/bluetext"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerVertical="true"
+
+                                                    android:layout_gravity="start|center"
+                                                    android:layout_marginStart="24dp"
+                                                    android:layout_toRightOf="@+id/abtSv"
+                                                    android:text="About SaveMemory"
+                                                    android:textSize="15sp" />
+
+                                            </RelativeLayout>
+
+                                            <View
+                                                style="@style/horizontal_line"
+                                                android:layout_alignBottom="@+id/activityMyPageMyStorageLL"
+                                                android:layout_marginTop="4dp" />
+
+
+                                            <RelativeLayout
+                                                android:id="@+id/activityChangePassword"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="16dp"
+                                                android:orientation="horizontal">
+
+                                                <android.support.v7.widget.AppCompatImageView
+                                                    android:id="@+id/ivChangePassword"
+                                                    android:layout_width="30dp"
+                                                    android:layout_height="30dp"
+                                                    android:layout_alignParentTop="true"
+                                                    android:layout_marginTop="0dp"
+                                                    android:padding="5dp"
+                                                    android:tint="#0088FF"
+                                                    android:src="@drawable/ic_keyone" />
+
+
+                                                <TextView
+                                                    style="@style/bluetext"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="start|center"
+                                                    android:layout_marginStart="24dp"
+                                                    android:layout_toRightOf="@+id/ivChangePassword"
+                                                    android:text="Change Password"
+                                                    android:textSize="15sp" />
+
+                                            </RelativeLayout>
+
+                                            <View
+                                                style="@style/horizontal_line"
+                                                android:layout_alignBottom="@+id/activityMyPageMyStorageLL"
+                                                android:layout_marginTop="4dp" />
+
+
+                                            <RelativeLayout
+                                                android:id="@+id/activityLockScreen"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="16dp"
+                                                android:orientation="horizontal">
+
+                                                <android.support.v7.widget.AppCompatImageView
+                                                    android:id="@+id/icLock"
+                                                    android:layout_width="30dp"
+                                                    android:layout_height="30dp"
+                                                    android:padding="5dp"
+                                                    android:src="@drawable/ic_lock_black_24dp" />
+
+
+                                                <TextView
+                                                    style="@style/bluetext"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="start|center"
+                                                    android:layout_marginStart="24dp"
+                                                    android:layout_toRightOf="@+id/icLock"
+                                                    android:text="Lock Screen"
+                                                    android:tint="#0088FF"
+
+                                                    android:textSize="15sp" />
+
+                                            </RelativeLayout>
+
+                                            <View
+                                                style="@style/horizontal_line"
+                                                android:layout_alignBottom="@+id/activityMyPageMyStorageLL"
+                                                android:layout_marginTop="4dp" />
+
+
+                                            <RelativeLayout
+                                                android:id="@+id/activityPayment"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="16dp"
+                                                android:orientation="horizontal">
+
+                                                <android.support.v7.widget.AppCompatImageView
+                                                    android:id="@+id/ivPayment"
+                                                    android:layout_width="30dp"
+                                                    android:layout_height="30dp"
+                                                    android:padding="5dp"
+                                                    android:tint="#0088FF"
+
+                                                    android:src="@drawable/ic_payment" />
+
+
+                                                <TextView
+                                                    style="@style/bluetext"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="start|center"
+                                                    android:layout_marginStart="24dp"
+                                                    android:layout_toRightOf="@+id/ivPayment"
+                                                    android:text="Payment"
+                                                    android:textSize="15sp" />
+
+                                            </RelativeLayout>
+
+                                            <View
+                                                style="@style/horizontal_line"
+                                                android:layout_alignBottom="@+id/activityMyPageMyStorageLL"
+                                                android:layout_marginTop="4dp" />
+
+                                            <RelativeLayout
+                                                android:id="@+id/activityChangeLanguage"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="16dp"
+                                                android:orientation="horizontal">
+
+                                                <android.support.v7.widget.AppCompatImageView
+                                                    android:id="@+id/ivChangeLanguage"
+                                                    android:layout_width="18dp"
+                                                    android:layout_height="18dp"
+                                                    android:tint="#0088FF"
+                                                    android:layout_marginLeft="8dp"
+                                                    android:src="@drawable/language" />
+
+
+                                                <TextView
+                                                    style="@style/bluetext"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="start|center"
+                                                    android:layout_marginStart="32dp"
+                                                    android:layout_toRightOf="@+id/ivChangeLanguage"
+                                                    android:text="Change Language"
+                                                    android:textSize="15sp" />
+
+                                            </RelativeLayout>
+
+                                            <View
+                                                style="@style/horizontal_line"
+                                                android:layout_alignBottom="@+id/activityMyPageMyStorageLL"
+                                                android:layout_marginTop="4dp" />
+
+                                            <RelativeLayout
+                                                android:id="@+id/activityFontSize"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="16dp"
+                                                android:orientation="horizontal">
+
+                                                <android.support.v7.widget.AppCompatImageView
+                                                    android:id="@+id/ivFont"
+                                                    android:layout_width="18dp"
+                                                    android:layout_height="18dp"
+                                                    android:tint="#0088FF"
+                                                    android:layout_marginLeft="4dp"
+                                                    android:src="@drawable/fontt" />
+
+
+                                                <TextView
+                                                    style="@style/bluetext"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="start|center"
+                                                    android:layout_marginStart="32dp"
+                                                    android:layout_toRightOf="@+id/ivFont"
+                                                    android:text="Font and Font Size"
+                                                    android:textSize="15sp" />
+
+                                            </RelativeLayout>
+
+                                            <View
+                                                style="@style/horizontal_line"
+                                                android:layout_alignBottom="@+id/activityMyPageMyStorageLL"
+                                                android:layout_marginTop="4dp" />
+
+
+                                            <RelativeLayout
+                                                android:id="@+id/activityAsk"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="16dp"
+                                                android:orientation="horizontal">
+
+                                                <android.support.v7.widget.AppCompatImageView
+                                                    android:id="@+id/ivAsk"
+                                                    android:layout_width="30dp"
+                                                    android:layout_height="30dp"
+                                                    android:padding="5dp"
+                                                    android:tint="#0088FF"
+                                                    android:src="@drawable/ic_info" />
+
+
+                                                <TextView
+                                                    style="@style/bluetext"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="start|center"
+                                                    android:layout_marginStart="24dp"
+                                                    android:layout_toRightOf="@+id/ivAsk"
+                                                    android:text="Ask"
+                                                    android:textSize="15sp" />
+
+                                            </RelativeLayout>
+
+                                            <View
+                                                style="@style/horizontal_line"
+                                                android:layout_alignBottom="@+id/activityMyPageMyStorageLL"
+                                                android:layout_marginTop="4dp" />
+
+
+                                            <RelativeLayout
+                                                android:id="@+id/activityFaq"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="16dp"
+                                                android:orientation="horizontal">
+
+                                                <android.support.v7.widget.AppCompatImageView
+                                                    android:id="@+id/ivFaq"
+                                                    android:layout_width="30dp"
+                                                    android:layout_height="30dp"
+                                                    android:padding="5dp"
+                                                    android:tint="#0088FF"
+                                                    android:src="@drawable/ic_help" />
+
+
+                                                <TextView
+                                                    style="@style/bluetext"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="start|center"
+                                                    android:layout_marginStart="24dp"
+                                                    android:layout_toRightOf="@+id/ivFaq"
+                                                    android:text="FAQ"
+                                                    android:textSize="15sp" />
+
+                                            </RelativeLayout>
+
+                                            <View
+                                                style="@style/horizontal_line"
+                                                android:layout_alignBottom="@+id/activityMyPageMyStorageLL"
+                                                android:layout_marginTop="4dp" />
+
+
+                                            <RelativeLayout
+                                                android:id="@+id/logoutLL"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="right"
+                                                android:layout_marginTop="50dp">
+
+                                                <ImageView
+                                                    android:layout_width="20dp"
+                                                    android:layout_height="20dp"
+                                                    android:layout_centerVertical="true"
+                                                    android:layout_toLeftOf="@+id/logOut"
+                                                    android:layout_marginRight="4dp"
+                                                    android:tint="#0088FF"
+                                                    android:src="@drawable/ic_logout" />
+
+                                                <TextView
+                                                    android:id="@+id/logOut"
+                                                    style="@style/bluetext"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_alignParentRight="true"
+                                                    android:layout_centerVertical="true"
+                                                    android:layout_marginRight="6dp"
+                                                    android:text="Logout"
+                                                    android:textSize="18sp" />
+
+
+                                            </RelativeLayout>
+
+
+                                        </LinearLayout>
+
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+
+                            </android.support.v7.widget.CardView>
+
+                        </LinearLayout>
+</ScrollView>
                 </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>
 
-            </android.support.v7.widget.CardView>
 
-        </LinearLayout>
-
-    </android.support.v4.widget.NestedScrollView>
-
-</LinearLayout>

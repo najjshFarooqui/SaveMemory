@@ -27,7 +27,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".AddInheritorActivity"></activity>
+        <activity android:name=".ChangeLanguageActivity"></activity>
+        <activity android:name=".FontAndSizeActivity" />
+        <activity android:name=".AddInheritorActivity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -230,6 +232,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeActionBar"
             android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".AskActivity" />
+        <activity android:name=".PaymentMethod" />
+        <activity android:name=".PaymentActivity" />
+        <activity android:name=".LockScreenAcivity" />
+        <activity android:name=".ChangePasswordActivity" />
 
         <meta-data
             android:name="io.fabric.ApiKey"

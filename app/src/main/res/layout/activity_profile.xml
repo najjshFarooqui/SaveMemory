@@ -23,11 +23,18 @@
                     android:layout_height="60dp"
                     android:background="@color/colorPrimary">
 
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/set" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="32dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="6dp"
                         android:text="SaveMemory"
                         android:textColor="@color/colorWhite"
                         android:textSize="18sp" />
@@ -36,10 +43,10 @@
                 <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="16dp"
                     android:layout_marginTop="40dp"
                     android:layout_marginRight="16dp"
-                    android:background="@color/colorWhite"
+                    android:layout_marginLeft="16dp"
+                    app:cardBackgroundColor="#F5F3F3"
                     app:cardCornerRadius="14dp">
 
                     <RelativeLayout
@@ -52,6 +59,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="16dp"
                             android:padding="8dp"
+                            android:tint="@color/colorPrimary"
                             android:src="@drawable/ic_arrow_blue" />
 
 
@@ -62,7 +70,8 @@
                             android:layout_margin="16dp"
                             android:padding="8dp"
                             android:text="Settings"
-                            android:textColor="@color/colorBlack" />
+                            android:textColor="@color/colorBlack"
+                            android:textSize="18sp" />
 
 
                         <TextView
@@ -72,7 +81,7 @@
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="54dp"
                             android:text="My Information"
-                            android:textColor="@color/colorAccent"
+                            android:textColor="#6FA6FF"
                             android:textSize="32sp" />
 
 
@@ -85,7 +94,7 @@
                             android:layout_marginTop="16dp"
                             android:text="Essential"
                             android:textColor="@color/redLight"
-                            android:textSize="20sp" />
+                            android:textSize="18sp" />
 
 
                         <LinearLayout
@@ -107,7 +116,19 @@
                                 android:layout_height="50dp"
                                 android:layout_marginTop="12dp"
                                 android:background="@drawable/square_bg"
-                                android:hint="Your full legal name"
+                                android:enabled="false"
+                                android:hint="First name"
+                                android:paddingLeft="20dp" />
+
+
+                            <EditText
+                                android:id="@+id/activityProfileLastNameET"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp"
+                                android:background="@drawable/square_bg"
+                                android:enabled="false"
+                                android:hint="Last name"
                                 android:paddingLeft="20dp" />
 
 
@@ -141,12 +162,11 @@
                                         android:layout_weight="0.10"
                                         android:background="@null"
                                         android:hint="Your gender"
-                                        android:textColor="@color/colorPrimaryDark"
                                         android:textSize="16sp" />
 
                                     <ImageView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_width="12dp"
+                                        android:layout_height="12dp"
                                         android:layout_gravity="center"
                                         android:layout_marginRight="10dp"
                                         android:src="@drawable/down_arrow"
@@ -156,47 +176,36 @@
                             </FrameLayout>
 
 
-                            <FrameLayout
+                            <LinearLayout
+                                android:id="@+id/calanderDateLayout"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
-                                android:layout_marginTop="12dp">
+                                android:layout_marginTop="16dp"
+                                android:background="@drawable/square_bg"
+                                android:orientation="horizontal"
+                                android:padding="10dp">
 
-                                <Spinner
+                                <TextView
+                                    android:id="@+id/calanderTv"
                                     android:layout_width="match_parent"
-                                    android:layout_height="50dp"
-                                    android:layout_marginLeft="16dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_weight="0.10"
+                                    android:background="@null"
+                                    android:hint="Date Of Birth"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="16sp" />
 
-                                    android:layout_marginRight="16dp" />
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="50dp"
-                                    android:background="@drawable/square_bg"
-                                    android:orientation="horizontal"
-                                    android:padding="10dp">
-
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center_vertical"
-                                        android:layout_marginLeft="8dp"
-                                        android:layout_marginRight="10dp"
-                                        android:layout_weight="0.10"
-                                        android:background="@null"
-                                        android:hint="Date Of Birth"
-                                        android:textColor="@color/colorPrimaryDark"
-                                        android:textSize="16sp" />
-
-                                    <ImageView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:layout_marginRight="10dp"
-                                        android:src="@drawable/down_arrow"
-                                        android:tint="@color/grey" />
-                                </LinearLayout>
-
-                            </FrameLayout>
+                                <ImageView
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="10dp"
+                                    android:src="@drawable/down_arrow"
+                                    android:tint="@color/grey" />
+                            </LinearLayout>
 
 
                             <EditText
@@ -205,6 +214,7 @@
                                 android:layout_height="50dp"
                                 android:layout_marginTop="12dp"
                                 android:background="@drawable/square_bg"
+                                android:enabled="false"
                                 android:hint="Email"
                                 android:paddingLeft="20dp" />
 
@@ -220,19 +230,19 @@
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="16dp"
                             android:text="Optional"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="20sp" />
+                            android:textColor="@color/darkGreen"
+                            android:textSize="18sp" />
 
 
                         <LinearLayout
+
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/labelOptionals"
                             android:layout_marginLeft="16dp"
                             android:layout_marginTop="8dp"
-
                             android:layout_marginRight="16dp"
-                            android:layout_marginBottom="16dp"
+                            android:layout_marginBottom="40dp"
                             android:orientation="vertical">
 
 
@@ -287,6 +297,7 @@
                                     android:padding="10dp">
 
                                     <TextView
+                                        android:id="@+id/tvNationality"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center_vertical"
@@ -295,12 +306,11 @@
                                         android:layout_weight="0.10"
                                         android:background="@null"
                                         android:hint="Nationality"
-                                        android:textColor="@color/colorPrimaryDark"
                                         android:textSize="16sp" />
 
                                     <ImageView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_width="12dp"
+                                        android:layout_height="12dp"
                                         android:layout_gravity="center"
                                         android:layout_marginRight="10dp"
                                         android:src="@drawable/down_arrow"
@@ -331,6 +341,7 @@
                                     android:padding="10dp">
 
                                     <TextView
+                                        android:id="@+id/tvMaritalStatus"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center_vertical"
@@ -339,12 +350,11 @@
                                         android:layout_weight="0.10"
                                         android:background="@null"
                                         android:hint="Marital status"
-                                        android:textColor="@color/colorPrimaryDark"
                                         android:textSize="16sp" />
 
                                     <ImageView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_width="12dp"
+                                        android:layout_height="12dp"
                                         android:layout_gravity="center"
                                         android:layout_marginRight="10dp"
                                         android:src="@drawable/down_arrow"
@@ -353,49 +363,15 @@
 
                             </FrameLayout>
 
-
-                            <FrameLayout
+                            <EditText
+                                android:id="@+id/activityProfileCountryET"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
-                                android:layout_marginTop="12dp">
-
-                                <Spinner
-                                    android:layout_width="match_parent"
-                                    android:layout_height="50dp"
-                                    android:layout_marginLeft="16dp"
-
-                                    android:layout_marginRight="16dp" />
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="50dp"
-                                    android:background="@drawable/square_bg"
-                                    android:orientation="horizontal"
-                                    android:padding="10dp">
-
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center_vertical"
-                                        android:layout_marginLeft="8dp"
-                                        android:layout_marginRight="10dp"
-                                        android:layout_weight="0.10"
-                                        android:background="@null"
-                                        android:hint="Country of residence"
-                                        android:textColor="@color/colorPrimaryDark"
-                                        android:textSize="16sp" />
-
-                                    <ImageView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:layout_marginRight="10dp"
-                                        android:src="@drawable/down_arrow"
-                                        android:tint="@color/grey" />
-                                </LinearLayout>
-
-                            </FrameLayout>
-
+                                android:layout_marginTop="12dp"
+                                android:background="@drawable/square_bg"
+                                android:enabled="false"
+                                android:hint="Living Country"
+                                android:paddingLeft="20dp" />
 
                             <EditText
                                 android:id="@+id/activityProfileOccupationET"
@@ -416,26 +392,90 @@
                                 android:paddingLeft="20dp" />
 
 
+                            <EditText
+                                android:id="@+id/activityProfileAddressET"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="12dp"
+                                android:background="@drawable/square_bg"
+                                android:enabled="false"
+                                android:hint="Postal Address"
+                                android:inputType="text"
+                                android:paddingLeft="20dp" />
+
+
                         </LinearLayout>
 
-                        <android.support.v7.widget.CardView
+                        <LinearLayout
                             android:id="@+id/edit"
                             android:layout_width="80dp"
                             android:layout_height="30dp"
-                            app:cardCornerRadius="10dp">
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="20dp"
+                            android:background="@drawable/bg_rounded"
+                            android:visibility="visible">
 
-                            <ImageView
-                                android:layout_width="14dp"
-                                android:layout_height="14dp"
-                                android:src="@drawable/ic_pencil" />
-
-                            <TextView
+                            <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_gravity="center"
-                                android:text="edit"
-                                android:textSize="16sp" />
-                        </android.support.v7.widget.CardView>
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:layout_width="28dp"
+                                    android:layout_height="28dp"
+                                    android:layout_alignParentLeft="true"
+                                    android:padding="4dp"
+                                    android:src="@drawable/ic_pencil" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_gravity="center"
+                                    android:text="edit"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="24sp" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/save"
+                            android:layout_width="80dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="20dp"
+                            android:background="@drawable/edit_bg"
+                            android:visibility="gone">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="2dp"
+                                    android:src="@drawable/ic_save" />
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_centerVertical="true"
+                                    android:text="save"
+                                    android:layout_marginLeft="32dp"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="18sp" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
 
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
@@ -460,6 +500,10 @@
         android:layout_height="50dp"
         android:background="@color/newPrimaryColor">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -467,7 +511,7 @@
             android:layout_marginStart="15dp"
             android:text="SaveMemory"
             android:textColor="@android:color/white"
-            android:textSize="18sp" />
+            android:textSize="14sp" />
 
     </RelativeLayout>
 
@@ -480,38 +524,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <android.support.v7.widget.AppCompatImageView
-                    android:id="@+id/activityProfileBackIV"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:padding="12dp"
-                    android:src="@drawable/image_back"
-                    android:tint="@color/newPrimaryColor" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="Settings"
-                    android:textColor="@android:color/black"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/myinfoTv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="5dp"
-                    android:text="My Information"
-                    android:textColor="#007AFF"
-                    android:textSize="15sp" />
-
-            </RelativeLayout>
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
@@ -521,411 +533,528 @@
                 app:cardCornerRadius="15dp"
                 app:cardElevation="4dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:orientation="vertical">
 
-                    <LinearLayout
-                        android:id="@+id/activityProfileEditLL"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:gravity="center"
-                        android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/rr"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
                         <android.support.v7.widget.AppCompatImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_gravity="center"
-                            android:padding="2dp"
-                            android:src="@drawable/image_edit"
-                            android:tint="#00BFFF" />
+                            android:id="@+id/activityProfileBackIV"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:padding="12dp"
+                            android:src="@drawable/image_back"
+                            android:tint="@color/newPrimaryColor" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:padding="10dp"
-                            android:text="Edit"
-                            android:textColor="#00BFFF" />
+                            android:layout_alignParentRight="true"
+                            android:padding="12dp"
+                            android:text="Settings"
+                            android:textColor="@android:color/black"
+                            android:textSize="15sp" />
 
-                    </LinearLayout>
+                        <TextView
+                            android:id="@+id/myinfoTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="32dp"
+                            android:layout_marginEnd="5dp"
+                            android:text="My Information"
+                            android:textColor="#007AFF"
+                            android:textSize="24sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/myinfoTv"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="32dp"
+                            android:text="Essentials" />
+
+                    </RelativeLayout>
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="start|center"
-                            android:text="Name"
-                            android:textSize="14sp" />
-
-                        <EditText
-                            android:id="@+id/activityProfileFirstNameET"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:backgroundTint="@color/newDimText"
-                            android:enabled="false"
-                            android:hint="First Name"
-                            android:textSize="14sp" />
-
-                        <EditText
-                            android:id="@+id/activityProfileLastNameET"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:backgroundTint="@color/newDimText"
-                            android:enabled="false"
-                            android:hint="Last Name"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="start|center"
-                            android:text="DOB"
-                            android:textSize="14sp" />
-
-                        <RelativeLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight=".66">
-
-                            <Spinner
-                                android:id="@+id/activityProfileDateSpinner"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@null" />
-
-                            <android.support.v7.widget.AppCompatImageView
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:src="@drawable/image_down_arrow"
-                                android:tint="@android:color/black" />
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight=".66">
-
-                            <Spinner
-                                android:id="@+id/activityProfileMonthSpinner"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@null" />
-
-                            <android.support.v7.widget.AppCompatImageView
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:src="@drawable/image_down_arrow"
-                                android:tint="@android:color/black" />
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight=".66">
-
-                            <Spinner
-                                android:id="@+id/activityProfileYearSpinner"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@null" />
-
-                            <android.support.v7.widget.AppCompatImageView
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:src="@drawable/image_down_arrow"
-                                android:tint="@android:color/black" />
-
-                        </RelativeLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="start|center"
-                            android:text="Sex"
-                            android:textSize="14sp" />
-
-                        <Spinner
-                            android:id="@+id/activityProfileSexSpinner"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:backgroundTint="@color/textDark" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="start|center"
-                            android:text="@string/email"
-                            android:textSize="14sp" />
-
-                        <EditText
-                            android:id="@+id/activityProfileEmailET"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:backgroundTint="@color/newDimText"
-                            android:enabled="false"
-                            android:hint="Direct Input"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="start|center"
-                            android:text="@string/phone_no"
-                            android:textSize="14sp" />
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rr"
+                        android:layout_margin="16dp"
+                        android:layout_marginTop="44dp"
+                        android:orientation="vertical">
 
                         <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
+                            android:id="@+id/activityProfileEditLL"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:gravity="center"
                             android:orientation="horizontal"
-                            android:weightSum="1">
+                            android:visibility="gone">
 
-                            <Spinner
-                                android:id="@+id/activityProfileISDSpinner"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight=".4"
-                                android:background="@null"
-                                android:backgroundTint="@color/textDark" />
+                            <android.support.v7.widget.AppCompatImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:padding="2dp"
+                                android:src="@drawable/image_edit"
+                                android:tint="#00BFFF" />
 
-                            <EditText
-                                android:id="@+id/activityProfilePhoneET"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight=".6"
-                                android:backgroundTint="@color/newDimText"
-                                android:enabled="false"
-                                android:hint="Phone number"
-                                android:inputType="phone"
-                                android:textSize="14sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:text="Edit"
+                                android:textColor="#00BFFF" />
 
                         </LinearLayout>
 
-                    </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="start|center"
-                            android:text="@string/nationality"
-                            android:textSize="14sp" />
+                              <TextView      android:layout_width="0dp"      android:layout_height="match_parent"      android:layout_weight="1"      android:gravity="start|center"      android:text="Name"      android:textSize="14sp" />
 
-                        <Spinner
-                            android:id="@+id/activityProfileNationalitySpinner"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:backgroundTint="@color/textDark" />
+    <!-  <EditText--><!--      android:id="@+id/activityProfileFirstNameET"--><!--      android:layout_width="0dp"--><!--      android:layout_height="match_parent"--><!--      android:layout_weight="1"--><!--      android:backgroundTint="@color/newDimText"--><!--      android:enabled="false"--><!--      android:hint="First Name"--><!--      android:textSize="14sp" />-->
 
-                    </LinearLayout>
+    <!--  <EditText--><!--      android:id="@+id/activityProfileLastNameET"--><!--      android:layout_width="0dp"--><!--      android:layout_height="match_parent"--><!--      android:layout_weight="1"--><!--      android:backgroundTint="@color/newDimText"--><!--      android:enabled="false"--><!--      android:hint="Last Name"--><!--      android:textSize="14sp" />-->
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="start|center"
-                            android:text="Living Country"
-                            android:textSize="14sp" />
+    <!-- <EditText
+         style="@style/edittext"
+         android:hint="Your full legal name" />
 
-                        <EditText
-                            android:id="@+id/activityProfileCountryET"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:backgroundTint="@color/newDimText"
-                            android:enabled="false"
-                            android:hint="Direct Input"
-                            android:textSize="14sp" />
 
-                    </LinearLayout>
+     <EditText
+         style="@style/edittext"
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
+         android:layout_marginTop="8dp" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="start|center"
-                            android:text="Marital Status"
-                            android:textSize="14sp" />
+     <EditText
+         style="@style/edittext"
+         android:layout_marginTop="8dp" />
 
-                        <Spinner
-                            android:id="@+id/activityProfileMaritalStatusSpinner"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:backgroundTint="@color/textDark" />
+     <EditText
+         style="@style/edittext"
+         android:layout_marginTop="8dp"
+         android:hint="Email" />
 
-                    </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         android:layout_marginTop="24dp"
+         android:text="Optional"
+         android:textSize="24sp" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="start|center"
-                            android:text="Occupation"
-                            android:textSize="14sp" />
 
-                        <EditText
-                            android:id="@+id/activityProfileOccupationET"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:backgroundTint="@color/newDimText"
-                            android:enabled="false"
-                            android:hint="Direct Input"
-                            android:textSize="14sp" />
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="50dp"
+         android:layout_marginTop="12dp"
+         android:background="@drawable/edittext">
 
-                    </LinearLayout>
+         <Spinner
+             android:id="@+id/activityProfileISDSpinner"
+             android:layout_width="48dp"
+             android:layout_height="match_parent"
+             android:layout_centerVertical="true"
+             android:background="@null"
+             android:backgroundTint="@color/textDark" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
+         <EditText
+             android:id="@+id/activityProfilePhoneET"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_toRightOf="@+id/activityProfileISDSpinner"
+             android:background="@null"
+             android:backgroundTint="@color/newDimText"
+             android:enabled="false"
+             android:hint="Phone number"
+             android:inputType="phone"
+             android:paddingLeft="8dp"
+             android:textSize="14sp" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="start"
-                            android:paddingTop="10dp"
-                            android:text="Postal address"
-                            android:textSize="14sp" />
+     </RelativeLayout>
 
-                        <EditText
-                            android:id="@+id/activityProfileAddressET"
-                            android:layout_width="0dp"
-                            android:layout_height="100dp"
-                            android:layout_gravity="start"
-                            android:layout_weight="2"
-                            android:backgroundTint="@color/newDimText"
-                            android:enabled="false"
-                            android:gravity="start"
-                            android:hint="Type start here"
-                            android:textSize="14sp" />
 
-                    </LinearLayout>
+     <LinearLayout
+         style="@style/edittext"
+         android:layout_width="match_parent"
+         android:layout_height="40dp"
+         android:layout_marginStart="5dp"
+         android:layout_marginEnd="5dp"
+         android:orientation="horizontal"
+         android:weightSum="3">
 
-                    <TextView
-                        android:id="@+id/activityProfileSaveTV"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:padding="10dp"
-                        android:text="Save"
-                        android:textColor="#00BFFF"
-                        android:textSize="18sp"
-                        android:visibility="gone" />
+         <TextView
+             android:layout_width="0dp"
+             android:layout_height="match_parent"
+             android:layout_weight="1"
+             android:gravity="start|center"
+             android:text="@string/nationality"
+             android:textSize="14sp" />
 
-                </LinearLayout>
+         <Spinner
+             android:id="@+id/activityProfileNationalitySpinner"
+             android:layout_width="0dp"
+             android:layout_height="match_parent"
+             android:layout_weight="2"
+             android:backgroundTint="@color/textDark" />
 
-            </android.support.v7.widget.CardView>
+     </LinearLayout>
 
-        </LinearLayout>
+ </LinearLayout>
 
-    </android.support.v4.widget.NestedScrollView>
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:layout_marginStart="5dp"
+     android:layout_marginEnd="5dp"
+     android:orientation="horizontal"
+     android:weightSum="3">
 
-    </LinearLayout>-->
+     <TextView
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="1"
+         android:gravity="start|center"
+         android:text="DOB"
+         android:textSize="14sp" />
+
+     <RelativeLayout
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight=".66">
+
+         <Spinner
+             android:id="@+id/activityProfileDateSpinner"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@null" />
+
+         <android.support.v7.widget.AppCompatImageView
+             android:layout_width="20dp"
+             android:layout_height="20dp"
+             android:layout_alignParentEnd="true"
+             android:layout_centerVertical="true"
+             android:src="@drawable/image_down_arrow"
+             android:tint="@android:color/black" />
+
+     </RelativeLayout>
+
+     <RelativeLayout
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight=".66">
+
+         <Spinner
+             android:id="@+id/activityProfileMonthSpinner"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@null" />
+
+         <android.support.v7.widget.AppCompatImageView
+             android:layout_width="20dp"
+             android:layout_height="20dp"
+             android:layout_alignParentEnd="true"
+             android:layout_centerVertical="true"
+             android:src="@drawable/image_down_arrow"
+             android:tint="@android:color/black" />
+
+     </RelativeLayout>
+
+     <RelativeLayout
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight=".66">
+
+         <Spinner
+             android:id="@+id/activityProfileYearSpinner"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@null" />
+
+         <android.support.v7.widget.AppCompatImageView
+             android:layout_width="20dp"
+             android:layout_height="20dp"
+             android:layout_alignParentEnd="true"
+             android:layout_centerVertical="true"
+             android:src="@drawable/image_down_arrow"
+             android:tint="@android:color/black" />
+
+     </RelativeLayout>
+
+ </LinearLayout>
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:layout_marginStart="5dp"
+     android:layout_marginEnd="5dp"
+     android:orientation="horizontal"
+     android:weightSum="3">
+
+     <TextView
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="1"
+         android:gravity="start|center"
+         android:text="Sex"
+         android:textSize="14sp" />
+
+     <Spinner
+         android:id="@+id/activityProfileSexSpinner"
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="2"
+         android:backgroundTint="@color/textDark" />
+
+ </LinearLayout>
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:layout_marginStart="5dp"
+     android:layout_marginEnd="5dp"
+     android:orientation="horizontal"
+     android:weightSum="3">
+
+     <TextView
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="1"
+         android:gravity="start|center"
+         android:text="@string/email"
+         android:textSize="14sp" />
+
+     <EditText
+         android:id="@+id/activityProfileEmailET"
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="2"
+         android:backgroundTint="@color/newDimText"
+         android:enabled="false"
+         android:hint="Direct Input"
+         android:textSize="14sp" />
+
+ </LinearLayout>
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:layout_marginStart="5dp"
+     android:layout_marginEnd="5dp"
+     android:orientation="horizontal"
+     android:weightSum="3">
+
+     <TextView
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="1"
+         android:gravity="start|center"
+         android:text="@string/phone_no"
+         android:textSize="14sp" />
+
+     <LinearLayout
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="2"
+         android:orientation="horizontal"
+         android:weightSum="1">
+
+         <Spinner
+             android:id="@+id/activityProfileISDSpinner"
+             android:layout_width="0dp"
+             android:layout_height="match_parent"
+             android:layout_weight=".4"
+             android:background="@null"
+             android:backgroundTint="@color/textDark" />
+
+         <EditText
+             android:id="@+id/activityProfilePhoneET"
+             android:layout_width="0dp"
+             android:layout_height="match_parent"
+             android:layout_weight=".6"
+             android:backgroundTint="@color/newDimText"
+             android:enabled="false"
+             android:hint="Phone number"
+             android:inputType="phone"
+             android:textSize="14sp" />
+
+     </LinearLayout>
+
+ </LinearLayout>
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:layout_marginStart="5dp"
+     android:layout_marginEnd="5dp"
+     android:orientation="horizontal"
+     android:weightSum="3">
+
+     <TextView
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="1"
+         android:gravity="start|center"
+         android:text="@string/nationality"
+         android:textSize="14sp" />
+
+     <Spinner
+         android:id="@+id/activityProfileNationalitySpinner"
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="2"
+         android:backgroundTint="@color/textDark" />
+
+ </LinearLayout>
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:layout_marginStart="5dp"
+     android:layout_marginEnd="5dp"
+     android:orientation="horizontal"
+     android:weightSum="3">
+
+     <TextView
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="1"
+         android:gravity="start|center"
+         android:text="Living Country"
+         android:textSize="14sp" />
+
+     <EditText
+         android:id="@+id/activityProfileCountryET"
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="2"
+         android:backgroundTint="@color/newDimText"
+         android:enabled="false"
+         android:hint="Direct Input"
+         android:textSize="14sp" />
+
+ </LinearLayout>
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:layout_marginStart="5dp"
+     android:layout_marginEnd="5dp"
+     android:orientation="horizontal"
+     android:weightSum="3">
+
+     <TextView
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="1"
+         android:gravity="start|center"
+         android:text="Marital Status"
+         android:textSize="14sp" />
+
+     <Spinner
+         android:id="@+id/activityProfileMaritalStatusSpinner"
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="2"
+         android:backgroundTint="@color/textDark" />
+
+ </LinearLayout>
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:layout_marginStart="5dp"
+     android:layout_marginEnd="5dp"
+     android:orientation="horizontal"
+     android:weightSum="3">
+
+     <TextView
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="1"
+         android:gravity="start|center"
+         android:text="Occupation"
+         android:textSize="14sp" />
+
+     <EditText
+         android:id="@+id/activityProfileOccupationET"
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="2"
+         android:backgroundTint="@color/newDimText"
+         android:enabled="false"
+         android:hint="Direct Input"
+         android:textSize="14sp" />
+
+ </LinearLayout>
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="5dp"
+     android:layout_marginEnd="5dp"
+     android:orientation="horizontal"
+     android:weightSum="3">
+
+     <TextView
+         android:layout_width="0dp"
+         android:layout_height="match_parent"
+         android:layout_weight="1"
+         android:gravity="start"
+         android:paddingTop="10dp"
+         android:text="Postal address"
+         android:textSize="14sp" />
+
+     <EditText
+         android:id="@+id/activityProfileAddressET"
+         android:layout_width="0dp"
+         android:layout_height="100dp"
+         android:layout_gravity="start"
+         android:layout_weight="2"
+         android:backgroundTint="@color/newDimText"
+         android:enabled="false"
+         android:gravity="start"
+         android:hint="Type start here"
+         android:textSize="14sp" />
+
+ </LinearLayout>
+
+ <TextView
+     android:id="@+id/activityProfileSaveTV"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_gravity="end"
+     android:padding="10dp"
+     android:text="Save"
+     android:textColor="#00BFFF"
+     android:textSize="18sp"
+     android:visibility="gone" />
+
+</LinearLayout>
+</RelativeLayout>
+
+</android.support.v7.widget.CardView>
+
+</LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>&ndash;&gt;
+-->

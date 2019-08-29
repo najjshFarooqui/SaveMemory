@@ -11,6 +11,13 @@
         android:layout_height="60dp"
         android:background="@color/colorPrimary">
 
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/set" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -27,7 +34,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="40dp"
         android:layout_marginRight="16dp"
-        android:background="@color/colorWhite"
+        app:cardBackgroundColor="#F5F3F3"
         app:cardCornerRadius="14dp">
 
         <RelativeLayout
@@ -35,11 +42,12 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/activityMyStorageBackIV"
+                android:id="@+id/activityAboutBackCV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:padding="8dp"
+                android:tint="@color/colorPrimary"
                 android:src="@drawable/ic_arrow_blue" />
 
 
@@ -106,7 +114,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="jhadkjahsdkjhadkjdhkshadkjhadkshadkjashdkjhasdkjhasdkjhasdkjshadkjshadkjahsdkjhsadkjhsadkjhsadkjhsdkjhsdkjhasdkjshadkjhsdkjhsadkjhsadkjhasdkjhsadkjhsdkhsdkjhsdkjshdkjahsdkjhsdkjhkjashdkjsahdkjahsdkjhsadkjahsdkjahsdkjdhskjdahskjshadkjshadkjhsadkjsahdkjhasdkjhadkjshadkjshadkjahskjhasdkjhsdkjhsdkjashdkjasdkjhsdkjhsdkjshdkjshadkjashdkjahsdkjahsdkjhasdkjhsdkjhihduhskjahsdkhkhsdkjshdkjkjsahdkjsahdkjhasdkjkjaskjhkjhskjasdkjsd" />
+                        android:text="SaveMemory started as a service to help parents store their memories of their children. However, it is not limited only to parent-child relationships. It also provides services to the patron and heritor(s) (beneficiary). Our product supports storing of a variety of media: text, photos, videos, documents, and audio files. This app is secured with end-to-end encryption, meaning that no third party, including SaveMemory, can read or access this media. " />
 
 
                     <TextView
@@ -121,8 +129,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="56dp"
                         android:layout_marginTop="8dp"
-                        android:text="jhadkjahsdkjhadkjdhkshadkjhadkshadkjashdkjhasdkjhasdkjhasdkjshadkjshadkjahsdkjhsadkjhsadkjhsadkjhsdkjhsdkjhasdkjshadkjhsdkjhsadkjhsadkjhasdkjhsadkjhsdkhsdkjhsdkjshdkjahsdkjhsdkjhkjashdkjsahdkjahsdkjhsadkjahsdkjahsdkjdhskjdahskjshadkjshadkjhsadkjsahdkjhasdkjhadkjshadkjshadkjahskjhasdkasdkjkjaskjhkjhskjasdkjsd" />
+                        android:text="Our company is located in San Francisco, USA. Our team is consisted of members from different countries (eg: USA, South Korea, Japan, India, Indonesia, and etc.) to offer excellent service to its users." />
 
 
                 </LinearLayout>

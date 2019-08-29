@@ -5,10 +5,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.AppCompatImageView;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.smnetinfo.savememory.database.PostsDataSource;
 import com.smnetinfo.savememory.database.SettingsDataSource;
@@ -20,9 +19,10 @@ public class MyPageActivity extends BaseActivity implements WebConstants {
 
 
     AppCompatImageView activityMyPageBackIV;
-    LinearLayout activityMyPageProfileLL, activityMyPageMyWillLL, activityMyPageMyBeneficiaryLL, activityMyPageMyStorageLL,
+    RelativeLayout activityMyPageProfileLL, activityMyPageMyWillLL, activityMyPageMyBeneficiaryLL, activityMyPageMyStorageLL,
             activityMyPageLogoutLL, activityMyPageThemeLL, activityMyPageSkinLL, activityMyPageFAQLL, activityMyPageQNALL,
-            activityMyPageAboutLL;
+            activityMyPageAboutLL,
+            activityChangePassword, activityLockScreen, activityPayment, activityChangeLanguage, activityFontSize;
 
     UserDataSource userDataSource;
     PostsDataSource postsDataSource;
@@ -39,30 +39,53 @@ public class MyPageActivity extends BaseActivity implements WebConstants {
 
         activityMyPageBackIV = findViewById(R.id.activityMyPageBackIV);
 
-        activityMyPageFAQLL = findViewById(R.id.activityMyPageFAQLL);
-        activityMyPageQNALL = findViewById(R.id.activityMyPageQNALL);
-        activityMyPageSkinLL = findViewById(R.id.activityMyPageSkinLL);
-        activityMyPageThemeLL = findViewById(R.id.activityMyPageThemeLL);
-        activityMyPageAboutLL = findViewById(R.id.activityMyPageAboutLL);
-        activityMyPageLogoutLL = findViewById(R.id.activityMyPageLogoutLL);
-        activityMyPageMyWillLL = findViewById(R.id.activityMyPageMyWillLL);
+        activityMyPageFAQLL = findViewById(R.id.activityFaq);
+        activityMyPageQNALL = findViewById(R.id.activityAsk);
+        activityChangePassword = findViewById(R.id.activityChangePassword);
+        activityLockScreen = findViewById(R.id.activityLockScreen);
+        activityMyPageAboutLL = findViewById(R.id.activityAboutSaveMemory);
+        activityMyPageLogoutLL = findViewById(R.id.logoutLL);
+        activityChangeLanguage = findViewById(R.id.activityChangeLanguage);
         activityMyPageProfileLL = findViewById(R.id.activityMyPageProfileLL);
         activityMyPageMyStorageLL = findViewById(R.id.activityMyPageMyStorageLL);
-        activityMyPageMyBeneficiaryLL = findViewById(R.id.activityMyPageMyBeneficiaryLL);
+        activityPayment = findViewById(R.id.activityPayment);
+        activityFontSize = findViewById(R.id.activityFontSize);
 
-        activityMyPageThemeLL.setOnClickListener(new View.OnClickListener() {
+        activityChangePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), FontActivity.class));
+
+                startActivity(new Intent(getApplicationContext(), ChangePasswordActivity.class));
             }
         });
 
-        activityMyPageSkinLL.setOnClickListener(new View.OnClickListener() {
+
+        activityChangeLanguage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), SkinActivity.class));
+                startActivity(new Intent(getApplicationContext(), ChangeLanguageActivity.class));
+
+
             }
         });
+
+        activityFontSize.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), FontAndSizeActivity.class));
+
+            }
+        });
+
+        activityPayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), PaymentActivity.class));
+
+
+            }
+        });
+
 
         activityMyPageProfileLL.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,20 +94,7 @@ public class MyPageActivity extends BaseActivity implements WebConstants {
             }
         });
 
-        activityMyPageMyWillLL.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), AddWillActivity.class));
-            }
-        });
 
-        activityMyPageMyBeneficiaryLL.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                LocalBroadcastManager.getInstance(MyPageActivity.this).sendBroadcast(new Intent(BROADCAST_MY_INHERITOR_PAGE));
-                finish();
-            }
-        });
 
         activityMyPageMyStorageLL.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,6 +121,15 @@ public class MyPageActivity extends BaseActivity implements WebConstants {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), AboutActivity.class));
+            }
+        });
+
+        activityLockScreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), LockScreenAcivity.class));
+
+
             }
         });
 
